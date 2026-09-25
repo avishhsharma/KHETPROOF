@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradToxic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c" />
+      <stop offset="100%" stop-color="#7f1d1d" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="320" fill="#fef2f2" rx="16"/>
+  
+  <!-- Bottle shape -->
+  <rect x="140" y="25" width="120" height="35" rx="6" fill="#334155"/>
+  <rect x="110" y="60" width="180" height="220" rx="18" fill="url(#gradToxic)" stroke="#991b1b" stroke-width="4"/>
+  
+  <!-- Label -->
+  <rect x="125" y="85" width="150" height="175" rx="6" fill="#ffffff"/>
+  <rect x="125" y="85" width="150" height="30" fill="#dc2626"/>
+  <text x="200" y="105" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">SUPER WEED BURN</text>
+  
+  <text x="200" y="132" font-family="sans-serif" font-size="12" font-weight="bold" fill="#991b1b" text-anchor="middle">24D MIX AGRO</text>
+  
+  <!-- Danger skull / warning sign -->
+  <polygon points="200,145 220,175 180,175" fill="#eab308" stroke="#ca8a04" stroke-width="2"/>
+  <text x="200" y="171" font-family="sans-serif" font-size="14" font-weight="bold" fill="#000000" text-anchor="middle">!</text>
+  
+  <rect x="135" y="185" width="130" height="65" rx="4" fill="#f1f5f9"/>
+  <text x="140" y="202" font-family="monospace" font-size="10" font-weight="bold" fill="#dc2626">BATCH: SWB-7721-RAI</text>
+  <text x="140" y="217" font-family="sans-serif" font-size="9" fill="#475569">MFG: 06/2026 | EXP: 05/2028</text>
+  <text x="140" y="232" font-family="sans-serif" font-size="9" font-weight="bold" fill="#b91c1c">CIBRC: अपंजीकृत/संदिग्ध</text>
+  
+  <rect x="15" y="15" width="135" height="28" rx="14" fill="#ef4444"/>
+  <text x="82" y="34" font-family="sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">⚠️ FLAG: FAKE WEEDICIDE</text>
+</svg>

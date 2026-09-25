@@ -108,8 +108,24 @@ def save_saved_inputs(inputs):
 
 
 @app.route('/')
+@app.route('/index')
+@app.route('/api')
+@app.route('/api/')
+@app.route('/api/index')
+@app.route('/api/index.py')
 def index():
     return render_template('index.html')
+
+@app.errorhandler(404)
+def page_not_found(e):
+    if not request.path.startswith('/api/'):
+        return render_template('index.html')
+    return jsonify({
+        "error": "Not Found",
+        "path": request.path,
+        "status": 404
+    }), 404
+
 
 
 def get_public_tunnel_url():
