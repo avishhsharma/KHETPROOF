@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.exe
+.vscode/
+scratch/
+*.log
+data/public_tunnel.txt
+scripts/setup_git.py
+mingit.zip

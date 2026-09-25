@@ -1,0 +1,14 @@
+{
+  "active": true,
+  "calamity_id": "CLM-20260925-1022",
+  "district": "dewas",
+  "calamity_type": "अतिवृष्टि एवं जलभराव",
+  "triggered_by": "किसान द्वारा सीधा दर्ज / मौसम अलार्म",
+  "started_at": "2026-09-25T10:22:26.914711+05:30",
+  "deadline_72h": "2026-09-28T10:22:26.914711+05:30",
+  "affected_crop": "Soybean (सोयाबीन JS-2034)",
+  "estimated_loss_percent": 60,
+  "field_photo": "/static/images/sample_waterlogged_field.svg",
+  "loss_status": "INTIMATION_PENDING",
+  "notes": "आवाज़/संदेश द्वारा दर्ज: मेरी 4 बीघा सोयाबीन में पानी भर गया"
+}

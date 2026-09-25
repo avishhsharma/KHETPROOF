@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="hi" class="h-full bg-slate-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>खेतप्रूफ (KhetProof) - किसान दावा व इनपुट सुरक्षा साथी</title>
+  
+  <!-- Google Fonts: Noto Sans Devanagari & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans Devanagari"', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            khet: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            },
+            wa: {
+              header: '#075e54',
+              teal: '#128c7e',
+              light: '#25d366',
+              bg: '#efeae2',
+              user: '#d9fdd3'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="h-full flex flex-col font-sans text-slate-900 antialiased selection:bg-khet-500 selection:text-white">
+
+  <!-- Top Emergency 72-Hour Calamity Bar (Dynamic) -->
+  <div id="calamity-banner" class="bg-gradient-to-r from-red-600 via-amber-600 to-red-700 text-white px-2.5 sm:px-4 py-1.5 sm:py-2.5 shadow-md transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-1.5 sm:gap-2 text-xs sm:text-sm">
+      <div class="flex items-center space-x-1.5 font-medium min-w-0">
+        <span class="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5 flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-300 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-yellow-400"></span>
+        </span>
+        <span id="banner-title" class="font-bold text-yellow-100 truncate text-[11px] sm:text-sm">🚨 72-घंटे की PMFBY दावा विंडो चालू!</span>
+        <span class="hidden lg:inline text-white/80" id="banner-location-sub">| <span id="banner-loc-name">देवास</span> में मौसम निगरानी सक्रिय</span>
+      </div>
+      
+      <div class="flex items-center space-x-1.5 sm:space-x-2 flex-shrink-0">
+        <!-- Live Countdown Widget -->
+        <div class="bg-black/30 backdrop-blur-sm px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-white/20 flex items-center space-x-1 font-mono font-bold text-[10px] sm:text-xs text-amber-200">
+          <i data-lucide="clock" class="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-0.5 text-yellow-300 animate-pulse"></i>
+          <span id="countdown-timer">68:24:10</span>
+          <span class="text-[10px] text-white/70 font-sans font-normal ml-0.5 hidden sm:inline" data-i18n="remaining">बाकी</span>
+        </div>
+        
+        <button onclick="switchTab('tab-dossier')" class="bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-bold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded text-[10px] sm:text-xs transition shadow-xs flex items-center flex-shrink-0">
+          <span data-i18n="quickClaimBtn">दावा पर्ची</span>
+          <i data-lucide="arrow-right" class="w-3 h-3 ml-0.5 sm:ml-1"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
+    <div class="max-w-6xl mx-auto px-2 sm:px-4 py-1.5 sm:py-2.5 flex items-center justify-between gap-1 sm:gap-2">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center space-x-1.5 sm:space-x-2 cursor-pointer flex-shrink-0" onclick="switchTab('tab-dashboard')">
+        <div class="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-gradient-to-br from-khet-600 to-emerald-800 flex items-center justify-center text-white shadow-xs flex-shrink-0">
+          <i data-lucide="shield-check" class="w-4 h-4 sm:w-6 sm:h-6"></i>
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center space-x-1 sm:space-x-1.5">
+            <h1 class="text-sm sm:text-xl font-black tracking-tight text-slate-900 leading-tight">
+              खेत<span class="text-khet-600">प्रूफ</span>
+            </h1>
+            <span class="hidden sm:inline-block text-[10px] bg-khet-100 text-khet-800 font-bold px-1.5 py-0.2 rounded-full border border-khet-500/20">KhetProof</span>
+          </div>
+          <p class="hidden sm:block text-[11px] text-slate-500 font-medium leading-none mt-0.5" data-i18n="tagline">किसान दावा व इनपुट सुरक्षा साथी</p>
+        </div>
+      </div>
+
+      <!-- Center / Right Controls -->
+      <div class="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
+        
+        <!-- Offline Mode Indicator Badge -->
+        <div id="offline-badge" class="hidden items-center space-x-1 bg-amber-500 text-white px-1.5 sm:px-2 py-1 rounded-lg text-[10px] sm:text-xs font-bold shadow animate-pulse flex-shrink-0">
+          <i data-lucide="wifi-off" class="w-3 h-3"></i>
+          <span class="hidden sm:inline">ऑफ़लाइन</span>
+          <button onclick="syncOfflineData()" class="ml-0.5 sm:ml-1 bg-white text-amber-900 px-1 sm:px-1.5 py-0.2 rounded text-[9px] font-black hover:bg-amber-100">
+            सिंक ↺
+          </button>
+        </div>
+
+        <!-- Open on Phone (Mobile QR) Trigger - Desktop only -->
+        <button onclick="openMobileConnectModal()" title="मोबाइल फोन पर खोलें" 
+                class="hidden md:flex items-center space-x-1 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white font-bold text-xs rounded-lg px-2.5 py-1.5 shadow-xs transition flex-shrink-0">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+          <span>मोबाइल QR</span>
+        </button>
+
+        <!-- Voice Assistant Audio Toggle -->
+        <button id="btn-voice-toggle" onclick="speakCurrentSummary()" title="आवाज से सुनें (Audio Assistance)" 
+                class="flex items-center space-x-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 px-1.5 sm:px-2.5 py-1 sm:py-1.5 rounded-lg text-xs font-semibold transition flex-shrink-0">
+          <i data-lucide="volume-2" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span class="hidden md:inline text-[11px]" data-i18n="voiceGuide">बोलकर सुनें</span>
+        </button>
+
+        <!-- MP Location Selector Trigger -->
+        <button onclick="openLocationModal()" title="स्थान बदलें"
+                class="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs rounded-lg px-1.5 sm:px-2.5 py-1 sm:py-1.5 border border-slate-300 transition cursor-pointer shadow-xs flex-shrink-0">
+          <i data-lucide="map-pin" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-600 flex-shrink-0"></i>
+          <span id="nav-location-label" class="font-bold max-w-[70px] sm:max-w-[150px] truncate text-[10px] sm:text-xs">देवास • सोनकच्छ</span>
+          <span class="text-[9px] text-slate-400 font-normal">▾</span>
+        </button>
+
+        <!-- Language Switcher (ENG / हिन्दी) -->
+        <button id="lang-btn" onclick="toggleLanguage()" title="भाषा बदलें / Switch Language" 
+                class="bg-slate-800 hover:bg-slate-900 text-white text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-lg transition flex items-center justify-center space-x-1 flex-shrink-0 shadow-xs min-w-[46px] sm:min-w-[52px]">
+          <i data-lucide="languages" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+          <span id="lang-label">ENG</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Emergency Farmer Helpline Strip -->
+    <div class="bg-emerald-950 text-white py-1 px-2.5 sm:px-4 text-xs border-t border-emerald-900/50">
+      <div class="max-w-6xl mx-auto flex items-center justify-between gap-1.5 overflow-x-auto no-scrollbar">
+        <div class="flex items-center space-x-1 text-emerald-200 font-bold text-[10px] sm:text-[11px] whitespace-nowrap flex-shrink-0">
+          <i data-lucide="phone-call" class="w-3 h-3 text-yellow-400"></i>
+          <span>हेल्पलाइन:</span>
+        </div>
+        <div class="flex items-center gap-1.5 flex-nowrap overflow-x-auto no-scrollbar text-[10px] sm:text-[11px]">
+          <a href="tel:14447" class="inline-flex items-center gap-1 bg-yellow-400 hover:bg-yellow-300 text-slate-950 px-2 py-0.5 rounded font-black whitespace-nowrap shadow-xs transition flex-shrink-0">
+            📞 14447 (PMFBY 24x7)
+          </a>
+          <a href="tel:18001801551" class="inline-flex items-center gap-1 bg-emerald-800 hover:bg-emerald-700 text-white px-2 py-0.5 rounded font-bold whitespace-nowrap transition flex-shrink-0">
+            📞 1800-180-1551 (किसान केंद्र)
+          </a>
+          <a href="tel:181" class="inline-flex items-center gap-1 bg-slate-800 hover:bg-slate-700 text-emerald-200 px-2 py-0.5 rounded font-bold whitespace-nowrap transition flex-shrink-0">
+            📞 181 (CM)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Navigation Bar -->
+    <nav class="max-w-6xl mx-auto px-2 sm:px-4 border-t border-slate-100 flex space-x-1 sm:space-x-3 overflow-x-auto no-scrollbar">
+      <button onclick="switchTab('tab-dashboard')" id="nav-tab-dashboard" class="nav-tab active-tab flex items-center py-2 px-2.5 sm:px-3 border-b-2 font-bold text-xs sm:text-sm transition whitespace-nowrap flex-shrink-0">
+        <i data-lucide="layout-dashboard" class="w-4 h-4 mr-1 sm:mr-1.5"></i>
+        <span data-i18n="tabDashboard">डैशबोर्ड</span>
+      </button>
+
+      <button onclick="switchTab('tab-vault')" id="nav-tab-vault" class="nav-tab flex items-center py-2 px-2.5 sm:px-3 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition whitespace-nowrap flex-shrink-0">
+        <i data-lucide="archive" class="w-4 h-4 mr-1 sm:mr-1.5 text-amber-600"></i>
+        <span data-i18n="tabVault">इनपुट वॉल्ट</span>
+        <span id="vault-count-badge" class="ml-1 px-1.5 py-0.2 bg-amber-100 text-amber-800 text-[10px] font-bold rounded-full">4</span>
+      </button>
+
+      <button onclick="switchTab('tab-loss-reporter')" id="nav-tab-loss-reporter" class="nav-tab flex items-center py-2 px-2.5 sm:px-3 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition whitespace-nowrap flex-shrink-0">
+        <i data-lucide="alarm-clock" class="w-4 h-4 mr-1 sm:mr-1.5 text-red-600"></i>
+        <span data-i18n="tabLoss">72h दावा</span>
+        <span class="ml-1 flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+        </span>
+      </button>
+
+      <button onclick="switchTab('tab-mandi-doctor')" id="nav-tab-mandi-doctor" class="nav-tab flex items-center py-2 px-2.5 sm:px-3 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition whitespace-nowrap flex-shrink-0">
+        <i data-lucide="trending-up" class="w-4 h-4 mr-1 sm:mr-1.5 text-emerald-600"></i>
+        <span>मंडी भाव व डॉक्टर</span>
+        <span class="ml-1 px-1.5 py-0.2 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">लाइव</span>
+      </button>
+
+      <button onclick="switchTab('tab-whatsapp')" id="nav-tab-whatsapp" class="nav-tab flex items-center py-2 px-2.5 sm:px-3 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition whitespace-nowrap flex-shrink-0">
+        <i data-lucide="message-square" class="w-4 h-4 mr-1 sm:mr-1.5 text-emerald-600"></i>
+        <span data-i18n="tabWhatsapp">व्हाट्सएप बॉट</span>
+      </button>
+
+      <button onclick="switchTab('tab-dossier')" id="nav-tab-dossier" class="nav-tab flex items-center py-2 px-2.5 sm:px-3 border-b-2 border-transparent text-slate-600 hover:text-slate-900 font-semibold text-xs sm:text-sm transition whitespace-nowrap flex-shrink-0">
+        <i data-lucide="file-check-2" class="w-4 h-4 mr-1 sm:mr-1.5 text-blue-600"></i>
+        <span data-i18n="tabDossier">दावा पर्ची</span>
+      </button>
+    </nav>
+  </header>
+
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-6 pb-24 md:pb-8 overflow-y-auto">
+
+    <!-- ==================== 1. TAB: DASHBOARD ==================== -->
+    <section id="tab-dashboard" class="space-y-6">
+      
+      <!-- Farmer Profile & Current Field Card -->
+      <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 text-white rounded-2xl p-5 sm:p-6 shadow-xl relative overflow-hidden">
+        <div class="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-khet-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+          <div class="space-y-1.5">
+            <div class="inline-flex items-center space-x-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm text-emerald-300">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+              <span id="prof-location">बरखेड़ी, गैरतगंज (जिला रायसेन, म.प्र.)</span>
+            </div>
+            <h2 class="text-2xl font-bold flex items-center gap-2">
+              <span id="prof-name">नागेश शर्मा (Nagesh Sharma)</span>
+              <span class="text-xs bg-emerald-500/30 text-emerald-300 border border-emerald-400/40 px-2 py-0.5 rounded font-normal">PMFBY बीमित कृषक</span>
+            </h2>
+            <div class="flex flex-wrap items-center gap-y-1 gap-x-4 text-xs text-slate-300 pt-1">
+              <span>🌱 <b class="text-white">फसल:</b> <span id="prof-crop">सोयाबीन JS-2034</span></span>
+              <span>📜 <b class="text-white">खसरा नं.:</b> <span id="prof-khasra">142/2</span> (6.5 एकड़)</span>
+              <span>🛡️ <b class="text-white">पॉलिसी क्र.:</b> <span id="prof-policy">MP-PMFBY-2026-8942110</span></span>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap sm:flex-nowrap gap-2 w-full md:w-auto">
+            <button onclick="switchTab('tab-loss-reporter')" class="flex-1 sm:flex-none bg-red-600 hover:bg-red-500 text-white px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-lg shadow-red-900/40 flex items-center justify-center space-x-2 transition">
+              <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+              <span>फसल नुकसान रिपोर्ट (72h)</span>
+            </button>
+            <button onclick="switchTab('tab-vault')" class="flex-1 sm:flex-none bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-lg shadow-emerald-900/40 flex items-center justify-center space-x-2 transition">
+              <i data-lucide="plus-circle" class="w-4 h-4"></i>
+              <span>दवा/बिल फोटो जोड़ें</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Key Metric Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <!-- Card 1: 72-Hour PMFBY Status -->
+        <div class="bg-white border-2 border-red-200 rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center">
+              <i data-lucide="timer" class="w-5 h-5"></i>
+            </div>
+            <span id="dash-calamity-badge" class="text-xs font-bold px-2.5 py-1 rounded-full bg-red-100 text-red-700">विंडो चालू</span>
+          </div>
+          <h3 class="font-bold text-slate-800 text-base mt-3">PMFBY 72-घंटे दावा स्टेटस</h3>
+          <p class="text-xs text-slate-500 mt-1">अतिवृष्टि / जलभराव सूचना विंडो</p>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-baseline justify-between">
+            <div>
+              <span class="text-xs text-slate-400">शेष समय:</span>
+              <div id="dash-countdown" class="text-xl font-black text-red-600 font-mono">68h 24m</div>
+            </div>
+            <button onclick="switchTab('tab-loss-reporter')" class="text-xs text-red-600 font-bold hover:underline flex items-center">
+              विवरण देखें <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-0.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Agri-Input Proof Vault -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+              <i data-lucide="file-badge" class="w-5 h-5"></i>
+            </div>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-amber-100 text-amber-800">2 इनपुट सुरक्षित</span>
+          </div>
+          <h3 class="font-bold text-slate-800 text-base mt-3">इनपुट सुरक्षा व ICAR जांच</h3>
+          <p class="text-xs text-slate-500 mt-1">1 प्रमाणित • 1 संदिग्ध (रायसेन चेतावनी)</p>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-baseline justify-between">
+            <div>
+              <span class="text-xs text-slate-400">हालिया रिकॉर्ड:</span>
+              <div class="text-sm font-bold text-slate-800">IFFCO सागरिका + 24D Mix</div>
+            </div>
+            <button onclick="switchTab('tab-vault')" class="text-xs text-amber-700 font-bold hover:underline flex items-center">
+              वॉल्ट खोलें <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-0.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Realtime Hyperlocal Weather Station -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <!-- Header with Live Pulse & Risk Badge -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shadow-inner">
+                  <i data-lucide="cloud-sun" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+                    लाइव मौसम स्टेशन
+                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse mr-1"></span>
+                      LIVE
+                    </span>
+                  </h3>
+                  <p id="weather-source" class="text-[10px] text-slate-400 font-medium">Open-Meteo सैटेलाइट सिंक</p>
+                </div>
+              </div>
+              <span id="weather-risk-badge" class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">सामान्य</span>
+            </div>
+
+            <!-- Hierarchical Location & Timestamp Box -->
+            <div class="mt-3 bg-slate-50 border border-slate-200/80 rounded-xl p-2.5">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-900 truncate">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i>
+                  <span id="weather-location-name" class="truncate font-black">बेड़ाखेड़ी, सोनकच्छ (देवास)</span>
+                </div>
+                <button onclick="loadWeather(true)" title="लाइव मौसम रीफ्रेश करें" class="text-slate-400 hover:text-sky-600 p-1 rounded-md hover:bg-sky-50 transition" id="weather-refresh-btn">
+                  <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+                </button>
+              </div>
+              <div class="flex items-center justify-between text-[10px] text-slate-500 mt-1">
+                <span id="weather-timestamp" class="flex items-center gap-1 font-mono"><i data-lucide="clock" class="w-3 h-3"></i> समय: --</span>
+                <span id="weather-coords" class="font-mono text-slate-400 text-[9px]">22.96°N, 76.34°E</span>
+              </div>
+            </div>
+
+            <!-- Temperature & Current Description -->
+            <div class="mt-3 flex items-baseline justify-between">
+              <div>
+                <div class="flex items-baseline gap-1.5">
+                  <span id="weather-temp" class="text-3xl font-black text-slate-900 tracking-tight">--°C</span>
+                  <span id="weather-apparent" class="text-xs text-slate-500 font-medium">(महसूस: --)</span>
+                </div>
+                <div id="weather-desc" class="text-xs font-semibold text-slate-700 mt-0.5">मौसम स्थिति लोड हो रही है...</div>
+              </div>
+              <div class="text-right">
+                <div class="text-[10px] text-slate-400 font-medium">अधिकतम / न्यूनतम</div>
+                <div id="weather-temp-range" class="text-xs font-bold text-slate-700">-- / --</div>
+              </div>
+            </div>
+
+            <!-- Meteorological Metrics Grid (Humidity, Rain, Wind) -->
+            <div class="mt-3 grid grid-cols-3 gap-1.5 bg-slate-50 p-2 rounded-xl border border-slate-100 text-center">
+              <div class="p-1">
+                <span class="text-[10px] text-slate-400 block font-medium">💧 आर्द्रता (नमी)</span>
+                <span id="weather-humidity" class="text-xs font-black text-slate-800">--%</span>
+              </div>
+              <div class="p-1 border-x border-slate-200/60">
+                <span class="text-[10px] text-slate-400 block font-medium">🌧️ बारिश (संभावना)</span>
+                <span id="weather-rain-stat" class="text-xs font-black text-slate-800">0mm (0%)</span>
+              </div>
+              <div class="p-1">
+                <span class="text-[10px] text-slate-400 block font-medium">💨 हवा गति</span>
+                <span id="weather-wind" class="text-xs font-black text-slate-800">-- km/h</span>
+              </div>
+            </div>
+
+            <!-- Actionable Agricultural Advisory for Farmers -->
+            <div id="weather-advisory-box" class="mt-3 p-2.5 rounded-xl bg-amber-50/90 border border-amber-200 text-xs transition-colors">
+              <div class="font-bold text-amber-900 flex items-center gap-1.5 text-[11px]">
+                <i data-lucide="sprout" class="w-3.5 h-3.5 text-amber-700 flex-shrink-0"></i>
+                <span>किसान मौसम सलाह (Agri Advisory):</span>
+              </div>
+              <p id="weather-advisory-text" class="text-[11px] text-amber-950 mt-1 leading-relaxed">
+                मौसम आधारित कृषि सलाह लोड हो रही है...
+              </p>
+            </div>
+          </div>
+
+          <!-- 3-Day Forecast Strip & Storm Test -->
+          <div class="mt-3 pt-2.5 border-t border-slate-100">
+            <div class="flex items-center justify-between text-[11px] text-slate-500 font-bold mb-1.5">
+              <span>3-दिवसीय कृषि पूर्वानुमान:</span>
+              <button onclick="simulateWeatherStorm()" class="text-[10px] text-blue-600 font-bold hover:underline flex items-center gap-0.5">
+                तूफान टेस्ट ⚡
+              </button>
+            </div>
+            <div id="weather-3day-strip" class="grid grid-cols-3 gap-1.5 text-center text-xs">
+              <!-- Populated dynamically via loadWeather() -->
+              <div class="bg-slate-50 p-1.5 rounded-lg border border-slate-100 animate-pulse h-12"></div>
+              <div class="bg-slate-50 p-1.5 rounded-lg border border-slate-100 animate-pulse h-12"></div>
+              <div class="bg-slate-50 p-1.5 rounded-lg border border-slate-100 animate-pulse h-12"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2-Column High Impact Section: Live Mandi Bhav & ICAR Crop Doctor -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        
+        <!-- Widget 1: Daily APMC Mandi Bhav with Nearby 4 Mandis -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shadow-inner">
+                  <i data-lucide="trending-up" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-extrabold text-slate-800 text-sm flex items-center gap-1.5">
+                    दैनिक मंडी भाव (नजदीकी 4 मंडियां)
+                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                      लाइव भाव तुलना
+                    </span>
+                  </h3>
+                  <p id="dash-mandi-subtitle" class="text-[11px] text-slate-500 font-medium">सोनकच्छ (9km) • देवास (32km) • उज्जैन (54km) • इंदौर (68km)</p>
+                </div>
+              </div>
+              <button onclick="loadMandiRates(true)" title="मंडी भाव रीफ्रेश करें" class="text-slate-400 hover:text-emerald-700 p-1.5 rounded-lg hover:bg-emerald-50 transition" id="mandi-refresh-btn">
+                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Quick Crop Filter Buttons on Dashboard -->
+            <div class="mt-3 flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 text-xs" id="dash-crop-pills">
+              <button onclick="selectMandiComparisonCrop('soybean')" class="dash-crop-btn px-2.5 py-1 rounded-lg bg-emerald-700 text-white font-bold text-[11px] whitespace-nowrap shadow-sm" data-crop="soybean">🌱 सोयाबीन</button>
+              <button onclick="selectMandiComparisonCrop('wheat')" class="dash-crop-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] whitespace-nowrap" data-crop="wheat">🌾 गेहूँ</button>
+              <button onclick="selectMandiComparisonCrop('garlic')" class="dash-crop-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] whitespace-nowrap" data-crop="garlic">🧄 लहसुन</button>
+              <button onclick="selectMandiComparisonCrop('dollar_chana')" class="dash-crop-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] whitespace-nowrap" data-crop="dollar_chana">🪙 डॉलर चना</button>
+              <button onclick="selectMandiComparisonCrop('gram')" class="dash-crop-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] whitespace-nowrap" data-crop="gram">🥜 चना</button>
+              <button onclick="selectMandiComparisonCrop('onion')" class="dash-crop-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-[11px] whitespace-nowrap" data-crop="onion">🧅 प्याज</button>
+            </div>
+
+            <!-- Nearby Mandis Comparison Grid -->
+            <div id="dash-mandi-cards" class="mt-2.5 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 text-xs">
+              <!-- Populated dynamically via loadMandiRates() -->
+              <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 animate-pulse h-16"></div>
+              <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 animate-pulse h-16"></div>
+              <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 animate-pulse h-16"></div>
+              <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 animate-pulse h-16"></div>
+            </div>
+
+            <div id="dash-mandi-freight-banner" class="mt-2.5 text-[11px] text-slate-600 bg-emerald-50/80 p-2 rounded-xl border border-emerald-200/60 flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-600 flex-shrink-0"></i>
+              <span id="dash-freight-text">इंदौर मंडी में भाव ₹130/क्विंटल अधिक है। यदि 25+ क्विंटल माल हो तो इंदौर ले जाना अधिक लाभकारी रहेगा।</span>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
+            <button onclick="shareMandiOnWhatsApp()" class="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1 bg-emerald-50 px-2.5 py-1.5 rounded-lg transition">
+              <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+              <span>WhatsApp पर नजदीकी मंडियों के भाव भेजें</span>
+            </button>
+            <button onclick="switchTab('tab-mandi-doctor')" class="text-xs font-bold text-slate-800 hover:text-emerald-700 flex items-center gap-0.5">
+              <span>विस्तृत तुलना व भाड़ा कैलकुलेटर</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Widget 2: ICAR Crop Doctor -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center shadow-inner">
+                  <i data-lucide="stethoscope" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-extrabold text-slate-800 text-sm flex items-center gap-1.5">
+                    ICAR फसल डॉक्टर (सोयाबीन व रबी)
+                    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-800">
+                      IISR इंदौर
+                    </span>
+                  </h3>
+                  <p class="text-[11px] text-slate-500 font-medium">वैज्ञानिक पहचान व सही दवा की अनुमोदित मात्रा</p>
+                </div>
+              </div>
+              <button onclick="openCropDoctorModal()" class="text-xs text-purple-700 font-bold hover:underline">
+                पूरी सूची
+              </button>
+            </div>
+
+            <!-- Quick Symptom Selector Pills -->
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              <button onclick="selectDoctorSymptom('yellow_mosaic')" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100 transition">
+                🟡 पीला मोज़ेक
+              </button>
+              <button onclick="selectDoctorSymptom('girdle_beetle')" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-rose-50 text-rose-900 border border-rose-200 hover:bg-rose-100 transition">
+                🐛 गर्डल बीटल (रिंग)
+              </button>
+              <button onclick="selectDoctorSymptom('semilooper_spodoptera')" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-900 border border-emerald-200 hover:bg-emerald-100 transition">
+                🐛 इल्ली (पत्ती छलनी)
+              </button>
+              <button onclick="selectDoctorSymptom('anthracnose_pod_blight')" class="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-800 border border-slate-200 hover:bg-slate-200 transition">
+                🍂 फली झुलसा
+              </button>
+            </div>
+
+            <!-- Live Prescription Box -->
+            <div id="dash-doctor-box" class="mt-3 p-3 rounded-xl bg-purple-50/70 border border-purple-200 text-xs">
+              <div class="flex items-center justify-between font-bold text-purple-950">
+                <span id="dash-doc-disease-name">🟡 पीला मोज़ेक (Yellow Mosaic)</span>
+                <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-black">CRITICAL</span>
+              </div>
+              <p id="dash-doc-symptom" class="text-[11px] text-purple-900/90 mt-1 leading-snug">
+                पत्तियों पर पीले धब्बे, सफेद मक्खी द्वारा फैलाव।
+              </p>
+              <div class="mt-2 pt-2 border-t border-purple-200/60 font-medium text-slate-800">
+                <span class="text-[10px] text-slate-500 block font-bold">अनुमोदित दवा व सही मात्रा (प्रति एकड़):</span>
+                <span id="dash-doc-chemical" class="font-bold text-purple-950">थायमेथॉक्सम 25% WG @ 40 ग्राम / 150 लीटर पानी</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400">दुकानदार से पक्का बिल अनिवार्य रूप से लें</span>
+            <button onclick="switchTab('tab-mandi-doctor')" class="text-xs font-bold text-purple-700 hover:text-purple-900 flex items-center gap-0.5">
+              <span>दवा कैलकुलेटर खोलें</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- District Nodal Officers & Direct Helpline Strip -->
+      <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-2xl p-4 sm:p-5 shadow-sm">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-3">
+          <div>
+            <h3 class="font-bold text-white text-sm flex items-center gap-2">
+              <i data-lucide="phone-forwarded" class="w-4 h-4 text-emerald-400"></i>
+              <span>कृषि अधिकारी व बीमा सहायता केंद्र (<span id="officers-dist-label">देवास</span>)</span>
+            </h3>
+            <p class="text-xs text-slate-300 mt-0.5">फसल क्षति होने पर इन नंबरों पर सीधे संपर्क करें अथवा व्हाट्सएप फॉरवर्ड करें</p>
+          </div>
+          <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+            अधिकृत बीमा: <span id="officers-insurer-label">HDFC ERGO</span>
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+          
+          <a href="tel:07272252130" class="bg-white/10 hover:bg-white/15 p-2.5 rounded-xl border border-white/10 transition flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="user-check" class="w-4 h-4"></i>
+            </div>
+            <div class="truncate">
+              <div class="font-bold text-white truncate">वरिष्ठ कृषि अधिकारी (SADO)</div>
+              <div class="text-[11px] text-emerald-300 font-mono">07272-252130</div>
+            </div>
+          </a>
+
+          <a href="tel:14447" class="bg-white/10 hover:bg-white/15 p-2.5 rounded-xl border border-white/10 transition flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-lg bg-yellow-500/20 text-yellow-300 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="shield-alert" class="w-4 h-4"></i>
+            </div>
+            <div class="truncate">
+              <div class="font-bold text-white truncate">PMFBY 24x7 राष्ट्रीय टोल-फ्री</div>
+              <div class="text-[11px] text-yellow-300 font-mono">14447 (निःशुल्क)</div>
+            </div>
+          </a>
+
+          <a href="tel:18001801551" class="bg-white/10 hover:bg-white/15 p-2.5 rounded-xl border border-white/10 transition flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-300 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="headphones" class="w-4 h-4"></i>
+            </div>
+            <div class="truncate">
+              <div class="font-bold text-white truncate">किसान कॉल सेंटर (KCC)</div>
+              <div class="text-[11px] text-sky-300 font-mono">1800-180-1551</div>
+            </div>
+          </a>
+
+          <a href="tel:181" class="bg-white/10 hover:bg-white/15 p-2.5 rounded-xl border border-white/10 transition flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-300 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+            </div>
+            <div class="truncate">
+              <div class="font-bold text-white truncate">म.प्र. सीएम हेल्पलाइन</div>
+              <div class="text-[11px] text-rose-300 font-mono">181 (शिकायत निवारण)</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex items-start space-x-3">
+          <div class="w-9 h-9 rounded-full bg-amber-500 text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i data-lucide="alert-octagon" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-amber-950 text-sm">कृषि मंत्रालय व जिला प्रशासन अलर्ट (रायसेन व विदिशा)</h4>
+            <p class="text-xs text-amber-900/80 mt-0.5 leading-relaxed">
+              सोयाबीन में अमानक खरपतवारनाशक के उपयोग से फसल झुलसने की शिकायतें आई हैं। 30,000 बायो-स्टिमुलेंट्स में से मात्र ~600 को ICAR प्रमाणन प्राप्त है। 
+              <b>हमेशा बिल, डिब्बे की फोटो व बैच नंबर 'खेतप्रूफ' में सहेजें</b> ताकि नुकसान होने पर डीलर व कंपनी से मुआवजा मिल सके।
+            </p>
+          </div>
+        </div>
+        <button onclick="switchTab('tab-whatsapp')" class="bg-amber-800 hover:bg-amber-900 text-white text-xs font-bold px-4 py-2 rounded-xl transition whitespace-nowrap flex items-center self-end md:self-center">
+          <span>व्हाट्सएप पर टेस्ट करें</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1.5"></i>
+        </button>
+      </div>
+
+      <!-- Step-by-Step Guidance Workflow for Farmers -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+        <h3 class="font-bold text-slate-800 text-base mb-4 flex items-center gap-2">
+          <i data-lucide="help-circle" class="w-5 h-5 text-khet-600"></i>
+          <span>खेतप्रूफ कैसे काम करता है? (3 आसान कदम)</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 relative">
+            <div class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-xs mb-2">1</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">खरीदते समय फोटो लें</h4>
+            <p class="text-slate-600 leading-relaxed">दुकान पर ही कीटनाशक की बोतल, बिल व बैच नंबर का फोटो खींचें। ऐप तुरंत ICAR मान्यता जांचेगा और पक्का डिजिटल वाटरमार्क बना देगा।</p>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 relative">
+            <div class="w-6 h-6 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs mb-2">2</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">आपदा के 72 घंटे में अलर्ट</h4>
+            <p class="text-slate-600 leading-relaxed">भारी बारिश, ओले या दवा से फसल जलने पर 72 घंटे का टाइमर शुरू होता है। उलटी गिनती आपको समय-सीमा चूकने से बचाती है।</p>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 relative">
+            <div class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs mb-2">3</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">एक-क्लिक दावा पर्ची</h4>
+            <p class="text-slate-600 leading-relaxed">जीपीएस लोकेशन व फोटो के साथ तैयार PMFBY दावा प्रपत्र एक क्लिक में कृषि अधिकारी या टोल-फ्री 14447 को व्हाट्सएप पर भेजें।</p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== 2. TAB: INPUT VAULT ==================== -->
+    <section id="tab-vault" class="space-y-6 hidden">
+      
+      <!-- Top Action Bar -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <i data-lucide="archive" class="w-6 h-6 text-amber-600"></i>
+            <span data-i18n="vaultHeading">इनपुट सुरक्षा वॉल्ट (Agri-Input Vault)</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">दवा, खाद, बायो-स्टिमुलेंट व बीज का फोटो, पक्का बिल व बैच नंबर का सुरक्षित कानूनी रिकॉर्ड</p>
+        </div>
+        <div class="flex flex-wrap gap-2 w-full sm:w-auto">
+          <button onclick="openSmartScanModal()" class="flex-1 sm:flex-none bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow transition flex items-center justify-center space-x-1.5">
+            <i data-lucide="scan-line" class="w-4 h-4"></i>
+            <span>लेबल स्मार्ट स्कैन (OCR)</span>
+          </button>
+          <button onclick="openNewInputModal()" class="flex-1 sm:flex-none bg-khet-600 hover:bg-khet-700 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow transition flex items-center justify-center space-x-1.5">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span>नया इनपुट / बिल जोड़ें</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Batch Verifier Tool -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
+        <h3 class="font-bold text-slate-800 text-sm mb-2 flex items-center gap-2">
+          <i data-lucide="shield-alert" class="w-4 h-4 text-emerald-600"></i>
+          <span>ICAR / CIBRC त्वरित उत्पाद व बैच सत्यापन (Instant Check)</span>
+        </h3>
+        <p class="text-xs text-slate-500 mb-3">
+          दवा खरीदने से पहले यहाँ नाम या बैच नंबर टाइप करके तुरंत देखें कि वह ICAR से स्वीकृत है या संदिग्ध।
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-2">
+          <input type="text" id="quick-check-input" placeholder="उदा. सागरिका, पर्स्यूट, Super Weed Burn, या बैच नं..." 
+                 class="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm focus:ring-2 focus:ring-khet-500 focus:outline-none">
+          <button onclick="performQuickCheck()" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition flex items-center justify-center space-x-1.5">
+            <i data-lucide="search" class="w-4 h-4"></i>
+            <span>जाँचें (Verify)</span>
+          </button>
+        </div>
+
+        <!-- Quick Check Result Container -->
+        <div id="quick-check-result" class="mt-3 hidden p-3.5 rounded-xl border text-xs"></div>
+      </div>
+
+      <!-- Inputs List (Cards) -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between text-xs text-slate-500 px-1">
+          <span class="font-bold text-slate-700">सुरक्षित दर्ज इनपुट्स (<span id="vault-total-count">2</span>)</span>
+          <span>रायसेन एवं विदिशा डेटाबेस सक्रिय</span>
+        </div>
+
+        <div id="inputs-list-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Dynamically injected via JS -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== 3. TAB: 72-HOUR LOSS REPORTER ==================== -->
+    <section id="tab-loss-reporter" class="space-y-6 hidden">
+      
+      <!-- Calamity Alert Banner with 72h Timeline -->
+      <div class="bg-white border-2 border-red-500 rounded-2xl p-4 sm:p-6 shadow-md relative overflow-hidden">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="min-w-0">
+            <div class="inline-flex items-center space-x-2 bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full mb-2">
+              <span class="relative flex h-2.5 w-2.5 flex-shrink-0">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+              </span>
+              <span id="calamity-badge-full">🚨 72-घंटे का अनिवार्य PMFBY काउंटडाउन (कानूनी समय-सीमा)</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900" id="calamity-title-full">
+              अतिवृष्टि एवं जलभराव (Excessive Rainfall & Inundation)
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1" id="calamity-summary-loc">
+              गाँव: <b id="calamity-village-b">बेड़ाखेड़ी (सोनकच्छ, देवास)</b> | फसल: <b id="calamity-crop-b">सोयाबीन JS-2034</b> | रकबा: <b id="calamity-acres-b">6.5 एकड़</b>
+            </p>
+          </div>
+
+          <!-- Big Countdown Box -->
+          <div class="bg-gradient-to-br from-red-600 to-rose-700 text-white p-3.5 sm:p-4 rounded-2xl shadow-lg text-center w-full md:w-auto min-w-[200px] flex-shrink-0">
+            <div class="text-[11px] font-medium text-red-100 uppercase tracking-wider mb-1">दावा दर्ज करने का शेष समय</div>
+            <div id="calamity-big-timer" class="text-2xl sm:text-3xl font-black font-mono tracking-wider text-yellow-300 drop-shadow">
+              68:24:10
+            </div>
+            <div class="text-[10px] text-white/90 mt-1 font-sans">
+              कंडिका 21.4: 72 घंटे बाद दावा कानूनी रूप से रद्द
+            </div>
+          </div>
+        </div>
+
+        <!-- 72-Hour Timeline Progress Bar -->
+        <div class="mt-5 pt-4 border-t border-slate-100">
+          <div class="flex justify-between text-[10px] sm:text-[11px] font-bold text-slate-600 mb-1.5">
+            <span>आपदा शुरू (0h)</span>
+            <span class="text-amber-600">24h (गोल्डन पीरियड)</span>
+            <span class="text-orange-600">48h (अति-आवश्यक)</span>
+            <span class="text-red-600">72h (अंतिम समय-सीमा)</span>
+          </div>
+          <div class="w-full bg-slate-200 h-2.5 sm:h-3 rounded-full overflow-hidden flex">
+            <div class="bg-emerald-500 h-full" style="width: 33.3%" title="0-24 घंटे"></div>
+            <div class="bg-amber-500 h-full" style="width: 33.3%" title="24-48 घंटे"></div>
+            <div class="bg-red-500 h-full" style="width: 33.4%" title="48-72 घंटे"></div>
+          </div>
+          <div class="text-[11px] text-slate-500 mt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+            <span class="flex items-center gap-1 font-medium">
+              <i data-lucide="cloud-rain" class="w-3.5 h-3.5 text-sky-600"></i>
+              <span>स्वचालित मौसम स्टेशन: <b class="text-slate-800" id="calamity-rain-val">84.6 mm भारी वर्षा दर्ज</b></span>
+            </span>
+            <span class="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 inline-block self-start sm:self-auto">
+              ✓ स्थिति: वैध 72h समय-सीमा में
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIVE PMFBY CLAIM COMPENSATION CALCULATOR -->
+      <div class="bg-gradient-to-br from-emerald-900 via-slate-900 to-teal-950 text-white rounded-3xl p-5 sm:p-6 shadow-xl relative overflow-hidden border border-emerald-700/40">
+        <div class="absolute right-0 top-0 translate-x-10 -translate-y-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-emerald-800/80 pb-4 relative z-10">
+          <div>
+            <div class="inline-flex items-center gap-1.5 bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full text-xs font-bold border border-emerald-400/30 mb-2">
+              <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+              <span>PMFBY आधिकारिक दावा क्षतिपूर्ति कैलकुलेटर (Govt. Norms)</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-white">
+              मेरी फसल का अनुमानित बीमा दावा कितना बनेगा?
+            </h3>
+            <p class="text-xs text-emerald-200/80 mt-0.5">
+              सर्वेक्षक द्वारा नुकसान कम आंकने से बचें — म.प्र. शासन द्वारा निर्धारित बीमित दर से सटीक गणना
+            </p>
+          </div>
+
+          <!-- Big Live Claim Payout Display -->
+          <div class="bg-white/10 backdrop-blur-md border border-emerald-400/40 px-5 py-3 rounded-2xl text-center self-stretch lg:self-auto min-w-[220px]">
+            <span class="text-[10px] text-emerald-300 font-bold uppercase tracking-wider block">अनुमानित दावा देय राशि (Estimated Claim)</span>
+            <div id="calc-claim-payout" class="text-2xl sm:text-3xl font-black text-yellow-300 font-mono tracking-tight mt-0.5">
+              ₹82,056
+            </div>
+            <span class="text-[10px] text-slate-300 block" id="calc-formula-subtitle">
+              2.63 हेक्टेयर × ₹48,000 × 65%
+            </span>
+          </div>
+        </div>
+
+        <!-- Reactive Calculator Controls & Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-4 text-xs relative z-10">
+          
+          <div class="bg-white/5 p-3 rounded-xl border border-white/10">
+            <span class="text-slate-400 block font-medium">1. फसल व बीमित दर/हेक्टेयर:</span>
+            <div class="font-bold text-white text-sm mt-0.5 flex items-center justify-between">
+              <span id="calc-crop-name">सोयाबीन (Soybean)</span>
+              <span id="calc-rate-per-ha" class="text-emerald-400 font-mono">₹48,000/ha</span>
+            </div>
+            <span class="text-[10px] text-slate-400">म.प्र. शासन अधिसूचना 2026</span>
+          </div>
+
+          <div class="bg-white/5 p-3 rounded-xl border border-white/10">
+            <label for="calc-input-acres" class="text-slate-400 block font-medium">2. प्रभावित रकबा (एकड़):</label>
+            <div class="flex items-center gap-2 mt-0.5">
+              <input type="number" id="calc-input-acres" value="6.5" min="0.5" max="100" step="0.5"
+                     oninput="updateClaimCalculation()"
+                     class="w-20 bg-white/10 text-white font-mono font-bold text-sm px-2.5 py-1 rounded-lg border border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-yellow-400">
+              <span class="text-[11px] text-slate-300" id="calc-converted-ha">(= 2.63 हेक्टेयर)</span>
+            </div>
+          </div>
+
+          <div class="bg-white/5 p-3 rounded-xl border border-white/10 sm:col-span-2">
+            <div class="flex justify-between items-center mb-1">
+              <label for="calc-slider-loss" class="text-slate-400 font-medium">3. फसल नुकसान प्रतिशत (%):</label>
+              <span id="calc-loss-badge" class="font-black text-yellow-300 font-mono text-sm">65% (गंभीर नुकसान)</span>
+            </div>
+            <input type="range" id="calc-slider-loss" min="10" max="100" value="65" step="5"
+                   oninput="updateClaimCalculation()"
+                   class="w-full accent-yellow-400 cursor-pointer h-2 bg-white/20 rounded-lg">
+            <div class="flex justify-between text-[9px] text-slate-400 mt-1">
+              <span>33% (न्यूनतम दावा)</span>
+              <span>50% (मध्यम)</span>
+              <span>75% (गंभीर)</span>
+              <span>100% (पूर्ण विनाश)</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-3.5 pt-3 border-t border-emerald-800/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[11px] text-emerald-200">
+          <span class="flex items-center gap-1.5">
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+            <span id="calc-clause-cite">लागू नियम: कंडिका 21.4 (स्थानीयकृत आपदा - जलभराव व ओलावृष्टि)</span>
+          </span>
+          <span class="text-white/80">33% से अधिक नुकसान पर बीमा दावा अनिवार्य रूप से देय होता है</span>
+        </div>
+      </div>
+
+      <!-- SATELLITE WEATHER EVIDENCE & CORROBORATION CARD -->
+      <div class="bg-white border-2 border-sky-300 rounded-2xl p-4 sm:p-5 shadow-sm space-y-3">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-9 h-9 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="satellite" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                <span>सैटेलाइट व IMD वर्षा साक्ष्य (Surveyor-Proof Evidence)</span>
+                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full border border-emerald-200">
+                  सत्यापित साक्ष्य
+                </span>
+              </h4>
+              <p class="text-[11px] text-slate-500">बीमा सर्वेक्षक को यह साबित करने हेतु कि आपके खेत में निर्धारित सीमा से अधिक वर्षा हुई</p>
+            </div>
+          </div>
+          <span class="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-lg">
+            स्थान: 22.9640°N, 76.3380°E
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="bg-sky-50/70 p-3 rounded-xl border border-sky-200">
+            <span class="text-slate-500 text-[10px] block">रिकॉर्डेड वर्षा (गत 24 घंटे):</span>
+            <div class="text-lg font-black text-sky-950 font-mono">84.6 mm</div>
+            <span class="text-[10px] text-sky-800 font-semibold">अतिवृष्टि श्रेणी (Heavy Rain > 64.5mm)</span>
+          </div>
+          <div class="bg-sky-50/70 p-3 rounded-xl border border-sky-200">
+            <span class="text-slate-500 text-[10px] block">निकटतम मौसम केंद्र (AWS):</span>
+            <div class="font-bold text-slate-900 text-xs mt-1">सोनकच्छ (देवास) मौसम स्टेशन</div>
+            <span class="text-[10px] text-slate-500">Open-Meteo & IMD सिंक</span>
+          </div>
+          <div class="bg-sky-50/70 p-3 rounded-xl border border-sky-200">
+            <span class="text-slate-500 text-[10px] block">सर्वेक्षक खंडन सुरक्षा:</span>
+            <div class="font-bold text-emerald-800 text-xs mt-1">✓ खंडन असंभव (Unchallengeable)</div>
+            <span class="text-[10px] text-slate-500">सरकारी वर्षा रिकॉर्ड दावा पर्ची पर संलग्न</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-ANGLE DISPUTE-PROOF PHOTO EVIDENCE VAULT -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4">
+        <div>
+          <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+            <i data-lucide="camera" class="w-5 h-5 text-red-600"></i>
+            <span>3-कोणीय डिजिटल साक्ष्य फोटो (Dispute-Proof 3-Angle Photos)</span>
+          </h3>
+          <p class="text-xs text-slate-500 mt-0.5">
+            बीमा कंपनी द्वारा साक्ष्य के अभाव में दावा खारिज करने से रोकने हेतु 3 अनिवार्य कोणों से फोटो सुरक्षित करें:
+          </p>
+        </div>
+
+        <!-- 3 Structured Photo Slots -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+          
+          <!-- Slot 1: Wide Angle -->
+          <div class="border-2 border-dashed border-emerald-400 bg-emerald-50/30 rounded-2xl p-3.5 text-center flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-1 text-[10px] bg-emerald-100 text-emerald-900 font-bold px-2 py-0.5 rounded-full mb-2">
+                <span>कोण 1: विहंगम दृश्य</span>
+              </div>
+              <h4 class="font-bold text-slate-800 text-xs mb-1">खेत में जलभराव / आपदा फैलाव</h4>
+              <p class="text-[10px] text-slate-500 mb-2">पूरे खसरे में फैले पानी अथवा ओलावृष्टि का व्यापक दृश्य</p>
+              <div class="relative rounded-xl overflow-hidden bg-slate-100 border border-slate-200 max-h-36 flex items-center justify-center cursor-pointer" onclick="document.getElementById('loss-file-wide').click()">
+                <img id="img-evidence-wide" src="/static/images/sample_waterlogged_field.svg" class="object-cover h-32 w-full">
+                <input type="file" id="loss-file-wide" class="hidden" accept="image/*" onchange="previewEvidencePhoto(event, 'wide')">
+              </div>
+            </div>
+            <div class="mt-2 text-[10px] text-emerald-700 font-bold flex items-center justify-center gap-1">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              <span>GPS व टाइमस्टैम्प वाटरमार्क सुरक्षित</span>
+            </div>
+          </div>
+
+          <!-- Slot 2: Close-up Damage -->
+          <div class="border-2 border-dashed border-slate-300 hover:border-emerald-400 bg-slate-50/50 rounded-2xl p-3.5 text-center flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-1 text-[10px] bg-slate-200 text-slate-800 font-bold px-2 py-0.5 rounded-full mb-2">
+                <span>कोण 2: क्लोज-अप दृश्य</span>
+              </div>
+              <h4 class="font-bold text-slate-800 text-xs mb-1">क्षतिग्रस्त पौधे व फलियां</h4>
+              <p class="text-[10px] text-slate-500 mb-2">सड़ी हुई जड़ें, टूटी फलियां अथवा झुलसी पत्तियां</p>
+              <div class="relative rounded-xl overflow-hidden bg-slate-100 border border-slate-200 max-h-36 flex items-center justify-center cursor-pointer" onclick="document.getElementById('loss-file-close').click()">
+                <img id="img-evidence-close" src="/static/images/sample_sagarika.svg" class="object-cover h-32 w-full">
+                <input type="file" id="loss-file-close" class="hidden" accept="image/*" onchange="previewEvidencePhoto(event, 'close')">
+              </div>
+            </div>
+            <div class="mt-2 text-[10px] text-emerald-700 font-bold flex items-center justify-center gap-1">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              <span>फसल नुकसान विवरण संलग्न</span>
+            </div>
+          </div>
+
+          <!-- Slot 3: Khasra Boundary Landmark -->
+          <div class="border-2 border-dashed border-slate-300 hover:border-emerald-400 bg-slate-50/50 rounded-2xl p-3.5 text-center flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-1 text-[10px] bg-slate-200 text-slate-800 font-bold px-2 py-0.5 rounded-full mb-2">
+                <span>कोण 3: सीमा साक्ष्य</span>
+              </div>
+              <h4 class="font-bold text-slate-800 text-xs mb-1">खसरा सीमा व मेड़ लैंडमार्क</h4>
+              <p class="text-[10px] text-slate-500 mb-2">खेत की मेड़, पेड़ अथवा बिजली खंभे सहित खसरा सत्यापन</p>
+              <div class="relative rounded-xl overflow-hidden bg-slate-100 border border-slate-200 max-h-36 flex items-center justify-center cursor-pointer" onclick="document.getElementById('loss-file-boundary').click()">
+                <img id="img-evidence-boundary" src="/static/images/sample_bill.svg" class="object-cover h-32 w-full">
+                <input type="file" id="loss-file-boundary" class="hidden" accept="image/*" onchange="previewEvidencePhoto(event, 'boundary')">
+              </div>
+            </div>
+            <div class="mt-2 text-[10px] text-emerald-700 font-bold flex items-center justify-center gap-1">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              <span>खसरा 142/2 सीमा मिलान</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Hindi Voice Loss Assistant Strip -->
+      <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-100 border-2 border-emerald-300 rounded-2xl p-4 shadow-sm">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div class="flex items-center space-x-3.5">
+            <button type="button" id="btn-voice-loss" onclick="toggleVoiceReporting()" 
+                    title="बोलकर नुकसान दर्ज करें"
+                    class="w-12 h-12 rounded-full bg-red-600 hover:bg-red-700 text-white flex items-center justify-center shadow-lg transition transform active:scale-95 flex-shrink-0 animate-pulse">
+              <i data-lucide="mic" id="voice-mic-icon" class="w-6 h-6"></i>
+            </button>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <span>बोलकर नुकसान दर्ज करें (Hindi Voice Assistant)</span>
+                <span id="voice-recording-status" class="hidden text-[10px] bg-red-600 text-white font-black px-2 py-0.5 rounded-full animate-bounce">
+                  सुन रहे हैं... बोलिए
+                </span>
+              </h4>
+              <p class="text-xs text-slate-600" id="voice-transcript-display">
+                माइक दबाकर बोलें: <i>"कल रात की तेज बारिश से मेरी 5 बीघा सोयाबीन में पानी भर गया"</i>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <button type="button" onclick="simulateVoiceInput('कल रात की तेज बारिश से मेरी 5 बीघा सोयाबीन में पानी भर गया, पूरी फसल डूब गई')" 
+                    class="text-[11px] bg-white hover:bg-emerald-50 text-slate-800 px-2.5 py-1.5 rounded-lg border border-emerald-300 font-bold shadow-sm transition">
+              🎙️ जलभराव (5 बीघा)
+            </button>
+            <button type="button" onclick="simulateVoiceInput('कल दोपहर अचानक ओले गिरे जिससे मेरी सोयाबीन की फलियां टूट कर गिर गईं')" 
+                    class="text-[11px] bg-white hover:bg-emerald-50 text-slate-800 px-2.5 py-1.5 rounded-lg border border-emerald-300 font-bold shadow-sm transition">
+              🎙️ ओलावृष्टि
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MULTI-CHANNEL 72-HOUR INTIMATION HUB -->
+      <div class="bg-white border-2 border-emerald-500 rounded-3xl p-5 sm:p-6 shadow-md space-y-4">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div>
+            <div class="inline-flex items-center gap-1 bg-yellow-400 text-slate-950 font-black text-[10px] px-2.5 py-0.5 rounded-full mb-1">
+              <span>तत्काल 4-तरफा कानूनी सूचना</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-black text-slate-900">
+              72-घंटे दावा सूचना प्रेषण केंद्र (Multi-Channel Dispatch Hub)
+            </h3>
+            <p class="text-xs text-slate-500">
+              बीमा कंपनी यह बहाना न बना सके कि सूचना नहीं मिली — एक साथ चारों चैनलों से कानूनी रिकॉर्ड बनाएं:
+            </p>
+          </div>
+          <span class="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200">
+            टोकन: MP/PMFBY/2026/72H-DEW-LIVE
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+          
+          <!-- Channel 1: WhatsApp Legal Intimation -->
+          <button onclick="shareClaimOnWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-2xl shadow-md transition flex flex-col justify-between text-left group">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-xs bg-emerald-800 text-emerald-200 px-2 py-0.5 rounded-full">चैनल 1</span>
+                <i data-lucide="share-2" class="w-4 h-4 text-emerald-200 group-hover:scale-110 transition"></i>
+              </div>
+              <h4 class="font-black text-sm">WhatsApp दावा प्रपत्र</h4>
+              <p class="text-[11px] text-emerald-100 mt-1 leading-snug">
+                कृषि अधिकारी व बीमा प्रतिनिधि को संपूर्ण विधिक विवरण व लिंक भेजें
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-emerald-500/60 font-bold text-[11px] text-yellow-300 flex items-center justify-between">
+              <span>व्हाट्सएप पर भेजें</span>
+              <span>→</span>
+            </div>
+          </button>
+
+          <!-- Channel 2: Standard 1-Tap SMS to 14447 -->
+          <button onclick="openSmsIntimationModal()" class="bg-blue-600 hover:bg-blue-700 text-white p-3.5 rounded-2xl shadow-md transition flex flex-col justify-between text-left group">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-xs bg-blue-800 text-blue-200 px-2 py-0.5 rounded-full">चैनल 2</span>
+                <i data-lucide="message-square" class="w-4 h-4 text-blue-200 group-hover:scale-110 transition"></i>
+              </div>
+              <h4 class="font-black text-sm">आधिकारिक SMS (14447)</h4>
+              <p class="text-[11px] text-blue-100 mt-1 leading-snug">
+                PMFBY राष्ट्रीय सर्वर पर मानकीकृत SMS द्वारा 72h सूचना दर्ज कराएं
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-blue-500/60 font-bold text-[11px] text-yellow-300 flex items-center justify-between">
+              <span>1-क्लिक SMS भेजें</span>
+              <span>→</span>
+            </div>
+          </button>
+
+          <!-- Channel 3: Speed-Dial 14447 with Hindi Operator Script -->
+          <button onclick="openCallScriptModal()" class="bg-amber-600 hover:bg-amber-700 text-white p-3.5 rounded-2xl shadow-md transition flex flex-col justify-between text-left group">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-xs bg-amber-800 text-amber-200 px-2 py-0.5 rounded-full">चैनल 3</span>
+                <i data-lucide="phone-call" class="w-4 h-4 text-yellow-200 group-hover:scale-110 transition"></i>
+              </div>
+              <h4 class="font-black text-sm">14447 कॉल + हिंदी गाइड</h4>
+              <p class="text-[11px] text-amber-100 mt-1 leading-snug">
+                टोल-फ्री पर कॉल करें और स्क्रीन पर देखकर ऑपरेटर को सही शब्द बोलें
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-amber-500/60 font-bold text-[11px] text-yellow-200 flex items-center justify-between">
+              <span>कॉल गाइड खोलें</span>
+              <span>→</span>
+            </div>
+          </button>
+
+          <!-- Channel 4: Print / Download Official Dossier Slip -->
+          <button onclick="switchTab('tab-dossier')" class="bg-slate-900 hover:bg-slate-800 text-white p-3.5 rounded-2xl shadow-md transition flex flex-col justify-between text-left group">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="font-bold text-xs bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full">चैनल 4</span>
+                <i data-lucide="printer" class="w-4 h-4 text-slate-300 group-hover:scale-110 transition"></i>
+              </div>
+              <h4 class="font-black text-sm">तहसील/बैंक हेतु पावती</h4>
+              <p class="text-[11px] text-slate-300 mt-1 leading-snug">
+                SADO, पटवारी व बैंक शाखा में जमा करने हेतु आधिकारिक 1-पेज पर्ची
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-700 font-bold text-[11px] text-emerald-400 flex items-center justify-between">
+              <span>दावा पर्ची देखें</span>
+              <span>→</span>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Loss Details Submission Form -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4">
+        <h4 class="font-bold text-slate-900 text-sm">
+          नुकसान रिपोर्ट विवरण अपडेट करें (Update Claim Parameters)
+        </h4>
+
+        <form id="loss-report-form" onsubmit="submitLossReport(event)" class="space-y-4 text-xs">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">आपदा / नुकसान का कारण *</label>
+              <select id="loss-calamity-type" onchange="onCalamityTypeChange(this.value)" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium">
+                <option value="अतिवृष्टि एवं जलभराव (Excessive Rainfall & Inundation)" selected>अतिवृष्टि एवं खेत में जलभराव (Inundation)</option>
+                <option value="ओलावृष्टि (Hailstorm Damage)">ओलावृष्टि (Hailstorm)</option>
+                <option value="अमानक/नकली खरपतवारनाशक से झुलसा (Spurious Chemical Burn)">अमानक/नकली खरपतवारनाशक से फसल झुलसना (रायसेन अलर्ट)</option>
+                <option value="बादल फटना या आकाशीय बिजली (Cloudburst)">बादल फटना / तेज आंधी</option>
+                <option value="कीट प्रकोप / पीला मोज़ेक (Pest / Yellow Mosaic)">कीट प्रकोप या पीला मोज़ेक</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-bold text-slate-700 mb-1">खेत का GPS स्थान *</label>
+              <div class="flex gap-2">
+                <input type="text" id="loss-gps" value="22.9640°N, 76.3380°E (बेड़ाखेड़ी, सोनकच्छ)" readonly 
+                       class="flex-1 bg-slate-100 border border-slate-300 rounded-xl p-2.5 font-mono text-[11px] text-slate-700">
+                <button type="button" onclick="refreshGPS()" class="bg-slate-200 hover:bg-slate-300 px-3 rounded-xl text-slate-700" title="GPS रीफ्रेश करें">
+                  <i data-lucide="locate-fixed" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-bold text-slate-700 text-xs mb-1">विशेष टिप्पणी (कृषि अधिकारी व बीमा सर्वेक्षक हेतु)</label>
+            <textarea id="loss-notes" rows="2" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-xs focus:ring-2 focus:ring-khet-500" 
+                      placeholder="उदा. लगातार 6 घंटे भारी वर्षा (84mm) से खेत में 2 फीट जलभराव, फलियां गलने लगीं..."></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 pt-1">
+            <button type="submit" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition flex items-center justify-center space-x-2">
+              <i data-lucide="file-check" class="w-5 h-5"></i>
+              <span>दावा सूचना लॉक करें व पर्ची अपडेट करें</span>
+            </button>
+            <button type="button" onclick="triggerTestCalamity('hailstorm')" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs py-3 px-4 rounded-xl border border-slate-300 transition">
+              ⚡ टेस्ट: ओलावृष्टि अलर्ट
+            </button>
+            <button type="button" onclick="triggerTestCalamity('fake_weedicide')" class="bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold text-xs py-3 px-4 rounded-xl border border-amber-300 transition">
+              🚨 टेस्ट: नकली खरपतवार झुलसा
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
+    <!-- ==================== TAB: MANDI BHAV & CROP DOCTOR ==================== -->
+    <section id="tab-mandi-doctor" class="space-y-6 hidden">
+
+      <!-- Top Header & Controls Banner -->
+      <div class="bg-gradient-to-r from-emerald-800 via-teal-900 to-slate-900 text-white rounded-2xl p-5 shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center space-x-2 bg-emerald-700/60 px-3 py-1 rounded-full text-xs font-bold text-emerald-200 mb-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>MP Mandi Board व ICAR-IISR इंदौर लाइव सिंक</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black text-white">
+            दैनिक मंडी भाव एवं फसल डॉक्टर (कीट व रोग समाधान)
+          </h2>
+          <p class="text-xs text-emerald-200/80 mt-1">
+            स्थान: <b id="mandi-doc-loc-badge" class="text-white">देवास (सोनकच्छ उपमंडी सहित)</b> | फसल: <b class="text-white">सोयाबीन JS-2034</b>
+          </p>
+        </div>
+
+        <div class="flex items-center space-x-2 self-end md:self-center">
+          <button onclick="shareMandiOnWhatsApp()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-3.5 py-2 rounded-xl shadow transition flex items-center gap-1.5">
+            <i data-lucide="share-2" class="w-4 h-4"></i>
+            <span>WhatsApp पर शेयर</span>
+          </button>
+          <button onclick="speakMandiRates()" class="bg-white/10 hover:bg-white/20 text-white font-bold text-xs px-3.5 py-2 rounded-xl border border-white/20 transition flex items-center gap-1.5">
+            <i data-lucide="volume-2" class="w-4 h-4 text-emerald-300"></i>
+            <span>भाव सुनें</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Module View Switcher (Mandi Rates vs Crop Doctor) -->
+      <div class="flex border-b border-slate-200 space-x-2">
+        <button id="btn-subtab-mandi" onclick="switchMandiDoctorSubtab('mandi')" 
+                class="py-2.5 px-4 font-bold text-xs sm:text-sm border-b-2 border-emerald-600 text-emerald-800 transition flex items-center gap-1.5">
+          <i data-lucide="store" class="w-4 h-4"></i>
+          <span>1. आज का मंडी भाव (APMC Rates)</span>
+        </button>
+        <button id="btn-subtab-doctor" onclick="switchMandiDoctorSubtab('doctor')" 
+                class="py-2.5 px-4 font-bold text-xs sm:text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition flex items-center gap-1.5">
+          <i data-lucide="microscope" class="w-4 h-4"></i>
+          <span>2. ICAR फसल डॉक्टर (रोग व कीटनाशक)</span>
+        </button>
+      </div>
+
+      <!-- Subtab 1: Mandi Rates View Panel -->
+      <div id="panel-mandi-rates" class="space-y-5">
+        
+        <!-- SECTION 1: Nearby 4 Mandis Side-by-Side Comparison -->
+        <div class="bg-white rounded-3xl p-5 sm:p-6 border-2 border-emerald-500/30 shadow-md space-y-4">
+          
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+            <div>
+              <div class="inline-flex items-center gap-1.5 text-xs font-black text-emerald-800 bg-emerald-100/80 px-3 py-1 rounded-full mb-1">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-700"></i>
+                <span id="mandi-comparison-loc-badge">नजदीकी कृषि उपज मंडियां</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-black text-slate-900 tracking-tight">
+                फसलवार मंडी भाव तुलना (Multi-Mandi Live Rates)
+              </h3>
+              <p class="text-xs text-slate-500 mt-0.5">
+                किस मंडी में ले जाने पर मिलेगा सबसे अधिक भाव? दूरी, मॉडल भाव व अतिरिक्त मुनाफे की तुलना:
+              </p>
+            </div>
+
+            <!-- Crop Selector Pills for Multi-Mandi Comparison -->
+            <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 text-xs" id="comp-crop-pills">
+              <button onclick="selectMandiComparisonCrop('soybean')" class="comp-crop-btn px-3 py-1.5 rounded-xl bg-emerald-700 text-white font-bold text-xs whitespace-nowrap shadow-sm" data-crop="soybean">🌱 सोयाबीन</button>
+              <button onclick="selectMandiComparisonCrop('wheat')" class="comp-crop-btn px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs whitespace-nowrap" data-crop="wheat">🌾 गेहूँ</button>
+              <button onclick="selectMandiComparisonCrop('garlic')" class="comp-crop-btn px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs whitespace-nowrap" data-crop="garlic">🧄 लहसुन</button>
+              <button onclick="selectMandiComparisonCrop('dollar_chana')" class="comp-crop-btn px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs whitespace-nowrap" data-crop="dollar_chana">🪙 डॉलर चना</button>
+              <button onclick="selectMandiComparisonCrop('gram')" class="comp-crop-btn px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs whitespace-nowrap" data-crop="gram">🥜 चना</button>
+              <button onclick="selectMandiComparisonCrop('onion')" class="comp-crop-btn px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs whitespace-nowrap" data-crop="onion">🧅 प्याज</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Nearby Mandis Comparison Grid -->
+          <div id="mandi-comparison-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3.5">
+            <!-- Populated dynamically via renderNearbyMandisComparison() -->
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 animate-pulse h-44"></div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 animate-pulse h-44"></div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 animate-pulse h-44"></div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 animate-pulse h-44"></div>
+          </div>
+
+          <!-- Interactive Freight & Net Profit Estimator -->
+          <div class="bg-gradient-to-br from-emerald-50 via-teal-50/60 to-slate-50 p-4 sm:p-5 rounded-2xl border border-emerald-200/80 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-emerald-200/60 pb-2.5">
+              <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold text-sm shadow">
+                  🚜
+                </div>
+                <div>
+                  <h4 class="font-black text-slate-900 text-xs sm:text-sm">
+                    कहाँ बेचना अधिक फायदेमंद? (ट्रैक्टर-ट्रॉली भाड़ा व शुद्ध मुनाफा कैलकुलेटर)
+                  </h4>
+                  <p class="text-[11px] text-slate-600">
+                    दूर की बड़ी मंडी में भाव अधिक होने पर अतिरिक्त भाड़ा काटकर शुद्ध लाभ की गणना करें।
+                  </p>
+                </div>
+              </div>
+
+              <!-- Input for Quintals -->
+              <div class="flex items-center space-x-2 self-start sm:self-auto bg-white px-3 py-1.5 rounded-xl border border-emerald-300 shadow-sm">
+                <label for="transport-qtl-input" class="text-xs font-bold text-slate-700 whitespace-nowrap">उपज मात्रा (क्विंटल):</label>
+                <input type="number" id="transport-qtl-input" value="30" min="5" max="500" step="5"
+                       oninput="calculateFreightProfit()"
+                       class="w-16 font-black text-emerald-800 text-sm text-center border-b-2 border-emerald-600 focus:outline-none">
+              </div>
+            </div>
+
+            <!-- Dynamic Calculation Result Strip -->
+            <div id="transport-calc-results" class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+              <!-- Dynamically populated via calculateFreightProfit() -->
+            </div>
+
+            <div id="transport-advice-banner" class="text-xs font-medium text-emerald-950 bg-white/80 p-2.5 rounded-xl border border-emerald-200/60 flex items-center gap-2">
+              <i data-lucide="info" class="w-4 h-4 text-emerald-700 flex-shrink-0"></i>
+              <span id="transport-advice-text">इंदौर मंडी में भाव ₹130/क्विंटल अधिक है। यदि 20+ क्विंटल माल है, तो अतिरिक्त ट्रैक्टर भाड़ा काटकर भी ₹2,700 का शुद्ध अतिरिक्त मुनाफा होगा!</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SECTION 2: Filter & Detailed Commodities Catalog -->
+        <div class="space-y-3 pt-2">
+          <div class="flex items-center justify-between">
+            <h4 class="font-extrabold text-slate-800 text-sm flex items-center gap-2">
+              <i data-lucide="list" class="w-4 h-4 text-emerald-700"></i>
+              <span>सोनकच्छ उपमंडी एवं देवास मुख्य मंडी - सम्पूर्ण जिंस भाव सूची</span>
+            </h4>
+            <div class="flex items-center space-x-2 text-xs text-slate-500 font-medium">
+              <span id="mandi-sync-time">अद्यतन: आज 11:30 AM</span>
+              <button onclick="loadMandiRates(true)" class="p-1 hover:text-emerald-700 rounded-lg hover:bg-slate-100" title="ताजा भाव प्राप्त करें">
+                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Full Mandi Cards Grid -->
+          <div id="mandi-commodities-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Mandi Board Farmer Advisory Alert -->
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 text-xs text-amber-950 flex items-start space-x-3">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5"></i>
+          <div>
+            <h4 class="font-bold text-amber-900 text-sm">मंडी बोर्ड किसान हितैषी सलाह (कमीशन व कटौती से बचाव):</h4>
+            <p class="mt-1 leading-relaxed text-amber-900/90">
+              1. <b>नमी का स्तर:</b> सोयाबीन व गेहूं में नमी 10% से 12% के बीच होने पर ही उच्चतम मॉडल भाव मिलता है। अधिक नमी पर व्यापारी ₹150-₹300/क्विंटल कटौती करते हैं।<br>
+              2. <b>ई-अनुज्ञा व भुगतान:</b> अपनी उपज की तुलाई केवल मंडी के अधिकृत धर्मकांटे पर कराएं और ई-पेमेंट से उसी दिन भुगतान प्राप्त करें।<br>
+              3. <b>अवैध कटौती:</b> बोरी भरने या तुलाई के नाम पर कोई भी दलाल अतिरिक्त कटौती नहीं कर सकता। शिकायत हेतु मंडी सचिव या 181 पर संपर्क करें।
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Subtab 2: ICAR Crop Doctor Panel -->
+      <div id="panel-crop-doctor" class="space-y-4 hidden">
+        
+        <!-- Search & Quick Symptom Selector Bar -->
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div class="relative flex-1">
+              <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-3"></i>
+              <input type="text" id="doctor-search-input" placeholder="फसल के लक्षण लिखें... (उदा. पत्तियां पीली पड़ना, इल्ली, फली में छेद, दवा से झुलसा)" 
+                     class="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-2 text-xs focus:ring-2 focus:ring-purple-500 font-medium">
+            </div>
+            <button onclick="runCropDoctorSearch()" class="bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs px-4 py-2 rounded-xl transition flex items-center justify-center gap-1.5 shadow">
+              <i data-lucide="microscope" class="w-4 h-4"></i>
+              <span>रोग पहचानें व उपचार देखें</span>
+            </button>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100 text-xs">
+            <span class="text-slate-500 font-bold">सोयाबीन के मुख्य रोग व कीट:</span>
+            <button onclick="showDiseaseDetail('yellow_mosaic')" class="bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold px-2.5 py-1 rounded-lg border border-amber-200 transition">
+              🟡 पीला मोज़ेक वायरस
+            </button>
+            <button onclick="showDiseaseDetail('girdle_beetle')" class="bg-rose-50 hover:bg-rose-100 text-rose-900 font-bold px-2.5 py-1 rounded-lg border border-rose-200 transition">
+              🐛 गर्डल बीटल (चक्र भृंग)
+            </button>
+            <button onclick="showDiseaseDetail('semilooper_spodoptera')" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-900 font-bold px-2.5 py-1 rounded-lg border border-emerald-200 transition">
+              🐛 तंबाकू की इल्ली व सेमीलूपर
+            </button>
+            <button onclick="showDiseaseDetail('anthracnose_pod_blight')" class="bg-sky-50 hover:bg-sky-100 text-sky-900 font-bold px-2.5 py-1 rounded-lg border border-sky-200 transition">
+              🍂 फली झुलसा व एंथ्रेक्नोज
+            </button>
+            <button onclick="showDiseaseDetail('chemical_burn_recovery')" class="bg-red-50 hover:bg-red-100 text-red-900 font-bold px-2.5 py-1 rounded-lg border border-red-200 transition">
+              🚨 अमानक दवा से झुलसा बचाव
+            </button>
+          </div>
+        </div>
+
+        <!-- Disease Detailed Card (Populated dynamically) -->
+        <div id="doctor-diagnosis-card" class="bg-white border-2 border-purple-200 rounded-2xl p-5 sm:p-6 shadow-md space-y-4">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Dose Calculator & Safety Checklist -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          
+          <div class="bg-purple-50 p-4 rounded-2xl border border-purple-200">
+            <h4 class="font-bold text-purple-950 text-sm mb-2 flex items-center gap-1.5">
+              <i data-lucide="calculator" class="w-4 h-4 text-purple-700"></i>
+              <span>स्प्रेयर घोल कैलकुलेटर (Sprayer Calculator)</span>
+            </h4>
+            <div class="space-y-2 text-purple-900/90 leading-relaxed">
+              <p>• <b>1 एकड़ रकबा = 10 टंकी</b> (15-लीटर वाला नेपसैक स्प्रेयर)</p>
+              <p>• <b>कुल पानी:</b> 150 लीटर प्रति एकड़ अनिवार्य है। कम पानी में दवा तेज होकर फसल जला सकती है।</p>
+              <p>• <b>कट-नोजल (Flat Fan / Floodjet):</b> खरपतवारनाशक के लिए कट-नोजल और कीटनाशक/फफूंदनाशक हेतु हॉलो-कोन नोजल का ही प्रयोग करें।</p>
+            </div>
+          </div>
+
+          <div class="bg-rose-50 p-4 rounded-2xl border border-rose-200">
+            <h4 class="font-bold text-rose-950 text-sm mb-2 flex items-center gap-1.5">
+              <i data-lucide="shield-alert" class="w-4 h-4 text-rose-700"></i>
+              <span>नकली दवा व कॉकटेल से फसल बचाव</span>
+            </h4>
+            <div class="space-y-2 text-rose-900/90 leading-relaxed">
+              <p>• <b>अमानक कॉकटेल न बनाएं:</b> एक साथ 3-4 दवाएं (कीटनाशक + फफूंदनाशक + टॉनिक + यूरिया) बिना वैज्ञानिक सलाह कभी न मिलाएं।</p>
+              <p>• <b>खाली डिब्बा व बिल:</b> हमेशा 1 डिब्बा सुरक्षित रखें और खेतप्रूफ में फोटो खींचकर सुरक्षित करें ताकि क्षति होने पर ₹85,000 तक का हर्जाना मिल सके।</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== 4. TAB: WHATSAPP BOT SIMULATOR & REAL PHONE ==================== -->
+    <section id="tab-whatsapp" class="max-w-2xl mx-auto space-y-4 hidden">
+      
+      <!-- Real Mobile Phone WhatsApp Connect Banner -->
+      <div class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white rounded-2xl p-4 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="space-y-1 text-center sm:text-left">
+          <div class="inline-flex items-center gap-1.5 bg-emerald-700/60 px-2.5 py-0.5 rounded-full text-[11px] font-bold text-emerald-200">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+            <span>असली फोन के WhatsApp से कनेक्ट करें</span>
+          </div>
+          <h4 class="text-base font-extrabold text-white">अपने मोबाइल से सीधे WhatsApp पर सूचना भेजें</h4>
+          <p class="text-xs text-emerald-100">बिना किसी ऐप को डाउनलोड किए 1-टैप में विधिक दावा या कृषि अधिकारी को नोटिस भेजें</p>
+        </div>
+        <div class="flex flex-wrap sm:flex-nowrap gap-2 w-full sm:w-auto">
+          <button onclick="openRealPhoneWhatsAppClaim()" class="flex-1 sm:flex-none bg-yellow-400 hover:bg-yellow-300 text-slate-950 font-black px-3.5 py-2.5 rounded-xl text-xs shadow transition flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>WhatsApp पर दावा भेजें</span>
+          </button>
+          <button onclick="openRealPhoneWhatsAppNotice()" class="flex-1 sm:flex-none bg-emerald-700 hover:bg-emerald-600 text-white font-bold px-3 py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-1.5 whitespace-nowrap">
+            <i data-lucide="shield-alert" class="w-4 h-4 text-amber-300"></i>
+            <span>डीलर कानूनी नोटिस</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3.5 flex items-center justify-between text-xs text-emerald-900">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="smartphone" class="w-4 h-4 text-emerald-700 flex-shrink-0"></i>
+          <span><b>व्हाट्सएप बॉट व वेबहुक:</b> यह इंजन Twilio WhatsApp व Meta Cloud API से भी सीधे जुड़कर असली फोन पर उत्तर देता है।</span>
+        </div>
+        <button onclick="resetWhatsAppChat()" class="text-xs text-emerald-700 font-bold hover:underline whitespace-nowrap ml-2">
+          रीसेट करें ↺
+        </button>
+      </div>
+
+
+      <!-- WhatsApp Device Frame -->
+      <div class="bg-wa-bg rounded-3xl shadow-2xl border-4 border-slate-800 overflow-hidden flex flex-col h-[650px] relative">
+        
+        <!-- WhatsApp Header -->
+        <div class="bg-wa-header text-white px-4 py-3 flex items-center justify-between shadow z-10">
+          <div class="flex items-center space-x-3">
+            <button class="text-white hover:opacity-80">
+              <i data-lucide="arrow-left" class="w-5 h-5"></i>
+            </button>
+            <div class="relative">
+              <div class="w-10 h-10 rounded-full bg-emerald-700 border border-white/30 flex items-center justify-center text-white font-bold text-sm">
+                🌾
+              </div>
+              <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
+            </div>
+            <div>
+              <h3 class="font-bold text-sm leading-tight">खेतप्रूफ सहायक (KhetProof)</h3>
+              <p class="text-[10px] text-emerald-200 flex items-center">
+                <span>ऑनलाइन</span> • <span class="ml-1">आधिकारिक कृषक सेवा</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-2 text-white/90">
+            <button onclick="triggerImdAlertPush()" title="IMD आपात मौसम अलर्ट" class="text-xs bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-bold px-2 py-1 rounded shadow flex items-center gap-1">
+              <span>⚡ IMD अलर्ट</span>
+            </button>
+            <button onclick="speakWhatsAppLastBot()" title="आवाज सुनें" class="hover:text-white p-1">
+              <i data-lucide="volume-2" class="w-5 h-5"></i>
+            </button>
+            <button onclick="triggerWaSamplePhoto('sagarika')" title="दवा फोटो भेजें" class="text-xs bg-emerald-600 hover:bg-emerald-500 px-2 py-1 rounded">
+              📸 सागरिका
+            </button>
+            <button onclick="triggerWaSamplePhoto('weedicide')" title="संदिग्ध दवा फोटो भेजें" class="text-xs bg-red-600 hover:bg-red-500 px-2 py-1 rounded">
+              🚨 24D
+            </button>
+          </div>
+        </div>
+
+        <!-- Chat Messages Scroll Container -->
+        <div id="wa-chat-container" class="flex-1 p-4 overflow-y-auto space-y-3 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]">
+          <!-- Chat messages injected dynamically -->
+        </div>
+
+        <!-- WhatsApp Quick Reply Chips -->
+        <div id="wa-quick-replies" class="bg-slate-100/90 border-t border-slate-200 px-3 py-2 flex space-x-2 overflow-x-auto no-scrollbar">
+          <!-- Dynamic quick reply buttons -->
+        </div>
+
+        <!-- WhatsApp Input Box -->
+        <form id="wa-input-form" onsubmit="sendWhatsAppMessage(event)" class="bg-slate-100 p-2.5 flex items-center space-x-2 border-t border-slate-200">
+          <button type="button" onclick="triggerWaSamplePhoto('sagarika')" class="text-slate-500 hover:text-slate-700 p-1.5" title="फोटो चुनें">
+            <i data-lucide="paperclip" class="w-5 h-5"></i>
+          </button>
+          <input type="text" id="wa-message-input" placeholder="नुकसान दर्ज करें, मौसम, या फोटो भेजें..." 
+                 class="flex-1 bg-white border border-slate-300 rounded-full px-4 py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-wa-teal">
+          <button type="submit" class="w-9 h-9 rounded-full bg-wa-teal hover:bg-wa-header text-white flex items-center justify-center shadow flex-shrink-0 transition">
+            <i data-lucide="send" class="w-4 h-4 ml-0.5"></i>
+          </button>
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== 5. TAB: CLAIM & COMPLAINT DOSSIER ==================== -->
+    <section id="tab-dossier" class="space-y-6 hidden">
+      
+      <!-- Top Dossier Action Controls -->
+      <!-- Document Type Switcher Tabs -->
+      <div class="flex flex-wrap items-center justify-between gap-3 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="flex space-x-2">
+          <button id="btn-doc-pmfby" onclick="switchDossierDoc('pmfby')" 
+                  class="bg-blue-600 text-white font-bold text-xs px-3.5 py-2 rounded-xl shadow-sm transition flex items-center gap-1.5">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span>1. PMFBY 72h दावा प्रपत्र (21.4)</span>
+          </button>
+          <button id="btn-doc-legal" onclick="switchDossierDoc('legal')" 
+                  class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs px-3.5 py-2 rounded-xl border border-slate-300 transition flex items-center gap-1.5">
+            <i data-lucide="shield-alert" class="w-4 h-4 text-amber-600"></i>
+            <span>2. कीटनाशी अधिनियम 1968 नोटिस (नकली दवा)</span>
+          </button>
+          <button id="btn-doc-receipt" onclick="switchDossierDoc('receipt')" 
+                  class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs px-3.5 py-2 rounded-xl border border-slate-300 transition flex items-center gap-1.5">
+            <i data-lucide="receipt" class="w-4 h-4 text-emerald-600"></i>
+            <span>3. आधिकारिक दावा पावती टोकन (Receipt)</span>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <button onclick="shareActiveDocOnWhatsApp()" class="flex-1 sm:flex-none bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow transition flex items-center justify-center space-x-1.5">
+            <i data-lucide="share-2" class="w-4 h-4"></i>
+            <span>WhatsApp पर भेजें</span>
+          </button>
+          <button onclick="window.print()" class="flex-1 sm:flex-none bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow transition flex items-center justify-center space-x-1.5">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span>प्रिंट / PDF</span>
+          </button>
+          <button onclick="copyActiveDocText()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3 py-2 rounded-xl border border-slate-300 transition flex items-center" title="टेक्स्ट कॉपी करें">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- Printable Official Document Paper -->
+      <div id="printable-dossier" class="bg-white border-2 border-slate-300 rounded-2xl p-6 sm:p-8 shadow-md text-slate-800 space-y-6 font-serif">
+        
+        <!-- Header / Letterhead -->
+        <div class="border-b-2 border-slate-900 pb-4 text-center space-y-1">
+          <div class="flex justify-between items-start text-left text-xs font-mono text-slate-500 mb-2">
+            <span>दस्तावेज़ संख्या: <b id="dos-id" class="text-slate-900 font-bold">KP-DOSSIER-20260921</b></span>
+            <span>तारीख: <b id="dos-date">21/09/2026</b></span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-sans">
+            प्रधानमंत्री फसल बीमा योजना (PMFBY) - स्थानीयकृत आपदा नुकसान सूचना प्रपत्र
+          </h2>
+          <p class="text-xs text-slate-600 font-sans">
+            (प्रपत्र कंडिका 21.4 के तहत 72 घंटे के भीतर अनिवार्य सूचना - बीमा कंपनी व कृषि विभाग हेतु)
+          </p>
+          <div class="pt-2 flex justify-center">
+            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-sans font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+              ✓ 72-घंटे की विधिक समय-सीमा के भीतर प्रमाणित दर्ज
+            </span>
+          </div>
+        </div>
+
+        <!-- Addressed To -->
+        <div class="text-xs space-y-1 text-slate-700 font-sans">
+          <p><b>प्रति,</b></p>
+          <p>1. <b>वरिष्ठ कृषि विकास अधिकारी (SADO)</b>, गैरतगंज, जिला रायसेन (म.प्र.)</p>
+          <p>2. <b>शाखा प्रबंधक / जिला नोडल अधिकारी</b>, एग्रीकल्चर इंश्योरेंस कंपनी ऑफ इंडिया लि. (AIC)</p>
+          <p>3. <b>PMFBY राष्ट्रीय कॉल सेंटर</b> (टोल-फ्री 14447)</p>
+        </div>
+
+        <!-- Farmer Particulars Table -->
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 font-sans bg-slate-100 px-2 py-1 rounded">
+            भाग 1: बीमित कृषक एवं भूमि विवरण
+          </h4>
+          <table class="w-full text-xs border border-slate-300 font-sans">
+            <tbody>
+              <tr class="border-b border-slate-200">
+                <td class="p-2 font-bold bg-slate-50 w-1/4">कृषक का नाम:</td>
+                <td class="p-2" id="dos-farmer-name">नागेश शर्मा (आत्मज श्री शिवनारायण शर्मा)</td>
+                <td class="p-2 font-bold bg-slate-50 w-1/4">मोबाइल नं.:</td>
+                <td class="p-2" id="dos-farmer-mobile">+91 98261 45892</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-2 font-bold bg-slate-50">गाँव व हल्का:</td>
+                <td class="p-2" id="dos-farmer-village">बरखेड़ी (हल्का नं. 18), तहसील गैरतगंज</td>
+                <td class="p-2 font-bold bg-slate-50">जिला व राज्य:</td>
+                <td class="p-2" id="dos-farmer-district">रायसेन, मध्य प्रदेश</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-2 font-bold bg-slate-50">खसरा / सर्वे क्र.:</td>
+                <td class="p-2" id="dos-farmer-khasra">142/2, 143/1 (कुल रकबा 6.5 एकड़)</td>
+                <td class="p-2 font-bold bg-slate-50">बीमित फसल:</td>
+                <td class="p-2" id="dos-farmer-crop">सोयाबीन (किस्म: JS-2034)</td>
+              </tr>
+              <tr>
+                <td class="p-2 font-bold bg-slate-50">PMFBY पॉलिसी / आवेदन:</td>
+                <td class="p-2 font-mono font-bold" id="dos-farmer-policy">MP-PMFBY-2026-8942110</td>
+                <td class="p-2 font-bold bg-slate-50">बैंक खाता:</td>
+                <td class="p-2" id="dos-farmer-bank">मध्य प्रदेश ग्रामीण बैंक (खाता अंतिम: 5512)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Calamity Details Table -->
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 font-sans bg-slate-100 px-2 py-1 rounded">
+            भाग 2: आपदा एवं फसल क्षति विवरण
+          </h4>
+          <table class="w-full text-xs border border-slate-300 font-sans">
+            <tbody>
+              <tr class="border-b border-slate-200">
+                <td class="p-2 font-bold bg-slate-50 w-1/4">आपदा का स्वरूप:</td>
+                <td class="p-2 font-bold text-red-700" id="dos-calamity-type">अतिवृष्टि एवं खेत में गंभीर जलभराव</td>
+                <td class="p-2 font-bold bg-slate-50 w-1/4">घटना की तिथि व समय:</td>
+                <td class="p-2" id="dos-calamity-time">20/09/2026 प्रात: 10:30 बजे</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-2 font-bold bg-slate-50">वर्षा रिकॉर्ड / वेदर स्टेशन:</td>
+                <td class="p-2" id="dos-weather-precip">84.6 mm अतिवृष्टि (सोनकच्छ AWS स्टेशन - IMD सिंक)</td>
+                <td class="p-2 font-bold bg-slate-50">अनुमानित क्षति प्रतिशत:</td>
+                <td class="p-2 font-bold text-red-600" id="dos-loss-pct">65% (गंभीर नुकसान)</td>
+              </tr>
+              <tr>
+                <td class="p-2 font-bold bg-slate-50">जीपीएस अक्षांश/देशांतर:</td>
+                <td class="p-2 font-mono" colspan="3" id="dos-gps-coords">Lat: 22.9640°N, Lon: 76.3380°E (सत्यापित भू-निर्देशांक)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- NEW: Part 3 - Financial Compensation Breakdown -->
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 font-sans bg-emerald-100/70 text-emerald-950 px-2 py-1 rounded flex items-center justify-between">
+            <span>भाग 3: PMFBY आधिकारिक क्षतिपूर्ति आंकलन (Govt. Scale of Finance)</span>
+            <span class="text-[10px] font-bold">कंडिका 21.4</span>
+          </h4>
+          <table class="w-full text-xs border border-emerald-300 font-sans">
+            <tbody>
+              <tr class="border-b border-slate-200">
+                <td class="p-2 font-bold bg-emerald-50/50 w-1/4">बीमित दर (प्रति हेक्टेयर):</td>
+                <td class="p-2 font-mono font-bold text-slate-900" id="dos-sum-insured-rate">₹48,000 / हेक्टेयर</td>
+                <td class="p-2 font-bold bg-emerald-50/50 w-1/4">प्रभावित रकबा (हेक्टेयर):</td>
+                <td class="p-2 font-mono" id="dos-affected-ha">2.63 हेक्टेयर (6.5 एकड़)</td>
+              </tr>
+              <tr class="border-b border-slate-200">
+                <td class="p-2 font-bold bg-emerald-50/50">कुल बीमित राशि (Sum Insured):</td>
+                <td class="p-2 font-mono font-bold text-slate-900" id="dos-total-sum-insured">₹1,26,240</td>
+                <td class="p-2 font-bold bg-emerald-50/50">क्षतिपूर्ति निर्धारण दर:</td>
+                <td class="p-2" id="dos-payout-formula">65% क्षति आंकलन आधारित</td>
+              </tr>
+              <tr class="bg-emerald-100/60 font-bold text-emerald-950">
+                <td class="p-2.5 font-black text-xs">अनुमानित बीमा दावा देय राशि:</td>
+                <td class="p-2.5 font-mono font-black text-base text-emerald-800" colspan="3" id="dos-payout-amount">
+                  ₹82,056/- (बयासी हजार छप्पन रुपये मात्र)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- NEW: Part 4 - Weather Station Satellite Corroboration Seal -->
+        <div class="p-3 bg-sky-50 border border-sky-200 rounded-xl flex items-center justify-between text-xs font-sans">
+          <div class="flex items-center gap-2">
+            <i data-lucide="satellite" class="w-5 h-5 text-sky-700 flex-shrink-0"></i>
+            <div>
+              <span class="font-bold text-sky-950 block">मौसम विभाग व सैटेलाइट सत्यापन मुहर (IMD Reanalysis Seal):</span>
+              <span class="text-[11px] text-sky-800" id="dos-satellite-seal-text">सोनकच्छ (देवास) स्वचालित वेदर स्टेशन द्वारा 84.6 mm वर्षा दर्ज • जलभराव की पुष्टि</span>
+            </div>
+          </div>
+          <span class="bg-white border border-sky-300 text-sky-900 font-black px-2.5 py-1 rounded-lg text-[10px] whitespace-nowrap shadow-xs">
+            ✓ निर्विवाद साक्ष्य
+          </span>
+        </div>
+
+        <!-- Evidence Showcase (Photographs & Invoices) -->
+        <div class="space-y-2 font-sans">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 bg-slate-100 px-2 py-1 rounded">
+            भाग 5: संलग्न 3-कोणीय डिजिटल साक्ष्य (Dispute-Proof Geo-Tagged Evidence)
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            
+            <div class="border border-slate-200 rounded-xl p-2 text-center bg-slate-50">
+              <p class="text-[10px] font-bold text-slate-700 mb-1">1. विहंगम दृश्य (जलभराव फैलाव)</p>
+              <img id="dos-img-field" src="/static/images/sample_waterlogged_field.svg" class="h-28 w-full object-cover rounded border border-slate-300 mx-auto">
+              <p class="text-[9px] text-slate-500 font-mono mt-1">20-09-2026 | GPS Tagged</p>
+            </div>
+
+            <div class="border border-slate-200 rounded-xl p-2 text-center bg-slate-50">
+              <p class="text-[10px] font-bold text-slate-700 mb-1">2. फसल क्लोज-अप (सड़ी जड़ें/फलियां)</p>
+              <img id="dos-img-bag" src="/static/images/sample_sagarika.svg" class="h-28 w-full object-cover rounded border border-slate-300 mx-auto">
+              <p class="text-[9px] text-slate-500 font-mono mt-1">बैच व फसल क्षति क्लोज-अप</p>
+            </div>
+
+            <div class="border border-slate-200 rounded-xl p-2 text-center bg-slate-50">
+              <p class="text-[10px] font-bold text-slate-700 mb-1">3. खसरा सीमा व लैंडमार्क</p>
+              <img id="dos-img-bill" src="/static/images/sample_bill.svg" class="h-28 w-full object-cover rounded border border-slate-300 mx-auto">
+              <p class="text-[9px] text-slate-500 font-mono mt-1">खसरा 142/2 मेड़ व बिजली पोल</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Legal Statement & Signature -->
+        <div class="border-t border-slate-300 pt-4 text-xs space-y-4 font-sans text-slate-700">
+          <p class="italic leading-relaxed">
+            <b>घोषणा:</b> मैं प्रमाणित करता हूँ कि उपरोक्त सूचना पूर्णत: सत्य है। प्रधानमंत्री फसल बीमा योजना के 72 घंटे के प्रावधान के अंतर्गत यह सूचना 'खेतप्रूफ' डिजिटल साक्ष्य प्रणाली के माध्यम से समय-सीमा में भेजी जा रही है। कृपया संयुक्त सर्वे दल (कृषि अधिकारी, बीमा प्रतिनिधि एवं पटवारी) द्वारा तत्काल मौका मुआयना कराकर दावा स्वीकृत करने की कृपा करें।
+          </p>
+
+          <div class="flex justify-between items-end pt-4">
+            <div class="space-y-1 text-[11px]">
+              <div class="w-16 h-16 bg-slate-100 border border-slate-300 flex items-center justify-center text-[10px] font-mono text-slate-400">
+                [QR साक्ष्य]
+              </div>
+              <p class="font-mono text-[9px] text-slate-500">डिजिटल वाटरमार्क: KP-SHA256-VERIFIED</p>
+            </div>
+
+            <div class="text-right space-y-1">
+              <div class="font-serif italic text-base text-slate-900">नागेश शर्मा</div>
+              <p class="text-[11px] font-bold">कृषक के हस्ताक्षर / अंगूठा निशानी</p>
+              <p class="text-[10px] text-slate-500">गाँव बरखेड़ी, गैरतगंज (रायसेन)</p>
+            </div>
+          </div>
+        </div>
+
+      <!-- Formal Legal Notice Paper (Under Insecticides Act, 1968) -->
+      <div id="printable-legal-notice" class="bg-white border-2 border-amber-400 rounded-2xl p-6 sm:p-8 shadow-md text-slate-800 space-y-6 font-serif hidden">
+        
+        <!-- Letterhead -->
+        <div class="border-b-2 border-slate-900 pb-4 text-center space-y-1">
+          <div class="flex justify-between items-start text-left text-xs font-mono text-slate-500 mb-2">
+            <span>नोटिस क्रमांक: <b id="legal-notice-id" class="text-slate-900 font-bold">KP-LEGAL-20260922</b></span>
+            <span>दिनांक: <b id="legal-notice-date">22/09/2026</b></span>
+          </div>
+          <span class="inline-block bg-red-100 text-red-800 border border-red-300 font-bold px-3 py-1 rounded-full text-xs font-sans">
+            ⚖️ वैधानिक शिकायत पत्र - कीटनाशी अधिनियम 1968 (धारा 21, 22 एवं 29)
+          </span>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight font-sans mt-2">
+            अमानक / मिथ्याछाप कृषि रसायन विक्रय एवं फसल क्षतिपूर्ति बाबत विधिक नोटिस
+          </h2>
+          <p class="text-xs text-slate-600 font-sans">
+            (उपभोक्ता संरक्षण अधिनियम 2019 एवं उर्वरक नियंत्रण आदेश 1985 के सुसंगत प्रावधानों सहित)
+          </p>
+        </div>
+
+        <!-- Addressed To -->
+        <div class="text-xs space-y-1 text-slate-700 font-sans bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <p><b>सेवा में,</b></p>
+          <p>1. <b>उप संचालक, किसान कल्याण तथा कृषि विकास</b>, जिला देवास / रायसेन (म.प्र.)</p>
+          <p>2. <b>वरिष्ठ कृषि विकास अधिकारी (SADO) / कीटनाशी निरीक्षक</b>, विकासखंड सोनकच्छ</p>
+          <p>3. <b>विक्रेता/डीलर:</b> <span id="legal-dealer-name" class="font-bold text-slate-900">किसान सेवा केंद्र, मुख्य बाजार</span></p>
+        </div>
+
+        <!-- Complaint Details Table -->
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 font-sans">1. प्रार्थी कृषक एवं भूमि विवरण</h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs bg-slate-50 p-3 rounded-xl border border-slate-200 font-sans">
+            <div><span class="text-slate-500">कृषक का नाम:</span><br><b id="legal-farmer-name">नागेश शर्मा</b></div>
+            <div><span class="text-slate-500">मोबाइल नं.:</span><br><b id="legal-farmer-mobile">9826145892</b></div>
+            <div><span class="text-slate-500">ग्राम व तहसील:</span><br><b id="legal-farmer-loc">बेड़ाखेड़ी, सोनकच्छ (देवास)</b></div>
+            <div><span class="text-slate-500">खसरा व रकबा:</span><br><b id="legal-farmer-land">खसरा 142/2 (6.5 एकड़)</b></div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 font-sans">2. संदिग्ध उत्पाद व क्रय साक्ष्य (खेतप्रूफ वॉल्ट में सुरक्षित)</h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs bg-amber-50/70 p-3 rounded-xl border border-amber-200 font-sans">
+            <div><span class="text-slate-500">उत्पाद का नाम:</span><br><b id="legal-prod-name" class="text-red-700">Super Weed Burn 24D Mix</b></div>
+            <div><span class="text-slate-500">बैच संख्या (Batch):</span><br><b id="legal-batch-no" class="font-mono">SWB-7721-RAI</b></div>
+            <div><span class="text-slate-500">बिल / कैशमेमो क्र.:</span><br><b id="legal-bill-no">KM-9921 (18/06/2026)</b></div>
+            <div><span class="text-slate-500">जांच स्थिति:</span><br><b id="legal-status" class="text-red-700">अमानक / गैर-पंजीकृत</b></div>
+          </div>
+        </div>
+
+        <!-- Statutory Demands & Legal Provisions -->
+        <div class="space-y-2 font-sans text-xs">
+          <h4 class="font-bold uppercase tracking-wider text-slate-500">3. वैधानिक मांगें एवं कानूनी प्रावधान</h4>
+          <div class="space-y-2 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+            <div class="flex items-start gap-2">
+              <span class="bg-slate-900 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-0.5">1</span>
+              <p><b>कीटनाशी अधिनियम 1968 की धारा 21 एवं 22:</b> कीटनाशी निरीक्षक तत्काल विक्रेता की दुकान व प्रार्थी के खेत का निरीक्षण कर उक्त बैच का विधिक नमूना (Sample) लेकर केंद्रीय/राज्य कीटनाशक परीक्षण प्रयोगशाला (CIL) भेजें।</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="bg-slate-900 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-0.5">2</span>
+              <p><b>कीटनाशी अधिनियम 1968 की धारा 29:</b> मिथ्याछाप व अमानक कृषि रसायनों के विक्रय हेतु दोषी पाए जाने पर विक्रेता व निर्माणकर्ता फर्म के विरुद्ध एफआईआर दर्ज कर अनुज्ञप्ति (लाइसेंस) रद्द किया जाए।</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="bg-slate-900 text-white w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-0.5">3</span>
+              <p><b>फसल क्षतिपूर्ति राशि ₹85,000/-:</b> बीज, जुताई, दवा व अनुमानित उत्पादन हानि का आंकलन कर राशि प्रार्थी कृषक के बैंक खाते में 15 दिवस में अंतरित कराई जाए।</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evidence Attachment Preview -->
+        <div class="space-y-2 font-sans text-xs">
+          <h4 class="font-bold uppercase tracking-wider text-slate-500">4. संलग्न डिजिटल साक्ष्य (GPS एवं समय-मुहर सहित)</h4>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-center">
+              <p class="font-bold text-slate-700 text-[11px] mb-1">दवा की बोतल/डिब्बा (बैच नं. सहित)</p>
+              <img src="/static/images/sample_weedicide.svg" class="max-h-28 mx-auto rounded border border-slate-300">
+            </div>
+            <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-center">
+              <p class="font-bold text-slate-700 text-[11px] mb-1">डीलर का पक्का बिल / कैश मेमो</p>
+              <img src="/static/images/sample_bill.svg" class="max-h-28 mx-auto rounded border border-slate-300">
+            </div>
+          </div>
+        </div>
+
+        <!-- Signatures -->
+        <div class="border-t border-slate-300 pt-4 flex justify-between items-end text-xs font-sans">
+          <div class="space-y-1">
+            <p class="font-mono text-[10px] text-slate-500">डिजिटल हैश: KP-LEGAL-SEC29-VERIFIED</p>
+            <p class="text-[10px] text-emerald-700 font-bold">✓ खेतप्रूफ विधिक साक्ष्य सुरक्षित</p>
+          </div>
+          <div class="text-right space-y-1">
+            <div class="font-serif italic text-base text-slate-900" id="legal-sign-name">नागेश शर्मा</div>
+            <p class="text-[11px] font-bold">भवदीय (प्रार्थी कृषक)</p>
+            <p class="text-[10px] text-slate-500" id="legal-sign-loc">ग्राम बेड़ाखेड़ी, तहसील सोनकच्छ</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3. Official PMFBY Claim Intimation Token Receipt Paper -->
+      <div id="printable-claim-receipt" class="bg-white border-2 border-emerald-500 rounded-2xl p-6 sm:p-8 shadow-md text-slate-800 space-y-6 font-sans hidden">
+        
+        <!-- Header -->
+        <div class="border-b-2 border-emerald-700 pb-4 text-center space-y-1">
+          <div class="flex justify-between items-start text-left text-xs font-mono text-slate-500 mb-2">
+            <span>दावा पावती टोकन: <b id="receipt-token-no" class="text-emerald-800 font-black text-sm">MP/PMFBY/2026/72H-DEW-84920</b></span>
+            <span>दिनांक: <b id="receipt-date">22/09/2026</b></span>
+          </div>
+          <div class="inline-block bg-emerald-100 text-emerald-900 border border-emerald-300 font-black px-4 py-1 rounded-full text-xs">
+            ✓ प्रधानमंत्री फसल बीमा योजना (PMFBY) - 72-घंटे दावा पावती टोकन
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mt-2">
+            फसल नुकसान आधिकारिक सूचना पावती (Intimation Acknowledgment Slip)
+          </h2>
+          <p class="text-xs text-slate-600">
+            कंडिका 21.4 के अधीन समय-सीमा में बीमा कंपनी एवं कृषि विभाग को दी गई सूचना का विधिक साक्ष्य
+          </p>
+        </div>
+
+        <!-- Token Highlight Banner -->
+        <div class="bg-emerald-50 border-2 border-dashed border-emerald-300 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <div>
+            <span class="text-[11px] text-emerald-800 font-bold block uppercase tracking-wider">आधिकारिक संदर्भ टोकन नंबर (Reference Token):</span>
+            <div id="receipt-big-token" class="text-xl sm:text-2xl font-black font-mono text-emerald-950 tracking-wider">MP/PMFBY/2026/72H-DEW-84920</div>
+            <p class="text-xs text-emerald-800 mt-0.5">यह टोकन नंबर बीमा सर्वेक्षक / पटवारी / SADO को संयुक्त निरीक्षण हेतु दिखाएं।</p>
+          </div>
+          <div class="bg-white px-4 py-2 rounded-xl border border-emerald-200 shadow-sm text-center">
+            <span class="text-[10px] text-slate-500 block font-bold">दावा स्थिति</span>
+            <span class="text-xs font-black text-emerald-700">✅ 72h में दर्ज</span>
+          </div>
+        </div>
+
+        <!-- Two Columns: Farmer & Crop Details -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+            <h4 class="font-bold text-slate-900 text-sm border-b border-slate-200 pb-1 flex items-center gap-1.5">
+              <i data-lucide="user" class="w-4 h-4 text-emerald-700"></i>
+              <span>कृषक व भूमि विवरण</span>
+            </h4>
+            <div class="grid grid-cols-2 gap-2 text-slate-700">
+              <div><span class="text-slate-400">नाम:</span> <b id="receipt-farmer-name">नागेश शर्मा</b></div>
+              <div><span class="text-slate-400">मोबाइल:</span> <b id="receipt-farmer-mobile">9826145892</b></div>
+              <div><span class="text-slate-400">ग्राम:</span> <b id="receipt-farmer-village">बेड़ाखेड़ी</b></div>
+              <div><span class="text-slate-400">तहसील:</span> <b id="receipt-farmer-tehsil">सोनकच्छ</b></div>
+              <div><span class="text-slate-400">जिला:</span> <b id="receipt-farmer-district">देवास (म.प्र.)</b></div>
+              <div><span class="text-slate-400">खसरा / रकबा:</span> <b id="receipt-farmer-land">142/2 (6.5 एकड़)</b></div>
+              <div class="col-span-2"><span class="text-slate-400">पॉलिसी/आवेदन क्र.:</span> <b id="receipt-policy-no" class="font-mono">MP-PMFBY-2026-8942110</b></div>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+            <h4 class="font-bold text-slate-900 text-sm border-b border-slate-200 pb-1 flex items-center gap-1.5">
+              <i data-lucide="shield-alert" class="w-4 h-4 text-red-600"></i>
+              <span>आपदा व बीमा कंपनी विवरण</span>
+            </h4>
+            <div class="grid grid-cols-2 gap-2 text-slate-700">
+              <div><span class="text-slate-400">आपदा प्रकार:</span> <b id="receipt-calamity-type" class="text-red-700">अतिवृष्टि एवं जलभराव</b></div>
+              <div><span class="text-slate-400">नुकसान %:</span> <b id="receipt-loss-percent" class="text-red-700">65% (गंभीर)</b></div>
+              <div><span class="text-slate-400">बीमा कंपनी:</span> <b id="receipt-insurer" class="text-blue-800">HDFC ERGO</b></div>
+              <div><span class="text-slate-400">टोल फ्री:</span> <b class="font-mono text-emerald-800">14447</b></div>
+              <div class="col-span-2"><span class="text-slate-400">जीपीएस निर्देशांक:</span> <b id="receipt-gps" class="font-mono">22.9640°N, 76.3380°E</b></div>
+              <div class="col-span-2"><span class="text-slate-400">स्थानीय कृषि अधिकारी:</span> <b>वरिष्ठ कृषि विकास अधिकारी (SADO), सोनकच्छ</b></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Legal Binding Notice under Rule 21.4 -->
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed space-y-1">
+          <p><b>विधिक नियम (PMFBY क्लॉज 21.4):</b> <i>"स्थानीय आपदा की दशा में बीमित कृषक द्वारा घटना के 72 घंटे के भीतर सूचना देना अनिवार्य है। सूचना प्राप्त होने पर बीमा कंपनी द्वारा 48 घंटे में सर्वेक्षक नियुक्त किया जाएगा तथा संयुक्त समिति द्वारा 10 दिवस में आंकलन किया जाएगा।"</i></p>
+          <p class="text-[11px] text-slate-500">यह कंप्यूटर जनित पावती है जिस पर डिजिटल समय, जीपीएस अक्षांश-देशांतर एवं खेतप्रूफ सत्यापन कूट अंकित है।</p>
+        </div>
+
+        <!-- Signature Block -->
+        <div class="pt-6 border-t border-slate-200 grid grid-cols-2 text-center text-xs">
+          <div>
+            <div class="h-10"></div>
+            <div class="border-t border-slate-400 pt-1 font-bold">कृषक के हस्ताक्षर / अंगूठा</div>
+          </div>
+          <div>
+            <div class="h-10"></div>
+            <div class="border-t border-slate-400 pt-1 font-bold">बीमा कंपनी प्रतिनिधि / SADO हस्ताक्षर</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Dedicated Creator & Platform Footer -->
+    <footer class="mt-12 mb-20 md:mb-8 border-t border-slate-200 pt-8 pb-4 text-center">
+      <div class="max-w-4xl mx-auto px-4 space-y-3">
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 text-emerald-900 px-4 py-2 rounded-2xl shadow-xs">
+          <span class="text-base">🌾</span>
+          <span class="font-bold text-xs sm:text-sm">खेतप्रूफ (KhetProof) — किसान दावा व इनपुट सुरक्षा साथी</span>
+          <span class="text-[11px] bg-emerald-600 text-white font-black px-2 py-0.5 rounded-full">v2.4 Live</span>
+        </div>
+        
+        <div class="flex flex-wrap items-center justify-center gap-2 text-sm font-extrabold text-slate-800">
+          <span>Designed & Developed with ❤️ by <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-4">Avish Sharma</span></span>
+          <span class="text-slate-300 hidden sm:inline">•</span>
+          <a href="mailto:avishhsharma28@gmail.com" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-emerald-700 bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-full border border-slate-200 transition">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span>avishhsharma28@gmail.com</span>
+          </a>
+        </div>
+
+        <p class="text-xs text-slate-500 max-w-xl mx-auto leading-relaxed">
+          मध्य प्रदेश के किसान भाइयों के लिए निष्पक्ष फसल बीमा दावा, वास्तविक मौसम निगरानी, मंडी भाव तुलना और ICAR कृषि इनपुट सुरक्षा समर्पित वेब पोर्टल।
+        </p>
+
+        <div class="flex items-center justify-center gap-4 text-xs font-semibold text-slate-600 pt-1">
+          <span class="flex items-center gap-1">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i> ICAR & IMD सिंक
+          </span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-1">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i> PMFBY 72h दावा साथी
+          </span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-1">
+            <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-500"></i> किसान कल्याण समर्पित
+          </span>
+        </div>
+        
+        <div class="text-[11px] text-slate-400 pt-2 border-t border-slate-100">
+          © 2026 खेतप्रूफ (KhetProof) | All rights reserved
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+
+  <!-- New Agri-Input Capture Modal -->
+  <div id="modal-new-input" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+      
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+          <i data-lucide="plus-circle" class="w-5 h-5 text-khet-600"></i>
+          <span>नया इनपुट व बिल सुरक्षित करें</span>
+        </h3>
+        <button onclick="closeNewInputModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="new-input-form" onsubmit="saveNewAgriInput(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">दवा / खाद / बायो-स्टिमुलेंट का नाम *</label>
+          <input type="text" id="inp-name" required placeholder="उदा. इफको सागरिका, पर्स्यूट, टांगा सुपर..." 
+                 oninput="checkProductLive(this.value)"
+                 class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium focus:ring-2 focus:ring-khet-500">
+        </div>
+
+        <!-- Live ICAR check alert inside modal -->
+        <div id="modal-icar-badge" class="hidden p-2.5 rounded-xl border text-xs"></div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">बैच संख्या (Batch No.) *</label>
+            <input type="text" id="inp-batch" required placeholder="उदा. SG-2026-0814" 
+                   class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-mono">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">श्रेणी (Category)</label>
+            <select id="inp-category" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium">
+              <option value="Bio-stimulant (बायो-स्टिमुलेंट)">बायो-स्टिमुलेंट / टॉनिक</option>
+              <option value="Weedicide / शाकनाशी">खरपतवारनाशक (Weedicide)</option>
+              <option value="Pesticide / कीटनाशी">कीटनाशक (Pesticide)</option>
+              <option value="Seeds / बीज">प्रमाणित बीज (Seeds)</option>
+              <option value="Fertilizer / उर्वरक">उर्वरक (Fertilizer)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">डीलर का नाम / दुकान</label>
+            <input type="text" id="inp-dealer" value="श्री बालाजी कृषि केंद्र, गैरतगंज" 
+                   class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">बिल / कैशमेमो नं.</label>
+            <input type="text" id="inp-bill-no" placeholder="INV-2026-981" 
+                   class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-mono">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">डिब्बे / बोतल का फोटो</label>
+          <div class="flex gap-2">
+            <button type="button" onclick="setModalSamplePhoto('sagarika')" class="flex-1 text-[11px] bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 py-2 rounded-xl font-semibold">
+              ✓ सागरिका नमूना
+            </button>
+            <button type="button" onclick="setModalSamplePhoto('weedicide')" class="flex-1 text-[11px] bg-red-50 hover:bg-red-100 text-red-800 border border-red-200 py-2 rounded-xl font-semibold">
+              ⚠️ नकली खरपतवार नमूना
+            </button>
+          </div>
+        </div>
+
+        <div class="pt-2 flex gap-2">
+          <button type="button" onclick="closeNewInputModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2.5 rounded-xl transition">
+            रद्द करें
+          </button>
+          <button type="submit" class="flex-1 bg-khet-600 hover:bg-khet-700 text-white font-bold py-2.5 rounded-xl shadow transition">
+            वॉल्ट में सुरक्षित करें
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- MP 55 Districts, Tehsil & Village Selector Modal -->
+  <div id="modal-location-picker" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl space-y-4 max-h-[92vh] overflow-y-auto">
+      
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div>
+          <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-5 h-5 text-emerald-600"></i>
+            <span>मध्य प्रदेश स्थान चयन (55 जिले व तहसीलें)</span>
+          </h3>
+          <p class="text-[11px] text-slate-500">अपना जिला, तहसील और गाँव चुनें ताकि सटीक मौसम व बीमा कंपनी मैप हो सके</p>
+        </div>
+        <button onclick="closeLocationModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3.5 text-xs">
+        
+        <!-- District Quick Search & Dropdown -->
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">1. जिला चुनें (Select District - All 55 Districts) *</label>
+          <div class="space-y-1.5">
+            <input type="text" id="modal-dist-search" placeholder="🔍 जिले का नाम खोजें (उदा. इंदौर, धार, रीवा, सागर, उज्जैन...)" 
+                   oninput="filterDistrictsDropdown(this.value)"
+                   class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-xs focus:ring-2 focus:ring-khet-500 focus:outline-none">
+            <select id="modal-select-district" onchange="onDistrictChange(this.value)" 
+                    class="w-full bg-white border-2 border-emerald-600 rounded-xl p-2.5 font-bold text-slate-800 focus:outline-none cursor-pointer">
+              <!-- Dynamically populated with all 55 districts -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Tehsil Dropdown -->
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">2. तहसील चुनें (Select Tehsil) *</label>
+          <select id="modal-select-tehsil" onchange="onTehsilChange(this.value)" 
+                  class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-semibold text-slate-800 focus:ring-2 focus:ring-khet-500 cursor-pointer">
+            <!-- Dynamically populated based on chosen district -->
+          </select>
+        </div>
+
+        <!-- Village Dropdown & Custom Village -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">3. गाँव चुनें (Select Village)</label>
+            <select id="modal-select-village" onchange="onVillageChange(this.value)" 
+                    class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium text-slate-800 focus:ring-2 focus:ring-khet-500 cursor-pointer">
+              <!-- Dynamically populated based on chosen tehsil -->
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">या गाँव का नाम टाइप करें (Or Type Village)</label>
+            <input type="text" id="modal-custom-village" placeholder="उदा. बेड़ाखेड़ी (Berakhedi), बरखेड़ी..." 
+                   class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium text-slate-800 focus:ring-2 focus:ring-khet-500">
+          </div>
+        </div>
+
+        <!-- District Intelligence Card (Auto-populated with clean SVG icons) -->
+        <div id="modal-district-info-card" class="bg-gradient-to-br from-slate-50 to-emerald-50 border border-emerald-200 rounded-2xl p-3.5 space-y-2">
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="font-bold text-slate-700 flex items-center gap-1.5">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+              <span>PMFBY अधिकृत बीमा कंपनी:</span>
+            </span>
+            <span id="modal-info-insurance" class="font-bold text-emerald-800 bg-white px-2 py-0.5 rounded border border-emerald-200">AIC of India</span>
+          </div>
+          <div class="flex items-center justify-between text-[11px]">
+            <span class="font-bold text-slate-700 flex items-center gap-1.5">
+              <i data-lucide="building-2" class="w-4 h-4 text-slate-600"></i>
+              <span>कृषि विभाग कार्यालय:</span>
+            </span>
+            <span id="modal-info-krishi" class="font-medium text-slate-800 truncate max-w-[200px]">उप संचालक कृषि</span>
+          </div>
+          <div class="text-[11px] pt-1.5 border-t border-emerald-100 flex items-center">
+            <span class="font-bold text-slate-700 flex items-center gap-1.5">
+              <i data-lucide="sprout" class="w-4 h-4 text-emerald-600"></i>
+              <span>जिले की प्रमुख फसलें:</span>
+            </span>
+            <span id="modal-info-crops" class="text-slate-700 font-medium ml-1.5">सोयाबीन, गेहूँ, चना</span>
+          </div>
+        </div>
+
+        <div class="pt-2 flex gap-2">
+          <button type="button" onclick="closeLocationModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2.5 rounded-xl transition">
+            रद्द करें
+          </button>
+          <button type="button" onclick="saveLocationSelection()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl shadow transition">
+            स्थान सहेजें व मौसम अपडेट करें
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Connect & QR Code Modal -->
+  <div id="modal-mobile-connect" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4">
+      
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div class="flex items-center space-x-2">
+          <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
+            <i data-lucide="smartphone" class="w-5 h-5 text-emerald-600"></i>
+          </div>
+          <div>
+            <h3 class="font-black text-slate-900 text-base" id="mobile-modal-title">मोबाइल फोन पर खेतप्रूफ खोलें</h3>
+            <p class="text-[11px] text-slate-500" id="mobile-modal-subtitle">कैमरे से QR कोड स्कैन करें या लिंक शेयर करें</p>
+          </div>
+        </div>
+        <button onclick="closeMobileConnectModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Public / Network Status Badge -->
+      <div id="mobile-network-status-badge" class="bg-emerald-50 border border-emerald-200 text-emerald-800 px-3 py-1.5 rounded-xl text-xs flex items-center justify-between">
+        <div class="flex items-center space-x-2 font-bold">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+          <span id="mobile-status-text">🌐 इंटरनेट लाइव लिंक सक्रिय (हर जगह काम करेगा)</span>
+        </div>
+        <span class="text-[10px] bg-emerald-600 text-white font-black px-2 py-0.5 rounded-full uppercase">ONLINE</span>
+      </div>
+
+      <!-- QR Code Display Card -->
+      <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-center flex flex-col items-center space-y-3">
+        <div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-200 inline-block">
+          <img id="mobile-qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http://127.0.0.1:5000" 
+               alt="KhetProof Mobile QR Code" class="w-44 h-44 object-contain rounded-lg mx-auto">
+        </div>
+        <div class="text-center">
+          <span class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+            <i data-lucide="scan" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span>फ़ोन के कैमरे से स्कैन करें</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Direct Link Box with One-Tap Copy -->
+      <div class="space-y-1.5 text-xs">
+        <label class="block font-bold text-slate-700">सीधा मोबाइल वेब पता (Direct Shareable Link):</label>
+        <div class="flex items-center gap-2">
+          <input type="text" id="mobile-connect-url-input" value="http://127.0.0.1:5000" readonly
+                 class="flex-1 bg-slate-100 border border-slate-300 rounded-xl p-2.5 font-mono font-bold text-emerald-700 text-xs select-all">
+          <button onclick="copyMobileUrl()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-2.5 rounded-xl shadow-xs transition flex items-center gap-1">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+            <span id="copy-btn-text">कॉपी</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3-Step Simple Guide -->
+      <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-3.5 text-xs text-slate-700 space-y-1.5">
+        <div class="font-bold text-emerald-900 flex items-center gap-1.5">
+          <i data-lucide="share-2" class="w-4 h-4 text-emerald-700"></i>
+          <span>दोस्तों व परिवार के साथ साझा करें:</span>
+        </div>
+        <p class="text-[11px] text-slate-600 leading-relaxed">
+          यह एक <b>सुरक्षित पब्लिक वेबसाइट लिंक</b> है। आप इसे अपने दोस्तों या किसान भाइयों को भेज सकते हैं — वे किसी भी मोबाइल पर, किसी भी नेटवर्क (Jio/Airtel/Wi-Fi) से खोल सकते हैं।
+        </p>
+      </div>
+
+      <div class="pt-1 flex gap-2">
+        <button type="button" onclick="shareMobileUrlOnWhatsApp()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl shadow transition flex items-center justify-center gap-1.5 text-xs">
+          <i data-lucide="share-2" class="w-4 h-4"></i>
+          <span>WhatsApp पर लिंक भेजें</span>
+        </button>
+        <button type="button" onclick="closeMobileConnectModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition text-xs">
+          बंद करें
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Smart Agri-Input Label / Batch Scanner Modal (OCR Simulation) -->
+  <div id="modal-smart-scan" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl space-y-4 max-h-[92vh] overflow-y-auto">
+      
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div>
+          <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+            <i data-lucide="scan-line" class="w-5 h-5 text-indigo-600"></i>
+            <span>स्मार्ट लेबल व बैच स्कैनर (OCR Scanner)</span>
+          </h3>
+          <p class="text-[11px] text-slate-500">डिब्बे या बोतल का फोटो स्कैन करके बैच व ICAR प्रमाणन तुरंत निकालें</p>
+        </div>
+        <button onclick="closeSmartScanModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Scanner Viewfinder Box -->
+      <div class="relative bg-slate-900 rounded-2xl overflow-hidden h-52 flex items-center justify-center border-2 border-indigo-500 shadow-inner">
+        <img id="scan-viewfinder-img" src="/static/images/sample_sagarika.svg" class="max-h-48 object-contain opacity-85">
+        
+        <!-- Animated Green Laser Scan Line -->
+        <div id="scan-laser-line" class="absolute inset-x-0 h-1 bg-emerald-400 shadow-[0_0_12px_#34d399] animate-pulse pointer-events-none" style="top: 40%"></div>
+        
+        <!-- Viewfinder Corners -->
+        <div class="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-white pointer-events-none"></div>
+        <div class="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-white pointer-events-none"></div>
+        <div class="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-white pointer-events-none"></div>
+        <div class="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-white pointer-events-none"></div>
+
+        <div class="absolute bottom-2 inset-x-0 text-center">
+          <span class="bg-black/70 text-emerald-400 text-[10px] font-mono px-3 py-1 rounded-full border border-emerald-500/30">
+            [AI OCR SCANNING: BATCH & MFG EXTRACTION]
+          </span>
+        </div>
+      </div>
+
+      <!-- Quick Scan Sample Selectors -->
+      <div>
+        <label class="block font-bold text-slate-700 text-xs mb-1.5">परीक्षण हेतु डिब्बा चुनें या नया फोटो अपलोड करें:</label>
+        <div class="grid grid-cols-3 gap-2">
+          <button type="button" onclick="runScannerSample('sagarika')" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 p-2 rounded-xl text-center text-xs font-bold transition">
+            🌿 इफको सागरिका<br><span class="text-[10px] font-normal text-emerald-700">ICAR प्रमाणित</span>
+          </button>
+          <button type="button" onclick="runScannerSample('weedicide')" class="bg-red-50 hover:bg-red-100 text-red-900 border border-red-200 p-2 rounded-xl text-center text-xs font-bold transition">
+            🚨 24D Weed Burn<br><span class="text-[10px] font-normal text-red-700">रायसेन नकली अलर्ट</span>
+          </button>
+          <button type="button" onclick="runScannerSample('pursuit')" class="bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 p-2 rounded-xl text-center text-xs font-bold transition">
+            🌱 पर्स्यूट शाकनाशी<br><span class="text-[10px] font-normal text-blue-700">CIBRC अनुमोदित</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scan Output Card -->
+      <div id="scan-output-card" class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 space-y-2 text-xs">
+        <div class="flex items-center justify-between">
+          <span class="font-bold text-slate-700" id="scan-out-prod">इफको सागरिका (IFFCO Sagarika)</span>
+          <span id="scan-out-badge" class="font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px]">
+            ✅ ICAR प्रमाणित
+          </span>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 bg-white p-2.5 rounded-xl border border-slate-200 font-mono">
+          <div>बैच क्र.: <b class="text-slate-900" id="scan-out-batch">SG-2026-0814</b></div>
+          <div>निर्माण: <b class="text-slate-900" id="scan-out-mfg">04/2026</b></div>
+          <div>अवसान: <b class="text-slate-900" id="scan-out-exp">03/2028</b></div>
+          <div>सक्रिय तत्व: <b class="text-slate-900" id="scan-out-active">Seaweed 28%</b></div>
+        </div>
+        <p id="scan-out-notes" class="text-[11px] text-slate-600 leading-snug">
+          ICAR एवं केंद्रीय उर्वरक नियंत्रण आदेश (FCO Schedule VI) द्वारा विधिवत प्रमाणित बायो-स्टिमुलेंट।
+        </p>
+      </div>
+
+      <div class="pt-2 flex gap-2">
+        <button type="button" onclick="closeSmartScanModal()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2.5 rounded-xl transition text-xs">
+          बंद करें
+        </button>
+        <button type="button" onclick="addScannedProductToVault()" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 rounded-xl shadow transition text-xs flex items-center justify-center space-x-1.5">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>वॉल्ट में सुरक्षित करें</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (Thumb-friendly on Smartphone in fields) -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-40 px-2 py-1.5 flex justify-around items-center shadow-lg mobile-bottom-nav">
+    <button id="mob-nav-tab-dashboard" onclick="switchTab('tab-dashboard')" class="flex flex-col items-center text-[10px] text-emerald-700 font-bold py-1">
+      <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+      <span class="mt-0.5 font-medium" data-i18n="tabDashboard">डैशबोर्ड</span>
+    </button>
+    <button id="mob-nav-tab-vault" onclick="switchTab('tab-vault')" class="flex flex-col items-center text-[10px] text-slate-500 hover:text-emerald-700 py-1">
+      <i data-lucide="archive" class="w-5 h-5"></i>
+      <span class="mt-0.5 font-medium" data-i18n="tabVault">इनपुट वॉल्ट</span>
+    </button>
+    <button id="mob-nav-tab-loss-reporter" onclick="switchTab('tab-loss-reporter')" class="flex flex-col items-center text-[10px] text-red-600 font-bold py-1">
+      <div class="relative">
+        <i data-lucide="alarm-clock" class="w-5 h-5"></i>
+        <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-red-600 rounded-full animate-ping"></span>
+      </div>
+      <span class="mt-0.5 font-bold" data-i18n="tabLoss">72h दावा</span>
+    </button>
+    <button id="mob-nav-tab-whatsapp" onclick="switchTab('tab-whatsapp')" class="flex flex-col items-center text-[10px] text-slate-500 hover:text-emerald-700 py-1">
+      <i data-lucide="message-square" class="w-5 h-5"></i>
+      <span class="mt-0.5 font-medium" data-i18n="tabWhatsapp">WhatsApp</span>
+    </button>
+    <button id="mob-nav-tab-dossier" onclick="switchTab('tab-dossier')" class="flex flex-col items-center text-[10px] text-slate-500 hover:text-blue-700 py-1">
+      <i data-lucide="file-check-2" class="w-5 h-5"></i>
+      <span class="mt-0.5 font-medium" data-i18n="tabDossier">पर्ची/नोटिस</span>
+    </button>
+  </nav>
+
+  <!-- Hidden Canvas for dispute-proof photo watermarking -->
+  <canvas id="watermark-canvas" class="hidden"></canvas>
+
+  <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl flex items-center space-x-2 text-xs font-semibold transform translate-y-20 opacity-0 transition duration-300 pointer-events-none">
+    <i id="toast-icon" data-lucide="check-circle" class="w-4 h-4 text-khet-500"></i>
+    <span id="toast-message">सूचना सहेजी गई</span>
+  </div>
+
+  <!-- Full Screen Photo Preview Lightbox Modal -->
+  <div id="modal-image-preview" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden" onclick="closeImagePreviewModal()">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-4 shadow-2xl space-y-3" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+        <h4 id="image-preview-title" class="font-bold text-slate-800 text-sm truncate">साक्ष्य फोटो</h4>
+        <button onclick="closeImagePreviewModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="bg-slate-100 rounded-2xl p-2 flex items-center justify-center min-h-[250px] max-h-[70vh] overflow-hidden">
+        <img id="image-preview-img" src="" alt="साक्ष्य" class="max-h-[65vh] w-auto object-contain rounded-xl shadow">
+      </div>
+      <button onclick="closeImagePreviewModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs">
+        समझ गया (बंद करें)
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal: 14447 Telephonic Call Assistant (Hindi Word-for-Word Script) -->
+  <div id="modal-call-script-14447" class="fixed inset-0 bg-black/75 backdrop-blur-md z-50 flex items-center justify-center p-3 sm:p-4 hidden" onclick="closeCallScriptModal()">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-5 sm:p-6 shadow-2xl space-y-4 max-h-[92vh] overflow-y-auto" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-10 h-10 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black shadow-sm">
+            <i data-lucide="phone-call" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-black text-slate-900 text-base">
+              14447 PMFBY कॉल गाइड (हिंदी स्क्रिप्ट)
+            </h3>
+            <p class="text-[11px] text-slate-500">ऑपरेटर को स्क्रीन पर देखकर ये 5 बातें क्रम से बोलें</p>
+          </div>
+        </div>
+        <button onclick="closeCallScriptModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Action: Dial 14447 Button -->
+      <div class="bg-gradient-to-r from-amber-500 to-yellow-500 p-3 rounded-2xl flex items-center justify-between shadow-md">
+        <div class="text-slate-950">
+          <span class="text-[10px] font-bold block uppercase tracking-wider">राष्ट्रीय फसल बीमा हेल्पलाइन (24x7 निःशुल्क)</span>
+          <span class="text-xl font-black font-mono">टोल-फ्री: 14447</span>
+        </div>
+        <a href="tel:14447" class="bg-slate-950 hover:bg-slate-900 text-yellow-300 font-black text-xs px-4 py-2 rounded-xl shadow transition flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+          <span>अभी कॉल करें</span>
+        </a>
+      </div>
+
+      <!-- Step-by-Step Hindi Dialogue Points -->
+      <div class="space-y-2.5 text-xs text-slate-800">
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="font-bold text-emerald-800 text-[11px] block mb-0.5">कदम 1: पहचान व स्थान बताएं</span>
+          <p class="leading-relaxed" id="script-point-1">
+            <i>"नमस्ते मैडम/सर, मेरा नाम <b>नागेश शर्मा</b> है। मैं ग्राम <b>बेड़ाखेड़ी</b>, तहसील <b>सोनकच्छ</b>, जिला <b>देवास (म.प्र.)</b> से बोल रहा हूँ।"</i>
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="font-bold text-red-800 text-[11px] block mb-0.5">कदम 2: आपदा व नुकसान का प्रतिशत बताएं</span>
+          <p class="leading-relaxed" id="script-point-2">
+            <i>"मेरी <b>सोयाबीन</b> की फसल में अतिवृष्टि एवं जलभराव से लगभग <b>65%</b> नुकसान हुआ है। मौसम केंद्र में <b>84.6 mm</b> वर्षा दर्ज है।"</i>
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="font-bold text-blue-800 text-[11px] block mb-0.5">कदम 3: पॉलिसी व खसरा नंबर लिखवाएं</span>
+          <p class="leading-relaxed" id="script-point-3">
+            <i>"मेरी PMFBY पॉलिसी / आवेदन संख्या <b class="font-mono">MP-PMFBY-2026-8942110</b> है और खसरा नंबर <b>142/2</b> (रकबा <b>6.5 एकड़</b>) है।"</i>
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="font-bold text-amber-800 text-[11px] block mb-0.5">कदम 4: 72 घंटे की विहित समय-सीमा की पुष्टि करें</span>
+          <p class="leading-relaxed" id="script-point-4">
+            <i>"यह सूचना 72 घंटे की विहित समय-सीमा के भीतर दे रहा हूँ। मेरा दावा संदर्भ टोकन <b class="font-mono" id="script-token-display">MP/PMFBY/2026/72H-DEW-84920</b> है।"</i>
+          </p>
+        </div>
+
+        <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-300">
+          <span class="font-bold text-emerald-900 text-[11px] block mb-0.5">कदम 5: सबसे अनिवार्य — डॉकेट नंबर मांगें!</span>
+          <p class="leading-relaxed text-emerald-950">
+            <i>"कृपया मेरी इस शिकायत/दावे का आधिकारिक <b>शिकायत डॉकेट नंबर (Docket / Ticket Number)</b> तत्काल दर्ज कर मुझे बताएं।"</i>
+          </p>
+        </div>
+      </div>
+
+      <!-- Docket Input Saver -->
+      <div class="bg-slate-100 p-3.5 rounded-2xl space-y-2">
+        <label for="docket-input" class="block font-bold text-slate-700 text-xs">
+          14447 ऑपरेटर द्वारा दिया गया डॉकेट नंबर यहाँ दर्ज करें:
+        </label>
+        <div class="flex gap-2">
+          <input type="text" id="docket-input" placeholder="उदा. PMFBY-TKT-2026-99120" class="flex-1 bg-white border border-slate-300 rounded-xl p-2.5 font-mono text-xs font-bold text-slate-900 uppercase">
+          <button type="button" onclick="saveDocketNumber()" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow transition">
+            सुरक्षित करें
+          </button>
+        </div>
+      </div>
+
+      <button type="button" onclick="closeCallScriptModal()" class="w-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-2.5 rounded-xl text-xs transition">
+        समझ गया (बंद करें)
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal: Standardized PMFBY 14447 SMS Intimation -->
+  <div id="modal-sms-intimation" class="fixed inset-0 bg-black/75 backdrop-blur-md z-50 flex items-center justify-center p-3 sm:p-4 hidden" onclick="closeSmsIntimationModal()">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-5 sm:p-6 shadow-2xl space-y-4" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-black shadow-sm">
+            <i data-lucide="message-square" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-black text-slate-900 text-base">
+              आधिकारिक 1-क्लिक SMS सूचना (14447)
+            </h3>
+            <p class="text-[11px] text-slate-500">नेटवर्क कमजोर होने पर भी SMS से 72h सूचना तुरंत दर्ज हो जाती है</p>
+          </div>
+        </div>
+        <button onclick="closeSmsIntimationModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-2 text-xs">
+        <span class="text-slate-500 font-bold block">SMS प्रेषण विवरण:</span>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+          <div>भेजें (To): <b class="font-mono text-blue-700">14447</b> (PMFBY राष्ट्रीय हेल्पलाइन)</div>
+          <div>शुल्क: <b class="text-emerald-700">निःशुल्क (Toll-Free SMS)</b></div>
+        </div>
+
+        <span class="text-slate-500 font-bold block pt-1">तैयार आधिकारिक SMS संदेश:</span>
+        <div class="p-3 bg-blue-50/60 border border-blue-200 rounded-xl font-mono text-[11px] text-slate-800 break-words leading-relaxed" id="sms-body-preview">
+          PMFBY 72H CLAIM: Nagesh Sharma, Pol: MP-PMFBY-2026-8942110, Khasra: 142/2, Village: BedaKhedi Sonkatch Dewas, Peril: Waterlogging (84mm Rain), Loss: 65%, Ref: MP/PMFBY/2026/72H-DEW-84920
+        </div>
+      </div>
+
+      <div class="flex gap-2 pt-2">
+        <a id="btn-sms-app-launcher" href="sms:14447" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-3 rounded-xl shadow-md transition flex items-center justify-center gap-1.5">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>मैसेज ऐप में खोलें व भेजें</span>
+        </a>
+        <button type="button" onclick="copySmsText()" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs px-4 py-3 rounded-xl border border-slate-300 transition flex items-center gap-1">
+          <i data-lucide="copy" class="w-4 h-4"></i>
+          <span>कॉपी</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
+

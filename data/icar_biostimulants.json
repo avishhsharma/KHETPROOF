@@ -1,0 +1,149 @@
+{
+  "districts": [
+    {
+      "id": "raisen",
+      "name_hi": "रायसेन (Raisen)",
+      "name_en": "Raisen",
+      "state": "Madhya Pradesh",
+      "lat": 23.3315,
+      "lon": 77.7818,
+      "major_crops": ["Soybean (सोयाबीन)", "Wheat (गेहूँ)", "Gram (चना)"],
+      "krishi_officer": "उप संचालक कृषि, रायसेन (सम्पर्क: 07482-222450)",
+      "insurance_company": "Agriculture Insurance Company of India (AIC)",
+      "toll_free": "14447"
+    },
+    {
+      "id": "vidisha",
+      "name_hi": "विदिशा (Vidisha)",
+      "name_en": "Vidisha",
+      "state": "Madhya Pradesh",
+      "lat": 23.5251,
+      "lon": 77.8081,
+      "major_crops": ["Soybean (सोयाबीन)", "Wheat (गेहूँ)", "Mustard (सरसों)"],
+      "krishi_officer": "उप संचालक कृषि, विदिशा (सम्पर्क: 07592-232115)",
+      "insurance_company": "SBI General Insurance / AIC",
+      "toll_free": "14447"
+    },
+    {
+      "id": "sehore",
+      "name_hi": "सीहोर (Sehore)",
+      "name_en": "Sehore",
+      "state": "Madhya Pradesh",
+      "lat": 23.2031,
+      "lon": 77.0844,
+      "major_crops": ["Soybean (सोयाबीन)", "Wheat (गेहूँ Sharbati)"],
+      "krishi_officer": "उप संचालक कृषि, सीहोर (सम्पर्क: 07562-224102)",
+      "insurance_company": "HDFC ERGO / AIC",
+      "toll_free": "14447"
+    },
+    {
+      "id": "hoshangabad",
+      "name_hi": "नर्मदापुरम / होशंगाबाद",
+      "name_en": "Narmadapuram",
+      "state": "Madhya Pradesh",
+      "lat": 22.7519,
+      "lon": 77.7289,
+      "major_crops": ["Wheat (गेहूँ)", "Soybean (सोयाबीन)", "Paddy (धान)"],
+      "krishi_officer": "उप संचालक कृषि, नर्मदापुरम (सम्पर्क: 07574-252321)",
+      "insurance_company": "AIC",
+      "toll_free": "14447"
+    }
+  ],
+  "verified_products": [
+    {
+      "brand_name": "IFFCO Sagarika (इफको सागरिका)",
+      "category": "Bio-stimulant (सीवीड अर्क)",
+      "active_ingredient": "Seaweed Extract 28% w/w",
+      "icar_status": "VERIFIED",
+      "icar_reg_no": "ICAR-FDR-2023-BS-0042",
+      "manufacturer": "IFFCO / AquAgri",
+      "approved_crops": ["Soybean", "Wheat", "Paddy", "Cotton", "Vegetables"],
+      "safety_score": 100,
+      "notes_hi": "ICAR एवं केंद्रीय उर्वरक नियंत्रण आदेश (FCO Schedule VI) द्वारा विधिवत प्रमाणित बायो-स्टिमुलेंट।"
+    },
+    {
+      "brand_name": "Tata Rallis Tata Bahaar (टाटा बहार)",
+      "category": "Bio-stimulant (अमीनो एसिड आधारित)",
+      "active_ingredient": "Amino Acids + Peptides",
+      "icar_status": "VERIFIED",
+      "icar_reg_no": "ICAR-FDR-2023-BS-0118",
+      "manufacturer": "Rallis India Limited (A Tata Enterprise)",
+      "approved_crops": ["Soybean", "Pulses", "Gram", "Vegetables"],
+      "safety_score": 98,
+      "notes_hi": "ICAR एवं FCO शेड्यूल VI द्वारा मान्य। गुणवत्ता जांच में खरा उतरा।"
+    },
+    {
+      "brand_name": "Pursuit (पर्स्यूट खरपतवारनाशक)",
+      "category": "Weedicide / शाकनाशी (सोयाबीन)",
+      "active_ingredient": "Imazethapyr 10% SL",
+      "icar_status": "VERIFIED",
+      "icar_reg_no": "CIBRC-CIR-54910/2007",
+      "manufacturer": "BASF India Limited",
+      "approved_crops": ["Soybean", "Groundnut"],
+      "safety_score": 96,
+      "notes_hi": "CIBRC द्वारा सोयाबीन में चौड़ी और संकरी पत्ती के खरपतवार नियंत्रण हेतु अनुमोदित।"
+    },
+    {
+      "brand_name": "Targa Super (टारगा सुपर)",
+      "category": "Weedicide / खरपतवारनाशक",
+      "active_ingredient": "Quizalofop Ethyl 5% EC",
+      "icar_status": "VERIFIED",
+      "icar_reg_no": "CIBRC-CIR-32104/1998",
+      "manufacturer": "Dhanuka Agritech",
+      "approved_crops": ["Soybean", "Cotton", "Groundnut"],
+      "safety_score": 95,
+      "notes_hi": "CIBRC प्रमाणित संकरी पत्ती खरपतवारनाशक।"
+    },
+    {
+      "brand_name": "Bayer Laudis (लाउडिस)",
+      "category": "Weedicide / शाकनाशी",
+      "active_ingredient": "Tembotrione 34.4% SC",
+      "icar_status": "VERIFIED",
+      "icar_reg_no": "CIBRC-CIR-67123/2012",
+      "manufacturer": "Bayer CropScience",
+      "approved_crops": ["Maize", "Corn"],
+      "safety_score": 96,
+      "notes_hi": "CIBRC द्वारा प्रमाणित।"
+    },
+    {
+      "brand_name": "UPL Saaf (साफ फफूंदनाशक)",
+      "category": "Fungicide / कवकनाशी",
+      "active_ingredient": "Carbendazim 12% + Mancozeb 63% WP",
+      "icar_status": "VERIFIED",
+      "icar_reg_no": "CIBRC-CIR-11045/1995",
+      "manufacturer": "UPL Limited",
+      "approved_crops": ["Soybean", "Groundnut", "Paddy"],
+      "safety_score": 97,
+      "notes_hi": "CIBRC द्वारा बीज उपचार एवं पर्णीय छिड़काव हेतु अनुमोदित।"
+    }
+  ],
+  "flagged_counterfeits": [
+    {
+      "keyword": "Super Weed Burn 24D Mix",
+      "brand_name": "Super Grow Agro Weed-Kill",
+      "active_ingredient": "अघोषित रसायनों का मिश्रण (Unregistered 2,4-D Acid Ester)",
+      "icar_status": "SUSPICIOUS_UNAPPROVED",
+      "alert_title_hi": "🚨 नकली खरपतवारनाशक अलर्ट (Raisen/Vidisha)",
+      "reason_hi": "कृषि विभाग रायसेन एवं विदिशा द्वारा इस अमानक बैच पर जब्ती की गई। सोयाबीन की फसल झुलसने की 140+ शिकायतें दर्ज!",
+      "risk_level": "CRITICAL"
+    },
+    {
+      "keyword": "Magic Growth 98% Humic Booster",
+      "brand_name": "Kisan Shaktiman Bio Gold",
+      "active_ingredient": "घटिया कोयला पाउडर व अमानक रंग (Fake Humic Acid)",
+      "icar_status": "UNVERIFIED_BIOSTIMULANT",
+      "alert_title_hi": "⚠️ गैर-प्रमाणित बायो-स्टिमुलेंट (Non-ICAR)",
+      "reason_hi": "भारत में 30,000 बायो-स्टिमुलेंट में से केवल ~600 को ICAR की अनुमति है। यह उत्पाद FCO Schedule VI सूची में पंजीकृत नहीं है!",
+      "risk_level": "HIGH"
+    },
+    {
+      "keyword": "Fast Kill 77",
+      "brand_name": "Agro Clean Crop Shield",
+      "active_ingredient": "प्रतिबंधित ग्लाइफोसेट मिश्रण (Illegal Glyphosate adulteration)",
+      "icar_status": "BANNED_HAZARD",
+      "alert_title_hi": "🚫 प्रतिबंधित रसायन का संदिग्ध मिश्रण",
+      "reason_hi": "सोयाबीन फसल के खड़े पौधों पर इस्तेमाल के लिए प्रतिबंधित। फसल पूरी तरह नष्ट हो सकती है।",
+      "risk_level": "CRITICAL"
+    }
+  ]
+}

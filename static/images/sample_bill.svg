@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <rect width="400" height="320" fill="#f8fafc" rx="16"/>
+  <!-- Bill Paper -->
+  <rect x="70" y="20" width="260" height="280" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  
+  <!-- Header -->
+  <rect x="70" y="20" width="260" height="45" fill="#f1f5f9"/>
+  <text x="200" y="42" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">श्री बालाजी कृषि सेवा केंद्र</text>
+  <text x="200" y="56" font-family="sans-serif" font-size="9" fill="#475569" text-anchor="middle">गैरतगंज, जिला रायसेन (म.प्र.) | मो: 9826011223</text>
+  
+  <text x="85" y="80" font-family="monospace" font-size="9" fill="#334155">बिल नं: INV-2026-981</text>
+  <text x="240" y="80" font-family="monospace" font-size="9" fill="#334155">तारीख: 10/07/2026</text>
+  <text x="85" y="95" font-family="sans-serif" font-size="9" fill="#334155">ग्राहक: नागेश शर्मा, बरखेड़ी</text>
+  <line x1="85" y1="105" x2="315" y2="105" stroke="#e2e8f0" stroke-width="1.5"/>
+  
+  <!-- Table Header -->
+  <text x="90" y="120" font-family="sans-serif" font-size="9" font-weight="bold" fill="#1e293b">सामग्री विवरण</text>
+  <text x="195" y="120" font-family="sans-serif" font-size="9" font-weight="bold" fill="#1e293b">बैच क्र.</text>
+  <text x="280" y="120" font-family="sans-serif" font-size="9" font-weight="bold" fill="#1e293b">रकम</text>
+  <line x1="85" y1="128" x2="315" y2="128" stroke="#cbd5e1" stroke-width="1"/>
+  
+  <!-- Items -->
+  <text x="90" y="145" font-family="sans-serif" font-size="9" fill="#334155">इफको सागरिका (1L)</text>
+  <text x="195" y="145" font-family="monospace" font-size="8" fill="#0f172a">SG-2026-0814</text>
+  <text x="280" y="145" font-family="sans-serif" font-size="9" fill="#334155">₹ 650.00</text>
+  
+  <text x="90" y="165" font-family="sans-serif" font-size="9" fill="#334155">पर्स्यूट खरपतवार (500ml)</text>
+  <text x="195" y="165" font-family="monospace" font-size="8" fill="#0f172a">PR-9844-BASF</text>
+  <text x="280" y="165" font-family="sans-serif" font-size="9" fill="#334155">₹ 820.00</text>
+  
+  <line x1="85" y1="210" x2="315" y2="210" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="90" y="228" font-family="sans-serif" font-size="10" font-weight="bold" fill="#0f172a">कुल योग (Total)</text>
+  <text x="270" y="228" font-family="sans-serif" font-size="11" font-weight="bold" fill="#15803d">₹ 1,470.00</text>
+  
+  <!-- Stamp / Signature -->
+  <circle cx="280" cy="265" r="22" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="280" y="263" font-family="sans-serif" font-size="7" font-weight="bold" fill="#2563eb" text-anchor="middle">श्री बालाजी कृषि</text>
+  <text x="280" y="272" font-family="sans-serif" font-size="7" fill="#2563eb" text-anchor="middle">गैरतगंज सील</text>
+  
+  <!-- Geotag watermark banner -->
+  <rect x="80" y="280" width="240" height="15" fill="#0f172a" rx="3" opacity="0.85"/>
+  <text x="200" y="291" font-family="monospace" font-size="8" fill="#38bdf8" text-anchor="middle">GPS: 23.3852° N, 77.8105° E | 10-07-2026</text>
+</svg>

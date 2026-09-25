@@ -1,0 +1,3637 @@
+[
+  {
+    "id": "dewas",
+    "name_hi": "देवास (Dewas)",
+    "name_en": "Dewas",
+    "division": "Ujjain",
+    "lat": 22.9676,
+    "lon": 76.0534,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, देवास (07272-252130)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Potato (आलू)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "सोनकच्छ (Sonkatch)",
+        "name_en": "Sonkatch",
+        "villages": [
+          "बेड़ाखेड़ी / बेरखेड़ी (Berakhedi)",
+          "गंधर्वपुरी (Gandharvapuri)",
+          "भौंरासा (Bhaurasa)",
+          "अग्रोद (Agrod)",
+          "पोलाय जागीर (Polay Jagir)",
+          "पीपल्या (Pipaliya)",
+          "खजूरिया (Khajuriya)",
+          "पाड़ल्या (Padlya)",
+          "कुम्हारिया (Kumhariya)",
+          "मूसाखेड़ी (Musakhedi)",
+          "जामोदी (Jamodi)",
+          "खारपा (Kharpa)",
+          "सोनकच्छ ग्रामीण (Sonkatch Rural)"
+        ]
+      },
+      {
+        "name_hi": "देवास (Dewas)",
+        "name_en": "Dewas",
+        "villages": [
+          "बरोठा (Barotha)",
+          "मेंढकी (Mendki)",
+          "नागदा (Nagda)",
+          "कैलोद (Kailod)",
+          "खटाम्बा (Khatamba)",
+          "लोहारपिपल्या (Loharpipaliya)",
+          "सिया (Siya)",
+          "बिन्याखेड़ी (Binyakhedi)"
+        ]
+      },
+      {
+        "name_hi": "टोंकखुर्द (Tonk Khurd)",
+        "name_en": "Tonk Khurd",
+        "villages": [
+          "देवली (Deoli)",
+          "चिड़ावद (Chidawad)",
+          "चौबाराधीरा (Chaubaradhira)",
+          "पिपल्यानानकर (Pipliyanankar)",
+          "कलमा (Kalma)"
+        ]
+      },
+      {
+        "name_hi": "बागली (Bagli)",
+        "name_en": "Bagli",
+        "villages": [
+          "चापड़ा (Chapda)",
+          "पुंजापुरा (Punjapura)",
+          "करनावद (Karnawad)",
+          "कमलापुर (Kamlapur)",
+          "उदायनगर (Udaynagar)"
+        ]
+      },
+      {
+        "name_hi": "हाटपीपल्या (Hatpipliya)",
+        "name_en": "Hatpipliya",
+        "villages": [
+          "देवगढ़ (Devgarh)",
+          "मानकुंड (Mankund)",
+          "बरखेड़ा (Barkheda)",
+          "नेवरी (Newari)",
+          "अरनिया (Arniya)"
+        ]
+      },
+      {
+        "name_hi": "कन्नौद (Kannod)",
+        "name_en": "Kannod",
+        "villages": [
+          "पानीगांव (Panigaon)",
+          "ननासा (Nanasa)",
+          "कुसमानिया (Kusmaniya)",
+          "अमझिर (Amjhir)",
+          "डोकरकुई (Dokarkui)"
+        ]
+      },
+      {
+        "name_hi": "खातेगांव (Khategaon)",
+        "name_en": "Khategaon",
+        "villages": [
+          "नेमावर (Nemawar)",
+          "हरणगांव (Harangaon)",
+          "संदलपुर (Sandalpur)",
+          "अजनास (Ajnas)",
+          "तिवारडिया (Tivardiya)"
+        ]
+      },
+      {
+        "name_hi": "सतवास (Satwas)",
+        "name_en": "Satwas",
+        "villages": [
+          "कांटाफोड़ (Kantaphod)",
+          "लोहारदा (Loharda)",
+          "सोनतलाई (Sontalai)",
+          "बरडू (Bardu)",
+          "घटी (Ghati)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ujjain",
+    "name_hi": "उज्जैन (Ujjain)",
+    "name_en": "Ujjain",
+    "division": "Ujjain",
+    "lat": 23.1765,
+    "lon": 75.7885,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, उज्जैन (0734-2512410)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Garlic (लहसुन)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "उज्जैन (Ujjain)",
+        "name_en": "Ujjain",
+        "villages": [
+          "ताजपुर (Tajpur)",
+          "पिपलीया राघौ (Pipliya Ragho)",
+          "नरवर (Narwar)",
+          "चंदूखेड़ी (Chandukhedi)"
+        ]
+      },
+      {
+        "name_hi": "घट्टिया (Ghattia)",
+        "name_en": "Ghattia",
+        "villages": [
+          "पानबिहार (Panbihar)",
+          "उन्हेल (Unhel)",
+          "रुपाखेड़ी (Rupakhedi)"
+        ]
+      },
+      {
+        "name_hi": "तराना (Tarana)",
+        "name_en": "Tarana",
+        "villages": [
+          "माकड़ोन (Makdon)",
+          "कनासिया (Kanasia)",
+          "नांदेड़ (Nanded)"
+        ]
+      },
+      {
+        "name_hi": "महिदपुर (Mahidpur)",
+        "name_en": "Mahidpur",
+        "villages": [
+          "झारड़ा (Jharda)",
+          "राघवी (Raghavi)",
+          "डोंगरखेड़ा (Dongarkheda)"
+        ]
+      },
+      {
+        "name_hi": "नागदा (Nagda)",
+        "name_en": "Nagda",
+        "villages": [
+          "रुपेटा (Rupeta)",
+          "पिपलिया मोल्हू (Pipliya Molhu)",
+          "बेरछा (Berchha)"
+        ]
+      },
+      {
+        "name_hi": "खाचरौद (Khachrod)",
+        "name_en": "Khachrod",
+        "villages": [
+          "मड़ावदा (Madawada)",
+          "कमठाना (Kamthana)",
+          "पानखेड़ी (Pankhedi)"
+        ]
+      },
+      {
+        "name_hi": "बड़नगर (Badnagar)",
+        "name_en": "Badnagar",
+        "villages": [
+          "इंगोरिया (Ingoria)",
+          "खरसोद कलां (Kharsod Kalan)",
+          "जलोदिया (Jalodiya)"
+        ]
+      },
+      {
+        "name_hi": "झारड़ा (Jharda)",
+        "name_en": "Jharda",
+        "villages": [
+          "गोगापुर (Gogapur)",
+          "कंजड़दा (Kanjarda)"
+        ]
+      },
+      {
+        "name_hi": "माकड़ोन (Makdon)",
+        "name_en": "Makdon",
+        "villages": [
+          "दूधिया (Dudhiya)",
+          "कचनारिया (Kachnariya)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "indore",
+    "name_hi": "इंदौर (Indore)",
+    "name_en": "Indore",
+    "division": "Indore",
+    "lat": 22.7196,
+    "lon": 75.8577,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, इंदौर (0731-2534120)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Potato/Garlic (आलू/लहसुन)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "इंदौर (Indore)",
+        "name_en": "Indore",
+        "villages": [
+          "कनाड़िया (Kanadiya)",
+          "पालदा (Palda)",
+          "तिलौर बुजुर्ग (Tilaur Bujurg)"
+        ]
+      },
+      {
+        "name_hi": "महू / डॉ. आंबेडकर नगर (Mhow)",
+        "name_en": "Mhow",
+        "villages": [
+          "मानपुर (Manpur)",
+          "हासलपुर (Hasalpur)",
+          "बड़गोंदा (Badgonda)",
+          "जामली (Jamli)"
+        ]
+      },
+      {
+        "name_hi": "सांवेर (Sanwer)",
+        "name_en": "Sanwer",
+        "villages": [
+          "चंद्रावतीगंज (Chandrawatiganj)",
+          "कुड़ाना (Kudana)",
+          "धर्मपुरी (Dharmapuri)",
+          "अजनोद (Ajnod)"
+        ]
+      },
+      {
+        "name_hi": "देपालपुर (Depalpur)",
+        "name_en": "Depalpur",
+        "villages": [
+          "बेतमा (Betma)",
+          "गौतमपुरा (Gautampura)",
+          "रूणजी (Runji)",
+          "सनावदा (Sanawada)"
+        ]
+      },
+      {
+        "name_hi": "राऊ (Rau)",
+        "name_en": "Rau",
+        "villages": [
+          "रंगवासा (Rangwasa)",
+          "तेजाजी नगर (Tejaji Nagar)",
+          "बिजलपुर (Bijpur)"
+        ]
+      },
+      {
+        "name_hi": "खुड़ैल (Khudail)",
+        "name_en": "Khudail",
+        "villages": [
+          "कम्पेल (Kampel)",
+          "पेमंतपुरा (Pemantpura)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dhar",
+    "name_hi": "धार (Dhar)",
+    "name_en": "Dhar",
+    "division": "Indore",
+    "lat": 22.5986,
+    "lon": 75.2974,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, धार (07292-234710)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Cotton (कपास)",
+      "Wheat (गेहूँ)",
+      "Maize (मक्का)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "धार (Dhar)",
+        "name_en": "Dhar",
+        "villages": [
+          "तिरला (Tirla)",
+          "नालछा (Nalchha)",
+          "मांडू (Mandu)"
+        ]
+      },
+      {
+        "name_hi": "बदनावर (Badnawar)",
+        "name_en": "Badnawar",
+        "villages": [
+          "कानवन (Kanwan)",
+          "बड़नगर रोड (Badnagar Road)",
+          "नागदा (Nagda-Dhar)"
+        ]
+      },
+      {
+        "name_hi": "सरदारपुर (Sardarpur)",
+        "name_en": "Sardarpur",
+        "villages": [
+          "राजगढ़ (Rajgarh-Dhar)",
+          "अमझेरा (Amjhera)",
+          "दसई (Dasai)"
+        ]
+      },
+      {
+        "name_hi": "मनावर (Manawar)",
+        "name_en": "Manawar",
+        "villages": [
+          "सिंघाना (Singhana)",
+          "उमरबन (Umarban)",
+          "बाकानेर (Bakaner)"
+        ]
+      },
+      {
+        "name_hi": "कुक्षी (Kukshi)",
+        "name_en": "Kukshi",
+        "villages": [
+          "डही (Dahi)",
+          "बाग (Bagh)",
+          "निसरपुर (Nisarpur)"
+        ]
+      },
+      {
+        "name_hi": "गंधवानी (Gandhwani)",
+        "name_en": "Gandhwani",
+        "villages": [
+          "बारीया (Bariya)",
+          "खेरवा (Kherwa)"
+        ]
+      },
+      {
+        "name_hi": "धरमपुरी (Dharampuri)",
+        "name_en": "Dharampuri",
+        "villages": [
+          "धामनोद (Dhamnod)",
+          "गुजरी (Gujri)"
+        ]
+      },
+      {
+        "name_hi": "तिरला (Tirla)",
+        "name_en": "Tirla",
+        "villages": [
+          "घोड़ा (Ghora)",
+          "उमरकुआं (Umarkuan)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "raisen",
+    "name_hi": "रायसेन (Raisen)",
+    "name_en": "Raisen",
+    "division": "Bhopal",
+    "lat": 23.3315,
+    "lon": 77.7818,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, रायसेन (07482-222450)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ Sharbati)",
+      "Gram (चना)",
+      "Paddy (धान)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "गैरतगंज (Gairatganj)",
+        "name_en": "Gairatganj",
+        "villages": [
+          "बरखेड़ी (Berkhedi)",
+          "गरही (Garhi)",
+          "देवरी (Deori)",
+          "टेकापार (Tekapar)",
+          "चांदनहेड़ा (Chandanheda)"
+        ]
+      },
+      {
+        "name_hi": "रायसेन (Raisen)",
+        "name_en": "Raisen",
+        "villages": [
+          "सलामतपुर (Salamatpur)",
+          "सांची (Sanchi)",
+          "अमरावद (Amrawad)",
+          "मुगालिया (Mugalia)"
+        ]
+      },
+      {
+        "name_hi": "बेगमगंज (Begamganj)",
+        "name_en": "Begamganj",
+        "villages": [
+          "सुलतानगंज (Sultanganj)",
+          "महुआखेड़ा (Mahuakheda)",
+          "कुचवाड़ा (Kuchwada)"
+        ]
+      },
+      {
+        "name_hi": "सिलवानी (Silwani)",
+        "name_en": "Silwani",
+        "villages": [
+          "बम्होरी (Bamhori)",
+          "जैथारी (Jaithari)",
+          "कुंदम (Kundam)"
+        ]
+      },
+      {
+        "name_hi": "उदयपुरा (Udaipura)",
+        "name_en": "Udaipura",
+        "villages": [
+          "बोरास (Boras)",
+          "देवरी (Deori)",
+          "पिपरिया कलां (Pipariya Kalan)"
+        ]
+      },
+      {
+        "name_hi": "बरेली (Bareli)",
+        "name_en": "Bareli",
+        "villages": [
+          "बगवाड़ा (Bagwada)",
+          "खरगोन (Khargone Village)",
+          "जामगढ़ (Jamgarh)"
+        ]
+      },
+      {
+        "name_hi": "बाड़ी (Badi)",
+        "name_en": "Badi",
+        "villages": [
+          "बकतरा (Baktara)",
+          "भारकछ (Bharkachh)"
+        ]
+      },
+      {
+        "name_hi": "गौहरगंज (Gauhar Ganj)",
+        "name_en": "Gauhar Ganj",
+        "villages": [
+          "ओबेदुल्लागंज (Obedullaganj)",
+          "मंडीदीप (Mandideep)",
+          "भोजपुर (Bhojpur)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vidisha",
+    "name_hi": "विदिशा (Vidisha)",
+    "name_en": "Vidisha",
+    "division": "Bhopal",
+    "lat": 23.5251,
+    "lon": 77.8081,
+    "insurance_company": "SBI General Insurance / AIC",
+    "krishi_officer": "उप संचालक कृषि, विदिशा (07592-232115)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Mustard (सरसों)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "विदिशा (Vidisha)",
+        "name_en": "Vidisha",
+        "villages": [
+          "अहमदपुर (Ahmadpur)",
+          "करिया (Kariya)",
+          "रंगई (Rangai)",
+          "गुलाबगंज (Gulabganj)"
+        ]
+      },
+      {
+        "name_hi": "बासौदा (Ganj Basoda)",
+        "name_en": "Ganj Basoda",
+        "villages": [
+          "उदयपुर (Udaypur)",
+          "त्योंदा (Tyonda)",
+          "हिनोतिया (Hinotiya)"
+        ]
+      },
+      {
+        "name_hi": "कुरवाई (Kurwai)",
+        "name_en": "Kurwai",
+        "villages": [
+          "मंडी बामोरा (Mandi Bamora)",
+          "बरोदिया (Barodiya)"
+        ]
+      },
+      {
+        "name_hi": "सिरोंज (Sironj)",
+        "name_en": "Sironj",
+        "villages": [
+          "मुगलसराय (Mughalsarai)",
+          "दीपनाकलां (Deepnakalan)"
+        ]
+      },
+      {
+        "name_hi": "लटेरी (Lateri)",
+        "name_en": "Lateri",
+        "villages": [
+          "आनंदपुर (Anandpur)",
+          "झिरनिया (Jhirniya)"
+        ]
+      },
+      {
+        "name_hi": "ग्यारसपुर (Gyaraspur)",
+        "name_en": "Gyaraspur",
+        "villages": [
+          "हैदरगढ़ (Haidargarh)",
+          "मानोरा (Manora)"
+        ]
+      },
+      {
+        "name_hi": "शमशाबाद (Shamshabad)",
+        "name_en": "Shamshabad",
+        "villages": [
+          "बरोद (Barod)",
+          "महानीम (Mahanim)"
+        ]
+      },
+      {
+        "name_hi": "नटेरन (Nateran)",
+        "name_en": "Nateran",
+        "villages": [
+          "रावन (Rawan)",
+          "पिपलिया (Pipliya)"
+        ]
+      },
+      {
+        "name_hi": "त्योंदा (Tyonda)",
+        "name_en": "Tyonda",
+        "villages": [
+          "बागरोद (Bagrod)",
+          "गरेठा (Garetha)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sehore",
+    "name_hi": "सीहोर (Sehore)",
+    "name_en": "Sehore",
+    "division": "Bhopal",
+    "lat": 23.2031,
+    "lon": 77.0844,
+    "insurance_company": "HDFC ERGO / AIC",
+    "krishi_officer": "उप संचालक कृषि, सीहोर (07562-224102)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (शरबती गेहूँ)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "सीहोर (Sehore)",
+        "name_en": "Sehore",
+        "villages": [
+          "बिलकिसगंज (Bilkisganj)",
+          "श्यामपुर (Shyampur)",
+          "मोगराराम (Mograram)"
+        ]
+      },
+      {
+        "name_hi": "आष्टा (Ashta)",
+        "name_en": "Ashta",
+        "villages": [
+          "जावर (Jawar)",
+          "कोठरी (Kothri)",
+          "खाचरोद (Khachrod)",
+          "मैना (Maina)"
+        ]
+      },
+      {
+        "name_hi": "इछावर (Ichhawar)",
+        "name_en": "Ichhawar",
+        "villages": [
+          "ब्रिजिशपुर (Brijispur)",
+          "दीवड़िया (Diwadiya)",
+          "लसूडिया (Lasudiya)"
+        ]
+      },
+      {
+        "name_hi": "भेरुंदा / नसरुल्लागंज (Bhairunda)",
+        "name_en": "Bhairunda",
+        "villages": [
+          "लाड़कुई (Ladkui)",
+          "गोपालपुर (Gopalpur)",
+          "छिपानेर (Chhipaner)"
+        ]
+      },
+      {
+        "name_hi": "बुधनी (Budhni)",
+        "name_en": "Budhni",
+        "villages": [
+          "शाहगंज (Shahganj)",
+          "बकतरा (Baktara)",
+          "जोशीपुर (Joshipur)"
+        ]
+      },
+      {
+        "name_hi": "जावर (Jawar)",
+        "name_en": "Jawar",
+        "villages": [
+          "हाटपिपल्या रोड (Hatpipliya Road)",
+          "डोडी (Dodi)"
+        ]
+      },
+      {
+        "name_hi": "श्यामपुर (Shyampur)",
+        "name_en": "Shyampur",
+        "villages": [
+          "दौराहा (Doraha)",
+          "अहमदपुर रोड (Ahmadpur Road)"
+        ]
+      },
+      {
+        "name_hi": "रेहटी (Rehti)",
+        "name_en": "Rehti",
+        "villages": [
+          "सलकनपुर (Salkanpur)",
+          "बमूलिया (Bamulia)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bhopal",
+    "name_hi": "भोपाल (Bhopal)",
+    "name_en": "Bhopal",
+    "division": "Bhopal",
+    "lat": 23.2599,
+    "lon": 77.4126,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, भोपाल (0755-2540112)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Vegetables (सब्जियां)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "हुजूर (Huzur)",
+        "name_en": "Huzur",
+        "villages": [
+          "खजूरी सड़क (Khajuri Sadak)",
+          "सूखी सेवनिया (Sukhi Sewaniya)",
+          "रातीबड़ (Ratibad)",
+          "फंदा (Phanda)"
+        ]
+      },
+      {
+        "name_hi": "बैरसिया (Berasia)",
+        "name_en": "Berasia",
+        "villages": [
+          "नजीराबाद (Nazirabad)",
+          "गुनगा (Gunga)",
+          "ललारिया (Lalariya)",
+          "धर्मा (Dharma)"
+        ]
+      },
+      {
+        "name_hi": "कोलार (Kolar)",
+        "name_en": "Kolar",
+        "villages": [
+          "गोल (Gol)",
+          "समसगढ़ (Samasgarh)",
+          "बरखेड़ी खुर्द (Barkhedi Khurd)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rajgarh",
+    "name_hi": "राजगढ़ (Rajgarh)",
+    "name_en": "Rajgarh",
+    "division": "Bhopal",
+    "lat": 24.0064,
+    "lon": 76.7297,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, राजगढ़ (07372-255140)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Orange/Citrus (संतरा)",
+      "Wheat (गेहूँ)",
+      "Mustard (सरसों)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "राजगढ़ (Rajgarh)",
+        "name_en": "Rajgarh",
+        "villages": [
+          "खुजनेर (Khujner)",
+          "माचलपुर (Machalpur)",
+          "कालीपीठ (Kalipith)"
+        ]
+      },
+      {
+        "name_hi": "ब्यावरा (Biaora)",
+        "name_en": "Biaora",
+        "villages": [
+          "मलावर (Malawar)",
+          "सुठालिया (Suthaliya)",
+          "पड़ाना (Padana)"
+        ]
+      },
+      {
+        "name_hi": "नरसिंहगढ़ (Narsinghgarh)",
+        "name_en": "Narsinghgarh",
+        "villages": [
+          "कुरावर (Kurawar)",
+          "बोड़ा (Boda)",
+          "इकलेरा (Iklera)"
+        ]
+      },
+      {
+        "name_hi": "सारंगपुर (Sarangpur)",
+        "name_en": "Sarangpur",
+        "villages": [
+          "तलेन (Talen)",
+          "पचोर (Pachore)",
+          "लीलखेड़ी (Leelkhedi)"
+        ]
+      },
+      {
+        "name_hi": "खिलचीपुर (Khilchipur)",
+        "name_en": "Khilchipur",
+        "villages": [
+          "छापीहेड़ा (Chhapiheda)",
+          "जीरापुर (Jirapur)",
+          "भोजपुर (Bhojpur)"
+        ]
+      },
+      {
+        "name_hi": "जीरापुर (Jirapur)",
+        "name_en": "Jirapur",
+        "villages": [
+          "माचलपुर (Machalpur)",
+          "पीपल्या (Pipliya)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shajapur",
+    "name_hi": "शाजापुर (Shajapur)",
+    "name_en": "Shajapur",
+    "division": "Ujjain",
+    "lat": 23.4268,
+    "lon": 76.2778,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, शाजापुर (07364-222315)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Onion/Garlic (प्याज/लहसुन)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "शाजापुर (Shajapur)",
+        "name_en": "Shajapur",
+        "villages": [
+          "बेरछा (Berchha)",
+          "मोमन बड़ोदिया (Moman Badodiya)",
+          "दुपाड़ा (Dupada)"
+        ]
+      },
+      {
+        "name_hi": "शुजालपुर (Shujalpur)",
+        "name_en": "Shujalpur",
+        "villages": [
+          "अकोदिया (Akodia)",
+          "मंडी शुजालपुर (Mandi Shujalpur)",
+          "भीलखेड़ी (Bhilkhedi)"
+        ]
+      },
+      {
+        "name_hi": "कालापीपल (Kalapipal)",
+        "name_en": "Kalapipal",
+        "villages": [
+          "पोलायकलां (Polay Kalan)",
+          "खोखराकलां (Khokhrakalan)",
+          "बेरछा रोड (Berchha Road)"
+        ]
+      },
+      {
+        "name_hi": "मोमन बड़ोदिया (Moman Badodiya)",
+        "name_en": "Moman Badodiya",
+        "villages": [
+          "तिलर (Tilar)",
+          "खेरखेड़ी (Kherkhedi)"
+        ]
+      },
+      {
+        "name_hi": "पोलायकलां (Polay Kalan)",
+        "name_en": "Polay Kalan",
+        "villages": [
+          "अरनिया (Arniya)",
+          "धर्मा (Dharma)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "agar_malwa",
+    "name_hi": "आगर मालवा (Agar Malwa)",
+    "name_en": "Agar Malwa",
+    "division": "Ujjain",
+    "lat": 23.7126,
+    "lon": 76.0152,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, आगर मालवा (07362-259110)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Orange (संतरा)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "आगर (Agar)",
+        "name_en": "Agar",
+        "villages": [
+          "कानड़ (Kanad)",
+          "तनोड़िया (Tanodiya)",
+          "घुरसिया (Ghursiya)"
+        ]
+      },
+      {
+        "name_hi": "बड़ौद (Barod)",
+        "name_en": "Barod",
+        "villages": [
+          "बिजनाखेड़ी (Bijnakhedi)",
+          "पिपलिया (Pipliya)"
+        ]
+      },
+      {
+        "name_hi": "सुसनेर (Susner)",
+        "name_en": "Susner",
+        "villages": [
+          "सोयतकलां (Soyatkalan)",
+          "मोड़ी (Modi)"
+        ]
+      },
+      {
+        "name_hi": "नलखेड़ा (Nalkheda)",
+        "name_en": "Nalkheda",
+        "villages": [
+          "बड़ागांव (Badagaon)",
+          "पिलवास (Pilwas)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ratlam",
+    "name_hi": "रतलाम (Ratlam)",
+    "name_en": "Ratlam",
+    "division": "Ujjain",
+    "lat": 23.3315,
+    "lon": 75.0367,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, रतलाम (07412-270410)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Garlic (लहसुन)",
+      "Onion (प्याज)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "रतलाम (Ratlam)",
+        "name_en": "Ratlam",
+        "villages": [
+          "धौंसवास (Dhonswas)",
+          "बिलपांक (Bilpank)",
+          "नामली (Namli)"
+        ]
+      },
+      {
+        "name_hi": "जावरा (Jaora)",
+        "name_en": "Jaora",
+        "villages": [
+          "पिप्लोदा (Piploda)",
+          "बड़ावदा (Barawada)",
+          "रिछा (Richha)"
+        ]
+      },
+      {
+        "name_hi": "आलोट (Alot)",
+        "name_en": "Alot",
+        "villages": [
+          "ताल (Tal)",
+          "बरखेड़ा कलां (Barkheda Kalan)"
+        ]
+      },
+      {
+        "name_hi": "सैलाना (Sailana)",
+        "name_en": "Sailana",
+        "villages": [
+          "शिवगढ़ (Shivgarh)",
+          "सरवन (Sarwan)"
+        ]
+      },
+      {
+        "name_hi": "बाजना (Bajna)",
+        "name_en": "Bajna",
+        "villages": [
+          "रावटी (Rawati)",
+          "कुंदनपुर (Kundanpur)"
+        ]
+      },
+      {
+        "name_hi": "पिपलौदा (Piploda)",
+        "name_en": "Piploda",
+        "villages": [
+          "सुखेड़ा (Sukheda)",
+          "मावता (Mawta)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mandsaur",
+    "name_hi": "मंदसौर (Mandsaur)",
+    "name_en": "Mandsaur",
+    "division": "Ujjain",
+    "lat": 24.0723,
+    "lon": 75.0683,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, मंदसौर (07422-255310)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Garlic (लहसुन - देश की सबसे बड़ी मंडी)",
+      "Soybean (सोयाबीन)",
+      "Mustard (सरसों)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "मंदसौर (Mandsaur)",
+        "name_en": "Mandsaur",
+        "villages": [
+          "दलोदा (Daloda)",
+          "पिपलिया मंडी (Pipliya Mandi)",
+          "धुंधड़का (Dhundhadka)"
+        ]
+      },
+      {
+        "name_hi": "मल्हारगढ़ (Malhargarh)",
+        "name_en": "Malhargarh",
+        "villages": [
+          "नारायणगढ़ (Narayangarh)",
+          "बुढ़ा (Budha)"
+        ]
+      },
+      {
+        "name_hi": "गरोठ (Garoth)",
+        "name_en": "Garoth",
+        "villages": [
+          "बोलिया (Boliya)",
+          "शामगढ़ (Shamgarh)"
+        ]
+      },
+      {
+        "name_hi": "शामगढ़ (Shamgarh)",
+        "name_en": "Shamgarh",
+        "villages": [
+          "चन्दवासा (Chandwasa)",
+          "मेलखेड़ा (Melkheda)"
+        ]
+      },
+      {
+        "name_hi": "भानपुरा (Bhanpura)",
+        "name_en": "Bhanpura",
+        "villages": [
+          "गांधीसागर (Gandhisagar)",
+          "कैथौली (Kaitholi)"
+        ]
+      },
+      {
+        "name_hi": "सुवासरा (Suwasra)",
+        "name_en": "Suwasra",
+        "villages": [
+          "बसई (Basai)",
+          "रूणीजा (Runija)"
+        ]
+      },
+      {
+        "name_hi": "सीतामऊ (Sitamau)",
+        "name_en": "Sitamau",
+        "villages": [
+          "लदूना (Ladoona)",
+          "बेलारा (Belara)"
+        ]
+      },
+      {
+        "name_hi": "दलोदा (Daloda)",
+        "name_en": "Daloda",
+        "villages": [
+          "फतेहगढ़ (Fatehgarh)",
+          "कचनारा (Kachnara)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "neemuch",
+    "name_hi": "नीमच (Neemuch)",
+    "name_en": "Neemuch",
+    "division": "Ujjain",
+    "lat": 24.4727,
+    "lon": 74.8703,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, नीमच (07423-228140)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Medicinal/Ashwagandha (अश्वगंधा)",
+      "Mustard (सरसों)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "नीमच (Neemuch)",
+        "name_en": "Neemuch",
+        "villages": [
+          "जीरन (Jeeran)",
+          "कनावटी (Kanawati)",
+          "बघाना (Baghana)"
+        ]
+      },
+      {
+        "name_hi": "जावद (Jawad)",
+        "name_en": "Jawad",
+        "villages": [
+          "मोरवन (Morwan)",
+          "नयागांव (Nayagaon)",
+          "अठाना (Athana)"
+        ]
+      },
+      {
+        "name_hi": "मनासा (Manasa)",
+        "name_en": "Manasa",
+        "villages": [
+          "कुकड़ेश्वर (Kukdeshwar)",
+          "रामपुरा (Rampura)",
+          "कंजर्दा (Kanjarda)"
+        ]
+      },
+      {
+        "name_hi": "सिंगोली (Singoli)",
+        "name_en": "Singoli",
+        "villages": [
+          "झांतला (Jhantla)",
+          "धनगांव (Dhangaon)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "khargone",
+    "name_hi": "खरगोन / पश्चिम निमाड़ (Khargone)",
+    "name_en": "Khargone",
+    "division": "Indore",
+    "lat": 21.8236,
+    "lon": 75.6105,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, खरगोन (07282-232145)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Cotton (कपास - सफेद सोना)",
+      "Chilli (लाल मिर्च - बेड़िया मंडी)",
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "खरगोन (Khargone)",
+        "name_en": "Khargone",
+        "villages": [
+          "बिस्टान (Bistan)",
+          "बामखल (Bamkhal)",
+          "ऊन (Oon)",
+          "मेंगांव (Mengao)"
+        ]
+      },
+      {
+        "name_hi": "बड़वाह (Barwaha)",
+        "name_en": "Barwaha",
+        "villages": [
+          "सनावद (Sanawad)",
+          "काटकूट (Katkut)",
+          "बेड़िया (Bedia)"
+        ]
+      },
+      {
+        "name_hi": "महेश्वर (Maheshwar)",
+        "name_en": "Maheshwar",
+        "villages": [
+          "मंडलेश्वर (Mandleshwar)",
+          "करही (Karhi)",
+          "धमनोद रोड (Dhamnod Road)"
+        ]
+      },
+      {
+        "name_hi": "कसरावद (Kasrawad)",
+        "name_en": "Kasrawad",
+        "villages": [
+          "खलघाट (Khalghat)",
+          "निमरानी (Nimrani)",
+          "दोगांवा (Dogawa)"
+        ]
+      },
+      {
+        "name_hi": "भीकनगांव (Bhikangaon)",
+        "name_en": "Bhikangaon",
+        "villages": [
+          "झिरन्या (Jhirnya)",
+          "चैनपुर (Chainpur)",
+          "रोड़गांव (Rodgaon)"
+        ]
+      },
+      {
+        "name_hi": "गोगावां (Gogawan)",
+        "name_en": "Gogawan",
+        "villages": [
+          "दसंगा (Dasanga)",
+          "मिरजापुर (Mirzapur)"
+        ]
+      },
+      {
+        "name_hi": "भगवानपुरा (Bhagwanpura)",
+        "name_en": "Bhagwanpura",
+        "villages": [
+          "धूलकोट (Dhulkot)",
+          "सिरवेल (Sirwel)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "khandwa",
+    "name_hi": "खण्डवा / पूर्वी निमाड़ (Khandwa)",
+    "name_en": "Khandwa",
+    "division": "Indore",
+    "lat": 21.8297,
+    "lon": 76.3504,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, खण्डवा (07332-223405)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Cotton (कपास)",
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "खण्डवा (Khandwa)",
+        "name_en": "Khandwa",
+        "villages": [
+          "सिंगोट (Singot)",
+          "जावर (Jawar)",
+          "छैगांवमाखन (Chhaigaon Makhan)"
+        ]
+      },
+      {
+        "name_hi": "पंधाना (Pandhana)",
+        "name_en": "Pandhana",
+        "villages": [
+          "रूधी (Rudhi)",
+          "डोंगरगांव (Dongargaon)",
+          "गांधवा (Gandhwa)"
+        ]
+      },
+      {
+        "name_hi": "पुनासा (Punasa)",
+        "name_en": "Punasa",
+        "villages": [
+          "ओंकारेश्वर (Omkareshwar)",
+          "मूंदी (Mundi)",
+          "नर्मदानगर (Narmadanagar)"
+        ]
+      },
+      {
+        "name_hi": "हरसूद (Harsud)",
+        "name_en": "Harsud",
+        "villages": [
+          "छनेरा (Chhanera)",
+          "किलोद (Killod)",
+          "बरूर (Barur)"
+        ]
+      },
+      {
+        "name_hi": "खालवा (Khalwa)",
+        "name_en": "Khalwa",
+        "villages": [
+          "रोशनी (Roshni)",
+          "सुंदरदेव (Sundardev)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "barwani",
+    "name_hi": "बड़वानी (Barwani)",
+    "name_en": "Barwani",
+    "division": "Indore",
+    "lat": 22.0366,
+    "lon": 74.9015,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, बड़वानी (07290-222130)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Cotton (कपास)",
+      "Soybean (सोयाबीन)",
+      "Banana (केला)",
+      "Maize (मक्का)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "बड़वानी (Barwani)",
+        "name_en": "Barwani",
+        "villages": [
+          "सिल्दावद (Sildawad)",
+          "तलून (Talun)",
+          "कसरावद कलां (Kasrawad Kalan)"
+        ]
+      },
+      {
+        "name_hi": "सेंधवा (Sendhwa)",
+        "name_en": "Sendhwa",
+        "villages": [
+          "धनोरा (Dhanora)",
+          "चाचरीया (Chachariya)",
+          "बालसमुद (Balsamud)"
+        ]
+      },
+      {
+        "name_hi": "राजपुर (Rajpur)",
+        "name_en": "Rajpur",
+        "villages": [
+          "पलसूद (Palsud)",
+          "जुलवानिया (Julwaniya)",
+          "ओझर (Ojhar)"
+        ]
+      },
+      {
+        "name_hi": "अंजड़ (Anjad)",
+        "name_en": "Anjad",
+        "villages": [
+          "मंडवाड़ा (Mandwada)",
+          "खापरखेड़ा (Khaparkheda)"
+        ]
+      },
+      {
+        "name_hi": "पानसेमल (Pansemal)",
+        "name_en": "Pansemal",
+        "villages": [
+          "खेतिया (Khetia)",
+          "कानसुल (Kansul)"
+        ]
+      },
+      {
+        "name_hi": "निवाली (Niwali)",
+        "name_en": "Niwali",
+        "villages": [
+          "बड़ागांव (Badagaon)",
+          "चिखली (Chikhli)"
+        ]
+      },
+      {
+        "name_hi": "पाटी (Pati)",
+        "name_en": "Pati",
+        "villages": [
+          "बोकराटा (Bokrata)",
+          "गांधावल (Gandhawal)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "burhanpur",
+    "name_hi": "बुरहानपुर (Burhanpur)",
+    "name_en": "Burhanpur",
+    "division": "Indore",
+    "lat": 21.3144,
+    "lon": 76.2299,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, बुरहानपुर (07325-242180)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Banana (केला)",
+      "Cotton (कपास)",
+      "Sugarcane (गन्ना)",
+      "Soybean (सोयाबीन)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "बुरहानपुर (Burhanpur)",
+        "name_en": "Burhanpur",
+        "villages": [
+          "शाहपुर (Shahpur)",
+          "लालबाग (Lalbagh)",
+          "असीरगढ़ (Asirgarh)"
+        ]
+      },
+      {
+        "name_hi": "नेपानगर (Nepanagar)",
+        "name_en": "Nepanagar",
+        "villages": [
+          "चांदनी (Chandni)",
+          "डोंगरगांव (Dongargaon)"
+        ]
+      },
+      {
+        "name_hi": "खकनार (Khaknarf)",
+        "name_en": "Khaknarf",
+        "villages": [
+          "धुलकोट (Dhulkot)",
+          "देढ़तलाई (Dedhtalai)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "alirajpur",
+    "name_hi": "अलीराजपुर (Alirajpur)",
+    "name_en": "Alirajpur",
+    "division": "Indore",
+    "lat": 22.306,
+    "lon": 74.3547,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, अलीराजपुर (07394-233140)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Maize (मक्का)",
+      "Soybean (सोयाबीन)",
+      "Gram (चना)",
+      "Noorjahan Mango (नूरजहाँ आम)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "अलीराजपुर (Alirajpur)",
+        "name_en": "Alirajpur",
+        "villages": [
+          "नानपुर (Nanpur)",
+          "चांदपुर (Chandpur)"
+        ]
+      },
+      {
+        "name_hi": "जोबट (Jobat)",
+        "name_en": "Jobat",
+        "villages": [
+          "बड़ी खट्टाली (Badi Khattali)",
+          "उदयगढ़ (Udaygarh)"
+        ]
+      },
+      {
+        "name_hi": "भाभरा / आज़ादनगर (Bhabhra)",
+        "name_en": "Bhabhra",
+        "villages": [
+          "बरझर (Barjhar)",
+          "सीतावत (Sitawat)"
+        ]
+      },
+      {
+        "name_hi": "सोंडवा (Sondwa)",
+        "name_en": "Sondwa",
+        "villages": [
+          "बखतगढ़ (Bakhatgarh)",
+          "उमराली (Umrali)"
+        ]
+      },
+      {
+        "name_hi": "कट्ठीवाड़ा (Katthiwada)",
+        "name_en": "Katthiwada",
+        "villages": [
+          "अंबाबाड़ी (Ambabadi)",
+          "छकतला (Chhaktala)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jhabua",
+    "name_hi": "झाबुआ (Jhabua)",
+    "name_en": "Jhabua",
+    "division": "Indore",
+    "lat": 22.7698,
+    "lon": 74.5957,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, झाबुआ (07392-243210)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Maize (मक्का)",
+      "Soybean (सोयाबीन)",
+      "Cotton (कपास)",
+      "Kadaknath (कड़कनाथ क्षेत्र)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "झाबुआ (Jhabua)",
+        "name_en": "Jhabua",
+        "villages": [
+          "कल्याणपुरा (Kalyanpura)",
+          "कुंदनपुर (Kundanpur)"
+        ]
+      },
+      {
+        "name_hi": "राणापुर (Ranapur)",
+        "name_en": "Ranapur",
+        "villages": [
+          "झाबुआ रोड (Jhabua Road)",
+          "समसोई (Samsoi)"
+        ]
+      },
+      {
+        "name_hi": "थांदला (Thandla)",
+        "name_en": "Thandla",
+        "villages": [
+          "खवासा (Khawasa)",
+          "परवलिया (Parwaliya)"
+        ]
+      },
+      {
+        "name_hi": "पेटलावद (Petlawad)",
+        "name_en": "Petlawad",
+        "villages": [
+          "रायपुरिया (Raipuriya)",
+          "बावड़ी (Bawadi)",
+          "सारंगी (Sarangi)"
+        ]
+      },
+      {
+        "name_hi": "मेघनगर (Meghnagar)",
+        "name_en": "Meghnagar",
+        "villages": [
+          "रंभापुर (Rambhapur)",
+          "मदनकुई (Madankui)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gwalior",
+    "name_hi": "ग्वालियर (Gwalior)",
+    "name_en": "Gwalior",
+    "division": "Gwalior",
+    "lat": 26.2183,
+    "lon": 78.1828,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, ग्वालियर (0751-2445120)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Mustard (सरसों)",
+      "Wheat (गेहूँ)",
+      "Paddy (धान)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "ग्वालियर (Gwalior)",
+        "name_en": "Gwalior",
+        "villages": [
+          "हस्तिनापुर (Hastinapur)",
+          "महाराजपुरा (Maharajpura)",
+          "बड़ागांव (Badagaon)"
+        ]
+      },
+      {
+        "name_hi": "डबरा (Dabra)",
+        "name_en": "Dabra",
+        "villages": [
+          "पिछोर-डबरा (Pichhore-Dabra)",
+          "बिलौआ (Biloua)",
+          "चांदपुर (Chandpur)"
+        ]
+      },
+      {
+        "name_hi": "भितरवार (Bhitarwar)",
+        "name_en": "Bhitarwar",
+        "villages": [
+          "करहिया (Karahiya)",
+          "हरसी (Harsi)",
+          "मोहनगढ़ (Mohangarh)"
+        ]
+      },
+      {
+        "name_hi": "घाटीगांव (Ghatigaon)",
+        "name_en": "Ghatigaon",
+        "villages": [
+          "बरई (Barai)",
+          "मोहना (Mohana)",
+          "पनिहार (Panihar)"
+        ]
+      },
+      {
+        "name_hi": "चीनौर (Chinour)",
+        "name_en": "Chinour",
+        "villages": [
+          "बनवार (Banwar)",
+          "गोहींदा (Gohinda)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shivpuri",
+    "name_hi": "शिवपुरी (Shivpuri)",
+    "name_en": "Shivpuri",
+    "division": "Gwalior",
+    "lat": 25.4319,
+    "lon": 77.6599,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, शिवपुरी (07492-223120)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Groundnut (मूंगफली)",
+      "Mustard (सरसों)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "शिवपुरी (Shivpuri)",
+        "name_en": "Shivpuri",
+        "villages": [
+          "सतनवाड़ा (Satanwada)",
+          "सिरसौद (Sirsod)"
+        ]
+      },
+      {
+        "name_hi": "कोलारस (Kolaras)",
+        "name_en": "Kolaras",
+        "villages": [
+          "लुकवासा (Lukwasa)",
+          "रन्नौद (Rannod)",
+          "मगरौनी (M协同)"
+        ]
+      },
+      {
+        "name_hi": "करेरा (Karera)",
+        "name_en": "Karera",
+        "villages": [
+          "दिनारा (Dinara)",
+          "सिहोर (Sihor)"
+        ]
+      },
+      {
+        "name_hi": "पिछोर (Pichhore)",
+        "name_en": "Pichhore",
+        "villages": [
+          "भौंती (Bhonti)",
+          "मनपुरा (Manpura)"
+        ]
+      },
+      {
+        "name_hi": "पोहरी (Pohri)",
+        "name_en": "Pohri",
+        "villages": [
+          "बैराड़ (Bairad)",
+          "भटनावर (Bhatnawar)"
+        ]
+      },
+      {
+        "name_hi": "नरवर (Narwar)",
+        "name_en": "Narwar",
+        "villages": [
+          "मगरौनी (M协同aroni)",
+          "करैरा रोड (Karera Road)"
+        ]
+      },
+      {
+        "name_hi": "बदरवास (Badarwas)",
+        "name_en": "Badarwas",
+        "villages": [
+          "ईश्वरपुर (Ishwarpur)",
+          "सुमावली (Sumawali)"
+        ]
+      },
+      {
+        "name_hi": "खनियाधाना (Khaniyadhana)",
+        "name_en": "Khaniyadhana",
+        "villages": [
+          "मायापुर (Mayapur)",
+          "अछरौनी (Achhroni)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "guna",
+    "name_hi": "गुना (Guna)",
+    "name_en": "Guna",
+    "division": "Gwalior",
+    "lat": 24.6469,
+    "lon": 77.3113,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, गुना (07542-252110)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Coriander (धनिया - कुंभराज मंडी)",
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Mustard (सरसों)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "गुना (Guna)",
+        "name_en": "Guna",
+        "villages": [
+          "बजरंगगढ़ (Bajranggarh)",
+          "म्याना (Myana)",
+          "पगरा (Pagra)"
+        ]
+      },
+      {
+        "name_hi": "राघौगढ़ (Raghogarh)",
+        "name_en": "Raghogarh",
+        "villages": [
+          "रुठियाई (Ruthiyai)",
+          "विजयपुर (Vijaypur)"
+        ]
+      },
+      {
+        "name_hi": "चाचौड़ा (Chachaura)",
+        "name_en": "Chachaura",
+        "villages": [
+          "बीनागंज (Binaganj)",
+          "खटोली (Khatoli)"
+        ]
+      },
+      {
+        "name_hi": "आरोन (Aron)",
+        "name_en": "Aron",
+        "villages": [
+          "पनवाड़ी (Panwadi)",
+          "सिरसी (Sirsi)"
+        ]
+      },
+      {
+        "name_hi": "कुंभराज (Kumbhraj)",
+        "name_en": "Kumbhraj",
+        "villages": [
+          "मृगवास (Mrigwas)",
+          "धनिया मंडी क्षेत्र (Coriander Hub)"
+        ]
+      },
+      {
+        "name_hi": "बमोरी (Bamori)",
+        "name_en": "Bamori",
+        "villages": [
+          "फतेहगढ़ (Fatehgarh)",
+          "झागर (Jhagar)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ashoknagar",
+    "name_hi": "अशोकनगर (Ashoknagar)",
+    "name_en": "Ashoknagar",
+    "division": "Gwalior",
+    "lat": 24.5779,
+    "lon": 77.7289,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, अशोकनगर (07543-228140)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Sharbati Wheat (शरबती गेहूँ - जीआई टैग)",
+      "Soybean (सोयाबीन)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "अशोकनगर (Ashoknagar)",
+        "name_en": "Ashoknagar",
+        "villages": [
+          "शाढौरा (Shadora)",
+          "सेहराई (Sehrai)",
+          "कचनार (Kachnar)"
+        ]
+      },
+      {
+        "name_hi": "चंदेरी (Chanderi)",
+        "name_en": "Chanderi",
+        "villages": [
+          "प्राणपुर (Pranpur)",
+          "विक्रमपुर (Vikrampur)"
+        ]
+      },
+      {
+        "name_hi": "ईसागढ़ (Isagarh)",
+        "name_en": "Isagarh",
+        "villages": [
+          "ढाकोनी (Dhakoni)",
+          "कदवाया (Kadwaya)"
+        ]
+      },
+      {
+        "name_hi": "मुंगावली (Mungaoli)",
+        "name_en": "Mungaoli",
+        "villages": [
+          "पिपराई (Piparai)",
+          "बहादुरपुर (Bahadurpur)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "datia",
+    "name_hi": "दतिया (Datia)",
+    "name_en": "Datia",
+    "division": "Gwalior",
+    "lat": 25.6685,
+    "lon": 78.4608,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, दतिया (07522-234510)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Mustard (सरसों)",
+      "Paddy (धान)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "दतिया (Datia)",
+        "name_en": "Datia",
+        "villages": [
+          "बड़ौनी (Badoni)",
+          "उनाव (Unao)",
+          "बसई (Basai)"
+        ]
+      },
+      {
+        "name_hi": "सेंवड़ा (Seondha)",
+        "name_en": "Seondha",
+        "villages": [
+          "सनकुआं (Sankua)",
+          "थरेट (Tharet)"
+        ]
+      },
+      {
+        "name_hi": "इंदरगढ़ (Indergarh)",
+        "name_en": "Indergarh",
+        "villages": [
+          "भांडेर रोड (Bhander Road)",
+          "धीरू (Dhiru)"
+        ]
+      },
+      {
+        "name_hi": "भांडेर (Bhander)",
+        "name_en": "Bhander",
+        "villages": [
+          "सोहन (Sohan)",
+          "सरसई (Sarsai)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "morena",
+    "name_hi": "मुरैना (Morena)",
+    "name_en": "Morena",
+    "division": "Chambal",
+    "lat": 26.495,
+    "lon": 77.994,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, मुरैना (07532-232140)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Mustard (सरसों - चंबल का पीला सोना)",
+      "Bajra (बाजरा)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "मुरैना (Morena)",
+        "name_en": "Morena",
+        "villages": [
+          "बानमोर (Banmore)",
+          "नूराबाद (Noorabad)",
+          "रिठौरा (Rithora)"
+        ]
+      },
+      {
+        "name_hi": "अंबाह (Ambah)",
+        "name_en": "Ambah",
+        "villages": [
+          "रुसिंघा (Rusingha)",
+          "पोरसा रोड (Porsa Road)"
+        ]
+      },
+      {
+        "name_hi": "पोरसा (Porsa)",
+        "name_en": "Porsa",
+        "villages": [
+          "नगरा (Nagra)",
+          "धर्मगढ़ (Dharmgarh)"
+        ]
+      },
+      {
+        "name_hi": "जौरा (Joura)",
+        "name_en": "Joura",
+        "villages": [
+          "पगारा (Pagara)",
+          "कैलारस रोड (Kailaras Road)"
+        ]
+      },
+      {
+        "name_hi": "सबलगढ़ (Sabalgarh)",
+        "name_en": "Sabalgarh",
+        "villages": [
+          "रामपुर (Rampur)",
+          "टेंटरा (Tentra)"
+        ]
+      },
+      {
+        "name_hi": "कैलारस (Kailaras)",
+        "name_en": "Kailaras",
+        "villages": [
+          "नेपरी (Nepari)",
+          "कुतघान (Kutghan)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bhind",
+    "name_hi": "भिंड (Bhind)",
+    "name_en": "Bhind",
+    "division": "Chambal",
+    "lat": 26.5644,
+    "lon": 78.7844,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, भिंड (07534-242310)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Mustard (सरसों)",
+      "Bajra (बाजरा)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "भिंड (Bhind)",
+        "name_en": "Bhind",
+        "villages": [
+          "उमरी (Umri)",
+          "फूप (Phoop)",
+          "अकोड़ा (Akoda)"
+        ]
+      },
+      {
+        "name_hi": "गोहद (Gohad)",
+        "name_en": "Gohad",
+        "villages": [
+          "मालनपुर (Malanpur)",
+          "एंडोरी (Endori)"
+        ]
+      },
+      {
+        "name_hi": "मेहगांव (Mehgaon)",
+        "name_en": "Mehgaon",
+        "villages": [
+          "गोरमी (Gormi)",
+          "सोनी (Soni)"
+        ]
+      },
+      {
+        "name_hi": "लहार (Lahar)",
+        "name_en": "Lahar",
+        "villages": [
+          "दबोह (Daboh)",
+          "आलमपुर (Alampur)"
+        ]
+      },
+      {
+        "name_hi": "अटेर (Ater)",
+        "name_en": "Ater",
+        "villages": [
+          "चौमहो (Chomaho)",
+          "खिपौना (Khipauna)"
+        ]
+      },
+      {
+        "name_hi": "रौन (Roun)",
+        "name_en": "Roun",
+        "villages": [
+          "मिहोना (Mihona)",
+          "इंद्राखी (Indrakhi)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sheopur",
+    "name_hi": "श्योपुर (Sheopur)",
+    "name_en": "Sheopur",
+    "division": "Chambal",
+    "lat": 25.6685,
+    "lon": 76.6963,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, श्योपुर (07530-221150)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Mustard (सरसों)",
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Soybean (सोयाबीन)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "श्योपुर (Sheopur)",
+        "name_en": "Sheopur",
+        "villages": [
+          "मानपुर (Manpur)",
+          "दांतरदा (Dantarda)"
+        ]
+      },
+      {
+        "name_hi": "बड़ौदा (Baroda)",
+        "name_en": "Baroda",
+        "villages": [
+          "पांडोला (Pandola)",
+          "सोइंकलां (Soinkalan)"
+        ]
+      },
+      {
+        "name_hi": "विजयपुर (Vijaypur)",
+        "name_en": "Vijaypur",
+        "villages": [
+          "वीरपुर (Veerpur)",
+          "गसवानी (Gaswani)"
+        ]
+      },
+      {
+        "name_hi": "कराहल (Karahal)",
+        "name_en": "Karahal",
+        "villages": [
+          "सेमल्दा (Semalda)",
+          "गोरस (Goras)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sagar",
+    "name_hi": "सागर (Sagar)",
+    "name_en": "Sagar",
+    "division": "Sagar",
+    "lat": 23.8388,
+    "lon": 78.7378,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, सागर (07582-222310)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Lentil/Masoor (मसूर)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "सागर (Sagar)",
+        "name_en": "Sagar",
+        "villages": [
+          "मकरोनिया (Makroniya)",
+          "जैसीनगर (Jaisinagar)",
+          "कर्रापुर (Karrapur)"
+        ]
+      },
+      {
+        "name_hi": "बीना (Bina)",
+        "name_en": "Bina",
+        "villages": [
+          "भानगढ़ (Bhangarh)",
+          "मंडी बामोरा (Mandi Bamora)",
+          "आगासोद (Agasod)"
+        ]
+      },
+      {
+        "name_hi": "खुरई (Khurai)",
+        "name_en": "Khurai",
+        "villages": [
+          "मालथौन (Malthone)",
+          "बांदरी (Bandri)"
+        ]
+      },
+      {
+        "name_hi": "रहली (Rehli)",
+        "name_en": "Rehli",
+        "villages": [
+          "गढ़ाकोटा (Gadhakota)",
+          "चांदपुर (Chandpur)"
+        ]
+      },
+      {
+        "name_hi": "बंडा (Banda)",
+        "name_en": "Banda",
+        "villages": [
+          "शाहगढ़ (Shahgarh)",
+          "दलपतपुर (Dalpatpur)"
+        ]
+      },
+      {
+        "name_hi": "देवरी (Deori)",
+        "name_en": "Deori",
+        "villages": [
+          "केसली (Kesli)",
+          "गौरझामर (Gourjhamar)"
+        ]
+      },
+      {
+        "name_hi": "राहतगढ़ (Rahatgarh)",
+        "name_en": "Rahatgarh",
+        "villages": [
+          "सिहोरा (Sihora)",
+          "बेगमगंज रोड (Begamganj Road)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "damoh",
+    "name_hi": "दमोह (Damoh)",
+    "name_en": "Damoh",
+    "division": "Sagar",
+    "lat": 23.8323,
+    "lon": 79.442,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, दमोह (07812-224130)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Gram (चना)",
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Paddy (धान)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "दमोह (Damoh)",
+        "name_en": "Damoh",
+        "villages": [
+          "बांदकपुर (Bandakpur)",
+          "नोहटा (Nohta)",
+          "हिंडोरिया (Hindoriya)"
+        ]
+      },
+      {
+        "name_hi": "हटा (Hatta)",
+        "name_en": "Hatta",
+        "villages": [
+          "पटेरा (Patera)",
+          "मड़िहादो (Madihado)"
+        ]
+      },
+      {
+        "name_hi": "पथरिया (Pathariya)",
+        "name_en": "Pathariya",
+        "villages": [
+          "बोतराई (Botrai)",
+          "जेरठ (Jerath)"
+        ]
+      },
+      {
+        "name_hi": "जबेरा (Jabera)",
+        "name_en": "Jabera",
+        "villages": [
+          "तेन्दूखेड़ा (Tendukheda)",
+          "सिग्रामपुर (Sigrampur)"
+        ]
+      },
+      {
+        "name_hi": "बटियागढ़ (Batiyagarh)",
+        "name_en": "Batiyagarh",
+        "villages": [
+          "बखतपुरा (Bakhatpura)",
+          "मगरोन (Magron)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "panna",
+    "name_hi": "पन्ना (Panna)",
+    "name_en": "Panna",
+    "division": "Sagar",
+    "lat": 24.7208,
+    "lon": 80.1818,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, पन्ना (07732-252110)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Mustard (सरसों)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "पन्ना (Panna)",
+        "name_en": "Panna",
+        "villages": [
+          "देवेन्द्रनगर (Devendranagar)",
+          "ककरहटी (Kakarhati)"
+        ]
+      },
+      {
+        "name_hi": "पवई (Pawai)",
+        "name_en": "Pawai",
+        "villages": [
+          "सिमरिया (Simariya)",
+          "मोहन्द्रा (Mohandra)"
+        ]
+      },
+      {
+        "name_hi": "गुन्नौर (Gunnor)",
+        "name_en": "Gunnor",
+        "villages": [
+          "अमानगंज (Amanganj)",
+          "सलेहा (Saleha)"
+        ]
+      },
+      {
+        "name_hi": "अजयगढ़ (Ajaigarh)",
+        "name_en": "Ajaigarh",
+        "villages": [
+          "धरमपुर (Dharampur)",
+          "बीरा (Beera)"
+        ]
+      },
+      {
+        "name_hi": "शाहनगर (Shahnagar)",
+        "name_en": "Shahnagar",
+        "villages": [
+          "बोरी (Bori)",
+          "रैपुरा (Raipura)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chhatarpur",
+    "name_hi": "छतरपुर (Chhatarpur)",
+    "name_en": "Chhatarpur",
+    "division": "Sagar",
+    "lat": 24.9164,
+    "lon": 79.5811,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, छतरपुर (07682-241240)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Sesame/Til (तिल)",
+      "Groundnut (मूंगफली)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "छतरपुर (Chhatarpur)",
+        "name_en": "Chhatarpur",
+        "villages": [
+          "गड़ीमलहरा (Gadimalehra)",
+          "ईशानगर (Ishanagar)"
+        ]
+      },
+      {
+        "name_hi": "नौगांव (Nowgong)",
+        "name_en": "Nowgong",
+        "villages": [
+          "गर्रोली (Garroli)",
+          "महाराजपुर रोड (Maharajpur Road)"
+        ]
+      },
+      {
+        "name_hi": "महाराजपुर (Maharajpur)",
+        "name_en": "Maharajpur",
+        "villages": [
+          "कुसमारिया (Kusmariya)",
+          "टटम (Tatam)"
+        ]
+      },
+      {
+        "name_hi": "राजनगर / खजुराहो (Rajnagar)",
+        "name_en": "Rajnagar",
+        "villages": [
+          "खजुराहो (Khajuraho)",
+          "बमीठा (Bamitha)"
+        ]
+      },
+      {
+        "name_hi": "बिजावर (Bijawar)",
+        "name_en": "Bijawar",
+        "villages": [
+          "किशनगढ़ (Kishangarh)",
+          "सटई (Satai)"
+        ]
+      },
+      {
+        "name_hi": "बड़ामलहरा (Bada Malhera)",
+        "name_en": "Bada Malhera",
+        "villages": [
+          "भगवां (Bhagawa)",
+          "बक्सवाहा (Buxwaha)"
+        ]
+      },
+      {
+        "name_hi": "लवकुशनगर (Lavkushnagar)",
+        "name_en": "Lavkushnagar",
+        "villages": [
+          "चंदला (Chandla)",
+          "गौरिहार (Gaurihar)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tikamgarh",
+    "name_hi": "टीकमगढ़ (Tikamgarh)",
+    "name_en": "Tikamgarh",
+    "division": "Sagar",
+    "lat": 24.7447,
+    "lon": 78.8315,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, टीकमगढ़ (07683-242310)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Groundnut (मूंगफली)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "टीकमगढ़ (Tikamgarh)",
+        "name_en": "Tikamgarh",
+        "villages": [
+          "बड़ागांव (Badagaon)",
+          "कुण्डेश्वर (Kundeshwar)"
+        ]
+      },
+      {
+        "name_hi": "बल्देवगढ़ (Baldeogarh)",
+        "name_en": "Baldeogarh",
+        "villages": [
+          "खरगापुर (Khargapur)",
+          "कुड़ीला (Kudila)"
+        ]
+      },
+      {
+        "name_hi": "जतारा (Jatara)",
+        "name_en": "Jatara",
+        "villages": [
+          "लिधौरा (Lidhora)",
+          "महेवा (Mahewa)"
+        ]
+      },
+      {
+        "name_hi": "पलेरा (Palera)",
+        "name_en": "Palera",
+        "villages": [
+          "सैदपुर (Saidpur)",
+          "बन्नेबुजुर्ग (Banne Bujurg)"
+        ]
+      },
+      {
+        "name_hi": "मोहनगढ़ (Mohangarh)",
+        "name_en": "Mohangarh",
+        "villages": [
+          "अतर्रा (Atarra)",
+          "पृथ्वीपुर रोड (Prithvipur Road)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "niwari",
+    "name_hi": "निवाड़ी (Niwari)",
+    "name_en": "Niwari",
+    "division": "Sagar",
+    "lat": 25.3619,
+    "lon": 78.802,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, निवाड़ी (07680-231120)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Groundnut (मूंगफली)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Mustard (सरसों)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "निवाड़ी (Niwari)",
+        "name_en": "Niwari",
+        "villages": [
+          "तरिचर कलां (Tarichar Kalan)",
+          "सेंदरी (Sendri)"
+        ]
+      },
+      {
+        "name_hi": "ओरछा (Orchha)",
+        "name_en": "Orchha",
+        "villages": [
+          "लाडपुरा (Ladpura)",
+          "प्रतापुरा (Pratappura)"
+        ]
+      },
+      {
+        "name_hi": "पृथ्वीपुर (Prithvipur)",
+        "name_en": "Prithvipur",
+        "villages": [
+          "अछरू माता (Achhru Mata)",
+          "मोहनगढ़ रोड (Mohangarh Road)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jabalpur",
+    "name_hi": "जबलपुर (Jabalpur)",
+    "name_en": "Jabalpur",
+    "division": "Jabalpur",
+    "lat": 23.1815,
+    "lon": 79.9864,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, जबलपुर (0761-2621410)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Green Pea/Matar (जबलपुर मटर - GI)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "जबलपुर (Jabalpur)",
+        "name_en": "Jabalpur",
+        "villages": [
+          "पनागर (Panagar)",
+          "बरेला (Barela)",
+          "भेड़ाघाट (Bhedaghat)"
+        ]
+      },
+      {
+        "name_hi": "पाटन (Patan)",
+        "name_en": "Patan",
+        "villages": [
+          "कटंगी-पाटन (Katangi-Patan)",
+          "शहपुरा रोड (Shahpura Road)"
+        ]
+      },
+      {
+        "name_hi": "सिहोरा (Sihora)",
+        "name_en": "Sihora",
+        "villages": [
+          "मझौली (Majholi)",
+          "गोसलपुर (Gosalpur)"
+        ]
+      },
+      {
+        "name_hi": "मझौली (Majholi)",
+        "name_en": "Majholi",
+        "villages": [
+          "इन्द्राना (Indrana)",
+          "पैलवारा (Pailwara)"
+        ]
+      },
+      {
+        "name_hi": "शहपुरा (Shahpura)",
+        "name_en": "Shahpura",
+        "villages": [
+          "बेलखेड़ा (Belkheda)",
+          "चरगवां (Chargawan)"
+        ]
+      },
+      {
+        "name_hi": "कुंडम (Kundam)",
+        "name_en": "Kundam",
+        "villages": [
+          "बगराजी (Bagraji)",
+          "तिहारी (Tihari)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "katni",
+    "name_hi": "कटनी (Katni)",
+    "name_en": "Katni",
+    "division": "Jabalpur",
+    "lat": 23.8343,
+    "lon": 80.3957,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, कटनी (07622-220130)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Pulses (दालें)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "कटनी (Katni)",
+        "name_en": "Katni",
+        "villages": [
+          "माधव नगर (Madhav Nagar)",
+          "झिंझरी (Jhinjhari)"
+        ]
+      },
+      {
+        "name_hi": "रीठी (Rithi)",
+        "name_en": "Rithi",
+        "villages": [
+          "बिलहरी (Bilhari)",
+          "कैमोर (Kymore)"
+        ]
+      },
+      {
+        "name_hi": "बड़वारा (Badwara)",
+        "name_en": "Badwara",
+        "villages": [
+          "विजयरघौगढ़ रोड (Vijayraghavgarh Road)",
+          "रोहनिया (Rohaniya)"
+        ]
+      },
+      {
+        "name_hi": "विजयराघवगढ़ (Vijayraghavgarh)",
+        "name_en": "Vijayraghavgarh",
+        "villages": [
+          "कैमोर (Kymore)",
+          "बरही (Barhi)"
+        ]
+      },
+      {
+        "name_hi": "बहोरीबंद (Bahoriband)",
+        "name_en": "Bahoriband",
+        "villages": [
+          "स्लीमनाबाद (Sleemanabad)",
+          "बाकल (Bakal)"
+        ]
+      },
+      {
+        "name_hi": "ढीमरखेड़ा (Dheemerkheda)",
+        "name_en": "Dheemerkheda",
+        "villages": [
+          "उमरियापान (Umariapan)",
+          "दशारमन (Dasharaman)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "narsinghpur",
+    "name_hi": "नरसिंहपुर (Narsinghpur)",
+    "name_en": "Narsinghpur",
+    "division": "Jabalpur",
+    "lat": 22.9463,
+    "lon": 79.1944,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, नरसिंहपुर (07792-230520)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Sugarcane (गन्ना - चीनी कटोरा)",
+      "Pigeon Pea/Tur (अरहर दाल - GI)",
+      "Wheat (गेहूँ)",
+      "Soybean (सोयाबीन)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "नरसिंहपुर (Narsinghpur)",
+        "name_en": "Narsinghpur",
+        "villages": [
+          "करेली (Kareli)",
+          "सिंहपुर (Singhpur)",
+          "बरमान (Barman)"
+        ]
+      },
+      {
+        "name_hi": "गाडरवारा (Gadarwara)",
+        "name_en": "Gadarwara",
+        "villages": [
+          "साईंखेड़ा (Saikheda)",
+          "चीचली (Chichli)",
+          "सालीचौका (Salichouka)"
+        ]
+      },
+      {
+        "name_hi": "करेली (Kareli)",
+        "name_en": "Kareli",
+        "villages": [
+          "बड़ागांव (Badagaon)",
+          "गुड़ मंडी क्षेत्र (Jaggery Hub)"
+        ]
+      },
+      {
+        "name_hi": "गोटेगांव (Gotegaon)",
+        "name_en": "Gotegaon",
+        "villages": [
+          "श्रीनगर (Shrinagar)",
+          "झांसीघाट (Jhansi Ghat)"
+        ]
+      },
+      {
+        "name_hi": "तेंदूखेड़ा (Tendukheda)",
+        "name_en": "Tendukheda",
+        "villages": [
+          "बिलहरा (Bilhara)",
+          "चांवरपाठा (Chanwarpatha)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "chhindwara",
+    "name_hi": "छिंदवाड़ा (Chhindwara)",
+    "name_en": "Chhindwara",
+    "division": "Jabalpur",
+    "lat": 22.0574,
+    "lon": 78.9382,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, छिंदवाड़ा (07162-242310)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Maize (मक्का - कॉर्न सिटी)",
+      "Orange (संतरा)",
+      "Cotton (कपास)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "छिंदवाड़ा (Chhindwara)",
+        "name_en": "Chhindwara",
+        "villages": [
+          "चंदनगांव (Chandangaon)",
+          "इमलीखेड़ा (Imlikheda)",
+          "सरना (Sarna)"
+        ]
+      },
+      {
+        "name_hi": "परासिया (Parasia)",
+        "name_en": "Parasia",
+        "villages": [
+          "चांदामेटा (Chandameta)",
+          "बड़कुही (Badkuhi)",
+          "न्यूटन (Newton)"
+        ]
+      },
+      {
+        "name_hi": "जुन्नारदेव (Junnardeo)",
+        "name_en": "Junnardeo",
+        "villages": [
+          "दमुआ (Damua)",
+          "पातालकोट (Patalkot)"
+        ]
+      },
+      {
+        "name_hi": "अमरवाड़ा (Amarwara)",
+        "name_en": "Amarwara",
+        "villages": [
+          "सिंगोड़ी (Singodi)",
+          "छिरिया (Chhiriya)"
+        ]
+      },
+      {
+        "name_hi": "चौरई (Chourai)",
+        "name_en": "Chourai",
+        "villages": [
+          "चांद (Chand)",
+          "सिरस (Siras)"
+        ]
+      },
+      {
+        "name_hi": "मोहखेड़ (Mohkhed)",
+        "name_en": "Mohkhed",
+        "villages": [
+          "उमरानाला (Umranala)",
+          "सावरी (Sawri)"
+        ]
+      },
+      {
+        "name_hi": "हर्रई (Harrai)",
+        "name_en": "Harrai",
+        "villages": [
+          "बटकाखापा (Batkakhapa)",
+          "धनोरा (Dhanora)"
+        ]
+      },
+      {
+        "name_hi": "तामिया (Tamia)",
+        "name_en": "Tamia",
+        "villages": [
+          "पातालकोट (Patalkot घाटी)",
+          "झिरपा (Jhirpa)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pandhurna",
+    "name_hi": "पांढुर्णा (Pandhurna)",
+    "name_en": "Pandhurna",
+    "division": "Jabalpur",
+    "lat": 21.5991,
+    "lon": 78.5262,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, पांढुर्णा (07164-220110)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Cotton (कपास)",
+      "Orange (संतरा)",
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "पांढुर्णा (Pandhurna)",
+        "name_en": "Pandhurna",
+        "villages": [
+          "बड़चिचोली (Badchicholi)",
+          "तिगांव (Tigaon)",
+          "हिवरा (Hiwra)"
+        ]
+      },
+      {
+        "name_hi": "सौंसर (Sausar)",
+        "name_en": "Sausar",
+        "villages": [
+          "लोधीखेड़ा (Lodhikhada)",
+          "रामाकोना (Ramakona)",
+          "बोरगांव (Borgaon)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "seoni",
+    "name_hi": "सिवनी (Seoni)",
+    "name_en": "Seoni",
+    "division": "Jabalpur",
+    "lat": 22.0869,
+    "lon": 79.5435,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, सिवनी (07692-220410)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (जीराशंकर सुगंधित धान)",
+      "Soybean (सोयाबीन)",
+      "Maize (मक्का)",
+      "Wheat (गेहूँ)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "सिवनी (Seoni)",
+        "name_en": "Seoni",
+        "villages": [
+          "गोपालगंज (Gopalganj)",
+          "बंडोल (Bandol)",
+          "डूंडासिवनी (Dundaseoni)"
+        ]
+      },
+      {
+        "name_hi": "बरघाट (Barghat)",
+        "name_en": "Barghat",
+        "villages": [
+          "आष्टा-बरघाट (Ashta-Barghat)",
+          "गांगपुर (Gangpur)"
+        ]
+      },
+      {
+        "name_hi": "लखनादौन (Lakhnadon)",
+        "name_en": "Lakhnadon",
+        "villages": [
+          "धूमा (Dhuma)",
+          "आदेगांव (Adegaon)"
+        ]
+      },
+      {
+        "name_hi": "केवलारी (Kewlari)",
+        "name_en": "Kewlari",
+        "villages": [
+          "उगली (Ugali)",
+          "पलारी (Palari)"
+        ]
+      },
+      {
+        "name_hi": "घंसौर (Ghansore)",
+        "name_en": "Ghansore",
+        "villages": [
+          "शिकारा (Shikara)",
+          "कहानी (Kahani)"
+        ]
+      },
+      {
+        "name_hi": "छपारा (Chhapara)",
+        "name_en": "Chhapara",
+        "villages": [
+          "भीमगढ़ (Bheemgarh)",
+          "चमारी (Chamari)"
+        ]
+      },
+      {
+        "name_hi": "कुरई (Kurai)",
+        "name_en": "Kurai",
+        "villages": [
+          "पेंच राष्ट्रीय उद्यान क्षेत्र (Pench)",
+          "सुकतरा (Suktara)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "balaghat",
+    "name_hi": "बालाघाट (Balaghat)",
+    "name_en": "Balaghat",
+    "division": "Jabalpur",
+    "lat": 21.8129,
+    "lon": 80.1837,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, बालाघाट (07632-240120)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Chinnor Rice (चिन्नौर चावल - GI टैग)",
+      "Paddy (धान)",
+      "Linseed (अलसी)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "बालाघाट (Balaghat)",
+        "name_en": "Balaghat",
+        "villages": [
+          "गर्रा (Garra)",
+          "उकवा (Ukwa)",
+          "भरवेली (Bharveli)"
+        ]
+      },
+      {
+        "name_hi": "वारासिवनी (Waraseoni)",
+        "name_en": "Waraseoni",
+        "villages": [
+          "रामपायली (Rampayli)",
+          "मेंहदीवाड़ा (Mehdiwada)"
+        ]
+      },
+      {
+        "name_hi": "कटंगी (Katangi)",
+        "name_en": "Katangi",
+        "villages": [
+          "तिरोड़ी (Tirodi)",
+          "बोरी (Bori)"
+        ]
+      },
+      {
+        "name_hi": "लांजी (Lanji)",
+        "name_en": "Lanji",
+        "villages": [
+          "बहेला (Bahela)",
+          "कारंजा (Karanja)"
+        ]
+      },
+      {
+        "name_hi": "बैहर (Baihar)",
+        "name_en": "Baihar",
+        "villages": [
+          "मुक्की (Mukki - कान्हा)",
+          "बिरसा (Birsa)"
+        ]
+      },
+      {
+        "name_hi": "परसवाड़ा (Paraswada)",
+        "name_en": "Paraswada",
+        "villages": [
+          "उकवा (Ukwa)",
+          "कान्हा बफर क्षेत्र"
+        ]
+      },
+      {
+        "name_hi": "लालबर्रा (Lalbarra)",
+        "name_en": "Lalbarra",
+        "villages": [
+          "बड़गांव (Badgaon)",
+          "कटेधरा (Katedhara)"
+        ]
+      },
+      {
+        "name_hi": "खैरलांजी (Khairlanji)",
+        "name_en": "Khairlanji",
+        "villages": [
+          "भटेरा (Bhatera)",
+          "किरनापुर रोड (Kirnapur Road)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mandla",
+    "name_hi": "मंडला (Mandla)",
+    "name_en": "Mandla",
+    "division": "Jabalpur",
+    "lat": 22.5986,
+    "lon": 80.3712,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, मंडला (07642-251140)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Kodo-Kutki (कोदो-कुटकी मिलेट्स)",
+      "Paddy (धान)",
+      "Maize (मक्का)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "मंडला (Mandla)",
+        "name_en": "Mandla",
+        "villages": [
+          "महाराजपुर (Maharajpur)",
+          "बम्हनी बंजर (Bamhni Banjar)"
+        ]
+      },
+      {
+        "name_hi": "नैनपुर (Nainpur)",
+        "name_en": "Nainpur",
+        "villages": [
+          "पिंडरई (Pindrai)",
+          "जिरोली (Jiroli)"
+        ]
+      },
+      {
+        "name_hi": "बिछिया (Bichhiya)",
+        "name_en": "Bichhiya",
+        "villages": [
+          "अंजनिया (Anjaniya)",
+          "सिझौरा (Sijhora)"
+        ]
+      },
+      {
+        "name_hi": "निवास (Niwas)",
+        "name_en": "Niwas",
+        "villages": [
+          "बबली (Babli)",
+          "मनेरी (Maneri)"
+        ]
+      },
+      {
+        "name_hi": "नारायणगंज (Narayanganj)",
+        "name_en": "Narayanganj",
+        "villages": [
+          "टिकरिया (Tikariya)",
+          "बड़झर (Badjhar)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dindori",
+    "name_hi": "डिंडौरी (Dindori)",
+    "name_en": "Dindori",
+    "division": "Jabalpur",
+    "lat": 22.9547,
+    "lon": 81.0818,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, डिंडौरी (07644-234110)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Kodo-Kutki (कोदो कुटकी - श्रीअन्न)",
+      "Paddy (धान)",
+      "Niger (रामतिल)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "डिंडौरी (Dindori)",
+        "name_en": "Dindori",
+        "villages": [
+          "गाड़ासरई (Gadasarai)",
+          "कुकरामठ (Kukramath)"
+        ]
+      },
+      {
+        "name_hi": "शहपुरा (Shahpura)",
+        "name_en": "Shahpura",
+        "villages": [
+          "बरगांव (Bargaon)",
+          "राघोपुर (Raghopur)"
+        ]
+      },
+      {
+        "name_hi": "बजाग (Bajag)",
+        "name_en": "Bajag",
+        "villages": [
+          "चाड़ा (Chada)",
+          "करंजिया रोड (Karanjiya Road)"
+        ]
+      },
+      {
+        "name_hi": "समनापुर (Samnapur)",
+        "name_en": "Samnapur",
+        "villages": [
+          "अमरपुर (Amarpur)",
+          "किसलपुरी (Kisalpur)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rewa",
+    "name_hi": "रीवा (Rewa)",
+    "name_en": "Rewa",
+    "division": "Rewa",
+    "lat": 24.5362,
+    "lon": 81.3037,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, रीवा (07662-241510)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Sundarja Mango (सुंदरजा आम - GI)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "हुजूर (Huzur-Rewa)",
+        "name_en": "Huzur",
+        "villages": [
+          "गोविंदगढ़ (Govindgarh)",
+          "गुढ़ (Gudh)",
+          "रताहरा (Ratahara)"
+        ]
+      },
+      {
+        "name_hi": "मंगवां (Mangawan)",
+        "name_en": "Mangawan",
+        "villages": [
+          "मनगवां (Manganwa)",
+          "गंगेव (Gangev)",
+          "लालगांव (Lalgaon)"
+        ]
+      },
+      {
+        "name_hi": "सिरमौर (Sirmaur)",
+        "name_en": "Sirmaur",
+        "villages": [
+          "डभौरा (Dabhoura)",
+          "बैकुंठपुर (Baikunthpur)"
+        ]
+      },
+      {
+        "name_hi": "त्योंथर (Teonthar)",
+        "name_en": "Teonthar",
+        "villages": [
+          "चाकघाट (Chakghat)",
+          "सोहागी (Sohagi)"
+        ]
+      },
+      {
+        "name_hi": "जवा (Jawa)",
+        "name_en": "Jawa",
+        "villages": [
+          "अतरैला (Atraila)",
+          "बरोहा (Baroha)"
+        ]
+      },
+      {
+        "name_hi": "सेमरिया (Semariya)",
+        "name_en": "Semariya",
+        "villages": [
+          "शाहपुर (Shahpur)",
+          "बसामन मामा (Basaman Mama)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mauganj",
+    "name_hi": "मऊगंज (Mauganj)",
+    "name_en": "Mauganj",
+    "division": "Rewa",
+    "lat": 24.6811,
+    "lon": 81.8744,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, मऊगंज (07663-221140)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Lentil (मसूर)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "मऊगंज (Mauganj)",
+        "name_en": "Mauganj",
+        "villages": [
+          "खटखरी (Khatkhari)",
+          "पिपराही (Piprahi)",
+          "देवतालाब (Devtalab)"
+        ]
+      },
+      {
+        "name_hi": "हनुमना (Hanumana)",
+        "name_en": "Hanumana",
+        "villages": [
+          "पिपरवार (Piparwar)",
+          "हाटा (Hata)"
+        ]
+      },
+      {
+        "name_hi": "नईगढ़ी (Naigarhi)",
+        "name_en": "Naigarhi",
+        "villages": [
+          "अष्टभुजी (Ashtabhuji)",
+          "चितरिया (Chitariya)"
+        ]
+      },
+      {
+        "name_hi": "देवतालाब (Devtalab)",
+        "name_en": "Devtalab",
+        "villages": [
+          "शिव मंदिर परिसर",
+          "मझिगवां (Majhigawan)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "satna",
+    "name_hi": "सतना (Satna)",
+    "name_en": "Satna",
+    "division": "Rewa",
+    "lat": 24.5806,
+    "lon": 80.8293,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, सतना (07672-222310)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Mustard (सरसों)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "रघुराजनगर / सतना (Raghurajnagar)",
+        "name_en": "Satna",
+        "villages": [
+          "सोहावल (Sohawal)",
+          "कोटर (Kotar)",
+          "माधवगढ़ (Madhavgarh)"
+        ]
+      },
+      {
+        "name_hi": "रामपुर बघेलान (Rampur Baghelan)",
+        "name_en": "Rampur Baghelan",
+        "villages": [
+          "बेला (Bela)",
+          "सज्जनपुर (Sajjanpur)"
+        ]
+      },
+      {
+        "name_hi": "नागौद (Nagod)",
+        "name_en": "Nagod",
+        "villages": [
+          "सिंहपुर (Singhpur)",
+          "जसो (Jaso)"
+        ]
+      },
+      {
+        "name_hi": "उचेहरा (Uchehara)",
+        "name_en": "Uchehara",
+        "villages": [
+          "परसमनिया (Parasmaniya)",
+          "अतरवेदी (Atarvedi)"
+        ]
+      },
+      {
+        "name_hi": "मझगवां (Majhgawan)",
+        "name_en": "Majhgawan",
+        "villages": [
+          "चित्रकूट (Chitrakoot)",
+          "पिंडरा (Pindra)",
+          "बरौंधा (Baroundha)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maihar",
+    "name_hi": "मैहर (Maihar)",
+    "name_en": "Maihar",
+    "division": "Rewa",
+    "lat": 24.2697,
+    "lon": 80.7573,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, मैहर (07674-232110)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Mustard (सरसों)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "मैहर (Maihar)",
+        "name_en": "Maihar",
+        "villages": [
+          "शारदा देवी धाम क्षेत्र",
+          "बदेरा (Badera)",
+          "झूकेही (Jhukehi)"
+        ]
+      },
+      {
+        "name_hi": "अमरपाटन (Amarpatan)",
+        "name_en": "Amarpatan",
+        "villages": [
+          "मुकुंदपुर (Mukundpur - व्हाइट टाइगर)",
+          "ताला (Tala)"
+        ]
+      },
+      {
+        "name_hi": "रामनगर (Ramnagar)",
+        "name_en": "Ramnagar",
+        "villages": [
+          "गोविंदगढ़ रोड (Govindgarh Road)",
+          "देवराज (Devraj)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sidhi",
+    "name_hi": "सीधी (Sidhi)",
+    "name_en": "Sidhi",
+    "division": "Rewa",
+    "lat": 24.4034,
+    "lon": 81.8797,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, सीधी (07682-252130)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Linseed (अलसी)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "गोपद बनास / सीधी (Gopad Banas)",
+        "name_en": "Sidhi",
+        "villages": [
+          "कुचवाही (Kuchwahi)",
+          "पड़रा (Padra)"
+        ]
+      },
+      {
+        "name_hi": "चुरहट (Churhat)",
+        "name_en": "Churhat",
+        "villages": [
+          "रामपुर नैकिन (Rampur Naikin)",
+          "शिकारगंज (Shikarganj)"
+        ]
+      },
+      {
+        "name_hi": "मझौली (Majhauli)",
+        "name_en": "Majhauli",
+        "villages": [
+          "ताला (Tala)",
+          "जोबा (Joba)"
+        ]
+      },
+      {
+        "name_hi": "कुसमी (Kusmi)",
+        "name_en": "Kusmi",
+        "villages": [
+          "टमसार (Tamsar)",
+          "पोंडी (Pondi)"
+        ]
+      },
+      {
+        "name_hi": "सिहावल (Sihawal)",
+        "name_en": "Sihawal",
+        "villages": [
+          "बहरी (Bahari)",
+          "अमिलिया (Amiliya)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "singrauli",
+    "name_hi": "सिंगरौली (Singrauli)",
+    "name_en": "Singrauli",
+    "division": "Rewa",
+    "lat": 24.1992,
+    "lon": 82.6644,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, सिंगरौली (07805-233140)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Maize (मक्का)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "बैढ़न (Waidhan)",
+        "name_en": "Waidhan",
+        "villages": [
+          "मोरवा (Morwa)",
+          "विंध्यनगर (Vindhyanagar)"
+        ]
+      },
+      {
+        "name_hi": "देवसर (Deosar)",
+        "name_en": "Deosar",
+        "villages": [
+          "बरगवां (Bargawan)",
+          "झांसी (Jhansi)"
+        ]
+      },
+      {
+        "name_hi": "चितरंगी (Chitrangi)",
+        "name_en": "Chitrangi",
+        "villages": [
+          "गढ़वा (Garhwa)",
+          "नौगई (Naugai)"
+        ]
+      },
+      {
+        "name_hi": "सरई (Sarai)",
+        "name_en": "Sarai",
+        "villages": [
+          "गजरा बहरा (Gajra Bahra)",
+          "निवास (Niwas)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shahdol",
+    "name_hi": "शहडोल (Shahdol)",
+    "name_en": "Shahdol",
+    "division": "Shahdol",
+    "lat": 23.2844,
+    "lon": 81.3547,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, शहडोल (07652-240110)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Gram (चना)",
+      "Kodo-Kutki (कोदो)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "सोहागपुर (Sohagpur)",
+        "name_en": "Sohagpur",
+        "villages": [
+          "बुढ़ार (Budhar)",
+          "सिंहपुर (Singhpur)"
+        ]
+      },
+      {
+        "name_hi": "जैतपुर (Jaitpur)",
+        "name_en": "Jaitpur",
+        "villages": [
+          "खैरहा (Khairha)",
+          "धनपुरी (Dhanpuri)"
+        ]
+      },
+      {
+        "name_hi": "ब्यौहारी (Beohari)",
+        "name_en": "Beohari",
+        "villages": [
+          "बाणसागर (Bansagar)",
+          "पपौंध (Papondh)"
+        ]
+      },
+      {
+        "name_hi": "जयसिंहनगर (Jaysinghnagar)",
+        "name_en": "Jaysinghnagar",
+        "villages": [
+          "कनौंजा (Kanauja)",
+          "अमझोर (Amjhor)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "umaria",
+    "name_hi": "उमरिया (Umaria)",
+    "name_en": "Umaria",
+    "division": "Shahdol",
+    "lat": 23.5244,
+    "lon": 80.8357,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, उमरिया (07653-222120)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Maize (मक्का)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "बांधवगढ़ / उमरिया (Bandhavgarh)",
+        "name_en": "Bandhavgarh",
+        "villages": [
+          "ताला (Tala - बांधवगढ़)",
+          "चंदिया (Chandia)"
+        ]
+      },
+      {
+        "name_hi": "मानपुर (Manpur)",
+        "name_en": "Manpur",
+        "villages": [
+          "रोहनिया (Rohaniya)",
+          "मझगवां (Majhgawan)"
+        ]
+      },
+      {
+        "name_hi": "पाली (Pali)",
+        "name_en": "Pali",
+        "villages": [
+          "नौरोजाबाद (Nowrozabad)",
+          "बिरसिंहपुर (Birsinghpur)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "anuppur",
+    "name_hi": "अनूपपुर (Anuppur)",
+    "name_en": "Anuppur",
+    "division": "Shahdol",
+    "lat": 23.1034,
+    "lon": 81.6914,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, अनूपपुर (07659-222410)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Paddy (धान)",
+      "Wheat (गेहूँ)",
+      "Millets (मोटे अनाज)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "अनूपपुर (Anuppur)",
+        "name_en": "Anuppur",
+        "villages": [
+          "चचाई (Chachai)",
+          "अमलाई (Amlai)"
+        ]
+      },
+      {
+        "name_hi": "कोतमा (Kotma)",
+        "name_en": "Kotma",
+        "villages": [
+          "बिजुरी (Bijuri)",
+          "रामनगर (Ramnagar)"
+        ]
+      },
+      {
+        "name_hi": "जैतहरी (Jaithari)",
+        "name_en": "Jaithari",
+        "villages": [
+          "वेंकटनगर (Venkatnagar)",
+          "चोलना (Cholna)"
+        ]
+      },
+      {
+        "name_hi": "पुष्पराजगढ़ (Pushprajgarh)",
+        "name_en": "Pushprajgarh",
+        "villages": [
+          "अमरकंटक (Amarkantak - नर्मदा उद्गम)",
+          "राजेंद्रग्राम (Rajendragram)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hoshangabad",
+    "name_hi": "नर्मदापुरम / होशंगाबाद (Narmadapuram)",
+    "name_en": "Narmadapuram",
+    "division": "Narmadapuram",
+    "lat": 22.7519,
+    "lon": 77.7289,
+    "insurance_company": "AIC of India",
+    "krishi_officer": "उप संचालक कृषि, नर्मदापुरम (07574-252321)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Wheat (गेहूँ - मध्य प्रदेश की रोटी)",
+      "Paddy (धान)",
+      "Soybean (सोयाबीन)",
+      "Gram (चना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "नर्मदापुरम (Narmadapuram)",
+        "name_en": "Narmadapuram",
+        "villages": [
+          "रसूलिया (Rasulia)",
+          "पवारखेड़ा (Pawarkheda कृषि केंद्र)"
+        ]
+      },
+      {
+        "name_hi": "माखननगर / बाबई (Makhannagar)",
+        "name_en": "Makhannagar",
+        "villages": [
+          "सांगाखेड़ा (Sangakheda)",
+          "बचावनी (Bachawani)"
+        ]
+      },
+      {
+        "name_hi": "इटारसी (Itarsi)",
+        "name_en": "Itarsi",
+        "villages": [
+          "डोलरिया (Dolariya)",
+          "सुखतवा (Sukhtawa)"
+        ]
+      },
+      {
+        "name_hi": "पिपरिया (Pipariya)",
+        "name_en": "Pipariya",
+        "villages": [
+          "पचमढ़ी (Pachmarhi)",
+          "सांडिया (Sandia)"
+        ]
+      },
+      {
+        "name_hi": "सोहागपुर (Sohagpur)",
+        "name_en": "Sohagpur",
+        "villages": [
+          "सेमरी हरचंद (Semri Harchand)",
+          "शोभापुर (Shobhapur)"
+        ]
+      },
+      {
+        "name_hi": "बनखेड़ी (Bankhedi)",
+        "name_en": "Bankhedi",
+        "villages": [
+          "चांदौनी (Chandauni)",
+          "उमरधा (Umardha)"
+        ]
+      },
+      {
+        "name_hi": "सिवनी मालवा (Seoni Malwa)",
+        "name_en": "Seoni Malwa",
+        "villages": [
+          "बानापुरा (Banapura)",
+          "शिवपुर (Shivpur)"
+        ]
+      },
+      {
+        "name_hi": "डोलरिया (Dolariya)",
+        "name_en": "Dolariya",
+        "villages": [
+          "भीलखेड़ी (Bhilkhedi)",
+          "मिर्जापुर (Mirzapur)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "harda",
+    "name_hi": "हरदा (Harda)",
+    "name_en": "Harda",
+    "division": "Narmadapuram",
+    "lat": 22.3444,
+    "lon": 77.0984,
+    "insurance_company": "HDFC ERGO",
+    "krishi_officer": "उप संचालक कृषि, हरदा (07577-222140)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Wheat (गेहूँ)",
+      "Moong (ग्रीष्मकालीन मूंग)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "हरदा (Harda)",
+        "name_en": "Harda",
+        "villages": [
+          "हंडिया (Handia)",
+          "मगामा (Magama)",
+          "रन्हाई (Ranhai)"
+        ]
+      },
+      {
+        "name_hi": "टिमरनी (Timarni)",
+        "name_en": "Timarni",
+        "villages": [
+          "रहटगांव (Rahatgaon)",
+          "पोखरनी (Pokharni)"
+        ]
+      },
+      {
+        "name_hi": "खिरकिया (Khirkiya)",
+        "name_en": "Khirkiya",
+        "villages": [
+          "सिराली (Sirali)",
+          "चारुवा (Charuwa)"
+        ]
+      },
+      {
+        "name_hi": "सिराली (Sirali)",
+        "name_en": "Sirali",
+        "villages": [
+          "महालपुर (Mahalpur)",
+          "पिपल्या (Pipliya)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "betul",
+    "name_hi": "बैतूल (Betul)",
+    "name_en": "Betul",
+    "division": "Narmadapuram",
+    "lat": 21.9015,
+    "lon": 77.9023,
+    "insurance_company": "SBI General Insurance",
+    "krishi_officer": "उप संचालक कृषि, बैतूल (07141-230120)",
+    "toll_free": "14447",
+    "major_crops": [
+      "Soybean (सोयाबीन)",
+      "Maize (मक्का)",
+      "Wheat (गेहूँ)",
+      "Sugarcane (गन्ना)"
+    ],
+    "tehsils": [
+      {
+        "name_hi": "बैतूल (Betul)",
+        "name_en": "Betul",
+        "villages": [
+          "बडोरा (Badora)",
+          "खेड़ी (Khedi)",
+          "मलाजपुर (Malajpur)"
+        ]
+      },
+      {
+        "name_hi": "मुलताई (Multai)",
+        "name_en": "Multai",
+        "villages": [
+          "प्रभातपट्टन (Prabhat Pattan)",
+          "मासोद (Masod)",
+          "दुनावा (Dunawa)"
+        ]
+      },
+      {
+        "name_hi": "आमला (Amla)",
+        "name_en": "Amla",
+        "villages": [
+          "बोरी (Bori)",
+          "कान्होज (Kanhoj)"
+        ]
+      },
+      {
+        "name_hi": "भैंसदेही (Bhainsdehi)",
+        "name_en": "Bhainsdehi",
+        "villages": [
+          "आठनेर (Aathner)",
+          "भीमपुर (Bhimpur)"
+        ]
+      },
+      {
+        "name_hi": "घोड़ाडोंगरी (Ghoradongri)",
+        "name_en": "Ghoradongri",
+        "villages": [
+          "सारणी (Sarni)",
+          "शाहपुर (Shahpur)"
+        ]
+      },
+      {
+        "name_hi": "चिचोली (Chicholi)",
+        "name_en": "Chicholi",
+        "villages": [
+          "चिरचिरा (Chirchira)",
+          "भीमपुर (Bhimpur)"
+        ]
+      },
+      {
+        "name_hi": "शाहपुर (Shahpur)",
+        "name_en": "Shahpur",
+        "villages": [
+          "भौरी (Bhouri)",
+          "कुंडी (Kundi)"
+        ]
+      },
+      {
+        "name_hi": "आठनेर (Aathner)",
+        "name_en": "Aathner",
+        "villages": [
+          "मांडवी (Mandvi)",
+          "हिड़ली (Hidli)"
+        ]
+      }
+    ]
+  }
+]

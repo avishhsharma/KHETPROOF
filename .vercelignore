@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.git/
+.gitignore
+.vscode/
+scratch/
+test_api.py
+run.bat
+*.log
+.DS_Store
